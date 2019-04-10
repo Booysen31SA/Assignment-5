@@ -44,7 +44,7 @@ public class Teachers {
         return iD;
     }
 
-    public static class Builder{
+    public static class Builder {
 
         private int persal_Num;
         private String first_Name;
@@ -52,27 +52,27 @@ public class Teachers {
         private String date_Of_Birth;
         private String iD;
 
-        public Builder setPersalNum(int persal_Num){
+        public Builder setPersalNum(int persal_Num) {
             this.persal_Num = persal_Num;
             return this;
-    }
+        }
 
-    public Builder setFirst_Name(String first_Name){
+        public Builder setFirst_Name(String first_Name) {
             this.first_Name = first_Name;
             return this;
-    }
+        }
 
-        public Builder setLast_Name(String last_Name){
+        public Builder setLast_Name(String last_Name) {
             this.last_Name = last_Name;
             return this;
         }
 
-        public Builder setDate_Of_Birth(String date_Of_Birth){
+        public Builder setDate_Of_Birth(String date_Of_Birth) {
             this.date_Of_Birth = date_Of_Birth;
             return this;
         }
 
-        public Builder setID(String iD){
+        public Builder setID(String iD) {
             this.iD = iD;
             return this;
         }
@@ -81,5 +81,15 @@ public class Teachers {
             return new Teachers(this);
         }
 
+
+    }
+
+    @Override
+    public String toString() {
+        return    "persal_Num    :" + persal_Num +
+                "\nfirst_Name    :" + first_Name +
+                "\nlast_Name     :" + last_Name +
+                "\ndate_Of_Birth :" + date_Of_Birth +
+                "\niD            :" + iD;
     }
 }
