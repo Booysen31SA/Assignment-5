@@ -1,35 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="db575afb-bea7-494f-a82d-c40e34fa18a0" name="Default Changelist" comment="Basic Layout : 10 classes&#10;             : 2 Factories&#10;             : 2 Tests">
-      <change afterPath="$PROJECT_DIR$/Capture.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/domain/School/Reason.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/domain/School/School.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/domain/School/Transfer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/domain/Teacher/Benefits.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/domain/Teacher/Demographics.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/domain/Teacher/TeacherAddress.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/domain/Teacher/TeacherIdentity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/domain/Teacher/TeacherName.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/domain/Teacher/TeacherPhoneNumber.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/factory/TeacherFactory/TeacherFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/factory/TransferFactory/TransferFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/factory/TeacherFactory/TeacherFactoryTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/factory/TransferFactory/TransferFactoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+    <list default="true" id="db575afb-bea7-494f-a82d-c40e34fa18a0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/domain/Schools/School.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/domain/Teacher/Teachers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/Teacher/Teacher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/factory/TeacherFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/factory/TeacherFactoryTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/domain/Schools/School$Builder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/domain/Schools/School.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/domain/Teacher/Teachers$Builder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/domain/Teacher/Teachers.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/factory/TeacherFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/factory/TeacherFactoryTest.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -298,7 +271,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555362035763" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555362555500" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_opened_file_path" value="C:/apps/Git/bin/git.exe" />
@@ -488,8 +461,16 @@
       <workItem from="1554890837470" duration="168000" />
       <workItem from="1554897547580" duration="758000" />
       <workItem from="1555343215010" duration="15090000" />
-      <workItem from="1555361878383" duration="463000" />
+      <workItem from="1555361878383" duration="1015000" />
     </task>
+    <task id="LOCAL-00001" summary="Basic Layout : 10 classes&#10;             : 2 Factories&#10;             : 2 Tests">
+      <created>1555362412059</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1555362412059</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -525,11 +506,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24741000" />
+    <option name="totallyTimeSpent" value="25293000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2753404" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
