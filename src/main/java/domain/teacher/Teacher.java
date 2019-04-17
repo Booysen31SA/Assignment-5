@@ -146,7 +146,7 @@ public class Teacher implements TeacherName, TeacherIdentity{
                 "\nPhysical Address:" + addr.getPhysicalAddress()+
                 "\nPostal Address  :" + addr.getPostalAddress()+
                 "\nGender          :"+demo.getGender()+
-                "\nrace            :"+demo.getGender()+
+                "\nrace            :"+demo.getRace()+
                 "\nCell Number     :"+phone.getCellNumber()+
                 "\nHome Number     :"+phone.getHomeNumber();
 

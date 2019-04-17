@@ -20,4 +20,4 @@ At the moment i am creating the program to handle:
 - And also if teachers want to retire they can do so. Benefits will be handled when registering a Teacher in the system.
 
 Domain diagram
-![](Capture.PNG)
+![Domain class diagram](Capture.PNG)
