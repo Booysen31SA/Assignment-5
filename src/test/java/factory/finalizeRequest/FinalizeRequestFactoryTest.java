@@ -15,8 +15,8 @@ public class FinalizeRequestFactoryTest {
 
         FinalizeRequest finalReq = FinalizeRequestFactory.Update(216062241,
                                                                   Misc.generateId(),
-                                                                  45000.2,
-                                                                  "Approved");
+                                                                 45000.2,
+                                                                 "Approved");
 
         assertNotNull(finalReq);
         System.out.println(finalReq);
