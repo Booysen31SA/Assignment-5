@@ -1,9 +1,6 @@
 package factory.finalizeRequest;
 
-import Util.Misc;
 import domain.retirement.FinalizeRequest;
-import domain.teacher.Teacher;
-import factory.teacherFactory.UpdateFactory;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

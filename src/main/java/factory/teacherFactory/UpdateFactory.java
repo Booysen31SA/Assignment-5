@@ -1,11 +1,12 @@
 package factory.teacherFactory;
 
+import Util.genericvalueobjects.ContactDetails;
 import domain.teacher.Teacher;
 
 public class UpdateFactory {
 
     public static Teacher UpdateTeacher(int persal_Num, String first_Name, String last_Name, String date_Of_Birth, String iD, String pAddress, String posAdd,
-                                     String gender, String race, String cell, String home){
+                                        String gender, String race, ContactDetails con){
 
         return new Teacher.Builder().setPersalNum(persal_Num)
                 .setFirst_Name(first_Name)
@@ -16,7 +17,7 @@ public class UpdateFactory {
                 .setPostalAddress(posAdd)
                 .setGender(gender)
                 .setRace(race)
-                .setCellNumber(cell)
-                .setHomeNumber(home).build();
+                .contactDetails(con)
+                .build();
     }
 }

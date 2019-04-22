@@ -10,7 +10,7 @@ public class TeacherAddressTest {
     private TeacherAddress teachadd;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         teachadd = new TeacherAddress("32 South Road", "32 South Road");
 
 
@@ -19,6 +19,6 @@ public class TeacherAddressTest {
     @Test
     public void addressTest(){
 
-        assertTrue(teachadd.getPhysicalAddress().equals("32 South Road"));
+        assertEquals("32 South Road", teachadd.getPhysicalAddress());
     }
 }

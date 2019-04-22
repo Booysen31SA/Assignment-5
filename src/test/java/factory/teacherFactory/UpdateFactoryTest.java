@@ -21,8 +21,7 @@ public class UpdateFactoryTest {
                 "",
                 "Male",
                 "Coloured",
-                "0721873430",
-                "");
+                null);
 
 
         System.out.println(teach);

@@ -2,6 +2,6 @@ package domain.school;
 
 public interface School {
 
-    public String getPreviousSchool();
-    public String getSchoolName();
+    String getPreviousSchool();
+    String getSchoolName();
 }

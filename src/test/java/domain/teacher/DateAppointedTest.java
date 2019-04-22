@@ -10,13 +10,13 @@ public class DateAppointedTest {
     private DateAppointed date;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
        date = new DateAppointed("17/02/1997");
 
     }
 
     @Test
     public void getDate() {
-        assertTrue(date.getDate().equals("17/02/1997"));
+        assertEquals("17/02/1997", date.getDate());
     }
 }

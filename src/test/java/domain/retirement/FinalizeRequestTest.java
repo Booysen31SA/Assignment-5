@@ -10,13 +10,13 @@ public class FinalizeRequestTest {
     private FinalizeRequest finalR;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         finalR = new FinalizeRequest.Builder().setPasalNumber(216062241).setId("970217").setPayout(78005).setStatus("Declined").build();
     }
 
     @Test
     public void getPersal_Num() {
-        assertTrue(finalR.getPersal_Num() == 216062241);
+        assertEquals(216062241, finalR.getPersal_Num());
     }
 
     @Test
@@ -26,7 +26,7 @@ public class FinalizeRequestTest {
 
     @Test
     public void getPayOut() {
-        assertTrue(finalR.getPayout() == 78005);
+        assertEquals(78005, finalR.getPayout(), 0.0);
     }
 
   

@@ -10,7 +10,7 @@ public class StatusTest {
     private Status status;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
 
         status = new Status("Approved");
     }

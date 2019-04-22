@@ -10,7 +10,7 @@ public class TransferTest {
     private Transfer transfer;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         transfer = new Transfer.Builder().setPasalNumber(216062241).setPreviousSchool("South Peninsula").setSchoolName("plumstead")
                 .setStatus("Approved").setTeacherAmount(4500).build();
     }
@@ -22,7 +22,7 @@ public class TransferTest {
 
     @Test
     public void getTeacherAmount() {
-        assertTrue(transfer.getTeacherAmount() == 4500);
+        assertEquals(4500, transfer.getTeacherAmount());
     }
 
     @Test
@@ -32,7 +32,7 @@ public class TransferTest {
 
     @Test
     public void getPersalNumber() {
-        assertTrue(transfer.getPersalNumber()==216062241);
+        assertEquals(216062241, transfer.getPersalNumber());
     }
 
 }

@@ -2,6 +2,6 @@ package domain.retirement;
 
 public interface RetirementIdentity {
 
-    public int getPersal_Num();
-    public String getiD();
+    int getPersal_Num();
+    String getiD();
 }

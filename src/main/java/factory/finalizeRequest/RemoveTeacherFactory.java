@@ -1,7 +1,6 @@
 package factory.finalizeRequest;
 
 import domain.retirement.FinalizeRequest;
-import domain.retirement.PutRequest;
 
 public class RemoveTeacherFactory {
 

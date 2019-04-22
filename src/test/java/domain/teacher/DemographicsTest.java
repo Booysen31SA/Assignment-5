@@ -9,13 +9,13 @@ public class DemographicsTest {
     private Demographics demo;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         demo = new Demographics("Male", "Coloured");
 
     }
 
     @Test
     public void demoTest() {
-        assertTrue(demo.getGender().equals("Male"));
+        assertEquals("Male", demo.getGender());
     }
 }
