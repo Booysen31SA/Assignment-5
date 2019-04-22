@@ -1,18 +1,19 @@
 package domain.teacher;
 
+import Util.genericvalueobjects.ContactDetails;
+
 public class Teacher implements TeacherName, TeacherIdentity{
 
-    TeacherAddress addr;
-    Demographics demo;
-    TeacherPhoneNumber phone;
-    DateAppointed dateA;
+    private ContactDetails contactDetails;
+
     private int persal_Num;
     private String date_Of_Birth;
     private String first_Name;
     private String last_Name;
     private String iD;
-
-
+    DateAppointed dateA;
+    TeacherAddress addr;
+    Demographics demo;
 
    // private Set<Transfer> school;
 
@@ -25,9 +26,9 @@ public class Teacher implements TeacherName, TeacherIdentity{
         this.last_Name = build.last_Name;
         this.date_Of_Birth = build.date_Of_Birth;
         this.iD = build.iD;
+        this.contactDetails = build.contactDetails;
         addr = new TeacherAddress(build.physicalAddress, build.postalAddress);
         demo = new Demographics(build.gender, build.race);
-        phone = new TeacherPhoneNumber(build.cellNumber, build.homeNumber);
         dateA = new DateAppointed(build.dateA);
     }
     @Override
@@ -53,6 +54,10 @@ public class Teacher implements TeacherName, TeacherIdentity{
         return iD;
     }
 
+    public ContactDetails getContactDetails() {
+        return contactDetails;
+    }
+
     public static class Builder{
 
         private int persal_Num;
@@ -60,14 +65,13 @@ public class Teacher implements TeacherName, TeacherIdentity{
         private String last_Name;
         private String date_Of_Birth;
         private String iD;
+        private ContactDetails contactDetails;
         //other class
         private String physicalAddress;
         private String postalAddress;
         //other class
         private String gender;
         private String race;
-        private String cellNumber;
-        private String homeNumber;
         private String dateA;
 
         public Builder setDateAppointed(String date){
@@ -75,13 +79,8 @@ public class Teacher implements TeacherName, TeacherIdentity{
             return this;
         }
 
-        public Builder setCellNumber(String cellNum){
-            this.cellNumber = cellNum;
-            return this;
-        }
-
-        public Builder setHomeNumber(String homeNumb){
-            this.homeNumber = homeNumb;
+        public Builder contactDetails(ContactDetails contactDetails) {
+            this.contactDetails = contactDetails;
             return this;
         }
 
@@ -136,19 +135,4 @@ public class Teacher implements TeacherName, TeacherIdentity{
 
     }
 
-    @Override
-    public String toString() {
-        return    "persal_Num      :" + persal_Num +
-                "\nfirst_Name      :" + first_Name +
-                "\nlast_Name       :" + last_Name +
-                "\ndate_Of_Birth   :" + date_Of_Birth +
-                "\niD              :" + iD+
-                "\nPhysical Address:" + addr.getPhysicalAddress()+
-                "\nPostal Address  :" + addr.getPostalAddress()+
-                "\nGender          :"+demo.getGender()+
-                "\nrace            :"+demo.getGender()+
-                "\nCell Number     :"+phone.getCellNumber()+
-                "\nHome Number     :"+phone.getHomeNumber();
-
-    }
 }

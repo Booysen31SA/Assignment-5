@@ -23,11 +23,6 @@ public class FinalizeRequest extends Retirement implements RetirementIdentity,Pa
     }
 
 
-    public double getPayOut() {
-        return payout;
-    }
-
-
     @Override
     public double getPayout() {
         return payout;

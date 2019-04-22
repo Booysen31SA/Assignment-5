@@ -11,6 +11,7 @@ public class TeacherFactoryTest {
     @Test
     public void getTeacher() {
 
+
         String name = "teacher List";
         Teacher teach = TeacherFactory.AddTeacher(216062241,
                 "Matthew",
@@ -21,8 +22,7 @@ public class TeacherFactoryTest {
                 "",
                 "Male",
                 "Coloured",
-                 "0721873430",
-                "");
+                 null);
 
 
         System.out.println(teach);

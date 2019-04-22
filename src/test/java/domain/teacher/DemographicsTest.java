@@ -1,0 +1,21 @@
+package domain.teacher;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import static org.junit.Assert.*;
+
+public class DemographicsTest {
+    private Demographics demo;
+
+    @Before
+    public void setUp() throws Exception {
+        demo = new Demographics("Male", "Coloured");
+
+    }
+
+    @Test
+    public void demoTest() {
+        assertTrue(demo.getGender().equals("Male"));
+    }
+}
