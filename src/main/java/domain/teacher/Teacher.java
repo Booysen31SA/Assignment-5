@@ -2,6 +2,8 @@ package domain.teacher;
 
 import Util.genericvalueobjects.ContactDetails;
 
+import java.util.Objects;
+
 public class Teacher implements TeacherName, TeacherIdentity{
 
     TeacherAddress addr;
@@ -147,7 +149,21 @@ public class Teacher implements TeacherName, TeacherIdentity{
                 "\nPhysical Address:" + addr.getPhysicalAddress()+
                 "\nPostal Address  :" + addr.getPostalAddress()+
                 "\nGender          :"+demo.getGender()+
-                "\nrace            :"+demo.getRace();
+                "\nrace            :"+demo.getRace()+
+                "\ncell number     :"+contactDetails.getCellNumber();
 
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Teacher teacher = (Teacher) o;
+        return persal_Num == teacher.persal_Num;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(persal_Num);
     }
 }
