@@ -8,6 +8,12 @@
   <artifactId>Education</artifactId>
   <version>1.0-SNAPSHOT</version>
 
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.1.4.RELEASE</version>
+  </parent>
+
   <name>Education</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
@@ -25,6 +31,26 @@
           <version>RELEASE</version>
           <scope>test</scope>
       </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+      <version>2.1.4.RELEASE</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-devtools</artifactId>
+      <version>2.1.4.RELEASE</version>
+      <optional>true</optional>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <version>2.1.4.RELEASE</version>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
 
   <build>
