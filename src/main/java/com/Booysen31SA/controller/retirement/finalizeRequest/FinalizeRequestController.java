@@ -2,7 +2,10 @@ package com.Booysen31SA.controller.retirement.finalizeRequest;
 
 import com.Booysen31SA.domain.retirement.FinalizeRequest;
 import com.Booysen31SA.repository.impl.retirement.finailzeRequest.FinalizeRequestRepository;
+import com.Booysen31SA.services.impl.retirement.finalizeRequest.FinalizeRequestService;
+import com.Booysen31SA.services.impl.retirement.finalizeRequest.FinalizeRequestServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Set;
@@ -12,11 +15,11 @@ import java.util.Set;
 public class FinalizeRequestController {
 
     @Autowired
-    private FinalizeRequestRepository service;
+    @Qualifier("FinalizeRequestServiceImpl")
+    private FinalizeRequestServiceImpl service;
 
     @PostMapping("/create")
-    @ResponseBody
-    public FinalizeRequest create(FinalizeRequest finalizeRequest){
+    public FinalizeRequest create(@RequestBody FinalizeRequest finalizeRequest){
         return service.create(finalizeRequest);
     }
 

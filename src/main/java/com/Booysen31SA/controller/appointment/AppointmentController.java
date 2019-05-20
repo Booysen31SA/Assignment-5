@@ -3,6 +3,7 @@ package com.Booysen31SA.controller.appointment;
 import com.Booysen31SA.domain.appointment.Appointment;
 import com.Booysen31SA.services.impl.appointment.AppointmentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Set;
@@ -12,6 +13,7 @@ import java.util.Set;
 public class AppointmentController {
 
     @Autowired
+    @Qualifier("AppointmentServiceImpl")
     private AppointmentService service;
 
     @PostMapping("/create")

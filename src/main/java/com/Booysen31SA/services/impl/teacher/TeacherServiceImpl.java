@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
-@Service
+@Service("TeacherServiceImpl")
 public class TeacherServiceImpl implements TeacherService{
 
     @Autowired

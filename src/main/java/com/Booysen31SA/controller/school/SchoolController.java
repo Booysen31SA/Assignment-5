@@ -3,6 +3,7 @@ package com.Booysen31SA.controller.school;
 import com.Booysen31SA.domain.school.Transfer;
 import com.Booysen31SA.services.impl.school.TransferService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Set;
@@ -12,6 +13,7 @@ import java.util.Set;
 public class SchoolController {
 
     @Autowired
+    @Qualifier("TransferServiceImpl")
     private TransferService service;
 
     @PostMapping("/create")

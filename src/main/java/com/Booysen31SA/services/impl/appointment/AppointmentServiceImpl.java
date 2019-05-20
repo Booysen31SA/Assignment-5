@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
-@Service
+@Service("AppointmentServiceImpl")
 public class AppointmentServiceImpl implements AppointmentService {
 
     @Autowired

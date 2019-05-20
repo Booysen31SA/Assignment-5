@@ -15,11 +15,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.web.client.HttpClientErrorException;
 
-import java.net.http.HttpHeaders;
 
 import static org.junit.Assert.*;
 
-@SpringBootTest
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 @RunWith(SpringRunner.class)
 public class AppointmentControllerTest {
 
@@ -27,14 +26,10 @@ public class AppointmentControllerTest {
     private TestRestTemplate restTemplate;
     private String baseURL = "http://localhost:8080/appointment";
 
-    @Before
-    public void setUp() throws Exception {
-    }
-
     @Test
     public void create() {
         Appointment appointment = AppointmentFactory.addAppointment("17/02/2019", "17:30", "Clinton Booysen", "Retirement", 216062241);
-
+        System.out.println(appointment);
 
         ResponseEntity<Appointment> postResponse = restTemplate.postForEntity(baseURL + "/create", appointment, Appointment.class);
         assertNotNull(postResponse);

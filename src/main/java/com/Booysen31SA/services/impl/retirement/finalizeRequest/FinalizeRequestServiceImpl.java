@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
-@Service
+@Service("FinalizeRequestServiceImpl")
 public class FinalizeRequestServiceImpl implements FinalizeRequestService {
     @Autowired
     private FinalizeRequestRepository repository;

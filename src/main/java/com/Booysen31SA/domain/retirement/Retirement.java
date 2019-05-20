@@ -9,6 +9,10 @@ public class Retirement extends Status {
     protected double payout;
 
 
+    public void setPasalNumber(int pasalNumber) {
+        this.pasalNumber = pasalNumber;
+    }
+
     @Override
     public String toString() {
         return  "pasalNumber:" + pasalNumber +

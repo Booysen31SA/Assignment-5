@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
-@Service
+@Service("TransferServiceImpl")
 public class TransferServiceImpl implements TransferService {
     @Autowired
     private SchoolRepository repository;

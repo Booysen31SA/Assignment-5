@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
-@Repository
+@Repository("Transfer")
 public class TransferRepositoryImpl implements SchoolRepository {
 
     private static TransferRepositoryImpl repository = null;
@@ -29,7 +29,7 @@ public class TransferRepositoryImpl implements SchoolRepository {
 
     @Override
     public Transfer create(Transfer transfer) {
-        transferTeacher.put(transfer.getPersalNumber(), transfer);
+        this.transferTeacher.put(transfer.getPersalNumber(), transfer);
         return transfer;
     }
 
