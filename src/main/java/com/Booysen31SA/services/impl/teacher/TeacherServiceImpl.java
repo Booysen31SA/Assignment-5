@@ -11,10 +11,16 @@ import java.util.Set;
 @Service("TeacherServiceImpl")
 public class TeacherServiceImpl implements TeacherService{
 
-    @Autowired
+    private TeacherServiceImpl services = null;
+
     private TeacherRepository repository;
 
     private TeacherServiceImpl(){this.repository = TeacherRepositoryImpl.getRepository();}
+
+    public TeacherServiceImpl getService(){
+        if(services == null) {services = new TeacherServiceImpl();}
+        return services;
+    }
 
 
     @Override

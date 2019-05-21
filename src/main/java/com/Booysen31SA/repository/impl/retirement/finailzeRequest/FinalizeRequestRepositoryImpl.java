@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import java.util.*;
 
 
-@Repository("Final")
+@Repository("FinalInMemory")
 public class FinalizeRequestRepositoryImpl implements FinalizeRequestRepository {
 
     private static FinalizeRequestRepositoryImpl repository = null;

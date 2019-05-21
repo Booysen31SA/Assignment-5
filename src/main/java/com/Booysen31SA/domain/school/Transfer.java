@@ -1,6 +1,5 @@
 package com.Booysen31SA.domain.school;
 
-import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 public class Transfer implements School, Person {
 
@@ -11,6 +10,8 @@ public class Transfer implements School, Person {
     private String schoolName;
     private int teacherAmount;
 
+    public Transfer() {
+    }
 
     public Transfer(Builder build) {
         this.pasalNumber = build.pasalNumber;

@@ -17,8 +17,9 @@ import org.springframework.web.client.HttpClientErrorException;
 
 import static org.junit.Assert.*;
 
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
+
 @RunWith(SpringRunner.class)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 public class TeacherControllerTest {
 
     @Autowired
@@ -28,16 +29,17 @@ public class TeacherControllerTest {
 
     @Test
     public void create() {
+        ContactDetails con = new ContactDetails.Builder().setCellNumber("0741873430").setHomeNumber("").build();
         Teacher teach = TeacherFactory.AddTeacher(216062241,
                 "Matthew",
                 "Booysen",
                 "17/02/1997",
-                Misc.generateId(),
+                "1702",
                 "32 South Road",
-                "",
+                "32 South Road",
                 "Male",
                 "Coloured",
-                null);
+                con);
         ResponseEntity<Teacher> postResponse = restTemplate.postForEntity(baseURL + "/create", teach, Teacher.class);
         assertNotNull(postResponse);
         assertNotNull(postResponse.getBody());
@@ -82,5 +84,6 @@ public class TeacherControllerTest {
         ResponseEntity<String> response =  restTemplate.exchange(baseURL + "/read/all",
                 HttpMethod.GET, entity, String.class);
         assertNotNull(response.getBody());
+        System.out.println(response.getBody());
     }
 }

@@ -4,6 +4,10 @@ public class PutRequest extends Retirement implements RetirementIdentity, Retire
 
     Status status;
 
+    private PutRequest(){
+
+    }
+
     public PutRequest(Builder build) {
         this.pasalNumber = build.pasalNumber;
         this.firstName = build.firstName;

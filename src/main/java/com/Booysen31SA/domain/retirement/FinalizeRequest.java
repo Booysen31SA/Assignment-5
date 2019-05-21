@@ -5,6 +5,9 @@ public class FinalizeRequest extends Retirement implements RetirementIdentity,Pa
 
     Status status;
 
+    public FinalizeRequest() {
+    }
+
     public FinalizeRequest(Builder build) {
         this.pasalNumber = build.pasalNumber;
         this.id = build.id;

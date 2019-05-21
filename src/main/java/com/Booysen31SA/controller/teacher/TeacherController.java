@@ -3,6 +3,7 @@ package com.Booysen31SA.controller.teacher;
 import com.Booysen31SA.domain.teacher.Teacher;
 import com.Booysen31SA.factory.teacherFactory.TeacherFactory;
 import com.Booysen31SA.services.impl.teacher.TeacherService;
+import com.Booysen31SA.services.impl.teacher.TeacherServiceImpl;
 import com.Booysen31SA.util.Misc;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -16,7 +17,7 @@ public class TeacherController {
 
     @Autowired
     @Qualifier("TeacherServiceImpl")
-    private TeacherService service;
+    private TeacherServiceImpl service;
 
 //    @GetMapping("/create/{persal_Num}/{first_Name}")
 //    public @ResponseBody
@@ -26,8 +27,7 @@ public class TeacherController {
 //    }
 
     @PostMapping("/create")
-    @ResponseBody
-    public Teacher create(Teacher teacher){
+    public Teacher create(@RequestBody Teacher teacher){
         return service.create(teacher);
     }
 

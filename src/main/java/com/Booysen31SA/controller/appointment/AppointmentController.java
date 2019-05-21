@@ -17,8 +17,7 @@ public class AppointmentController {
     private AppointmentService service;
 
     @PostMapping("/create")
-    @ResponseBody
-    public Appointment create(Appointment appointment){
+    public Appointment create(@RequestBody Appointment appointment){
         return service.create(appointment);
     }
 

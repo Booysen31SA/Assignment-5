@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
-@Repository("Transfer")
+@Repository("TransferInMemory")
 public class TransferRepositoryImpl implements SchoolRepository {
 
     private static TransferRepositoryImpl repository = null;

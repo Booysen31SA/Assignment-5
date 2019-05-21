@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
-@Repository("Teacher")
+@Repository("TeacherInMemory")
 public class TeacherRepositoryImpl implements TeacherRepository {
 
        private static TeacherRepositoryImpl repository = null;

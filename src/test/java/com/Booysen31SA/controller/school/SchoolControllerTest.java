@@ -2,7 +2,6 @@ package com.Booysen31SA.controller.school;
 
 import com.Booysen31SA.domain.school.Transfer;
 import com.Booysen31SA.factory.transferFactory.TransferFactory;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,8 +13,8 @@ import org.springframework.web.client.HttpClientErrorException;
 
 import static org.junit.Assert.*;
 
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 @RunWith(SpringRunner.class)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 public class SchoolControllerTest {
 
     @Autowired
@@ -24,14 +23,7 @@ public class SchoolControllerTest {
 
     @Test
     public void create() {
-        System.out.println("\nteacher amount increment");
-        int currentAmountOfTeachersAtSchool = 21;
-        String beforeTransfer = "South Peninsula";
-        Transfer transfer = new TransferFactory().TransferSchool(216062241,
-                beforeTransfer,
-                "Plumstead High Transfer",
-                currentAmountOfTeachersAtSchool,
-                "Pending");
+        Transfer transfer = TransferFactory.TransferSchool(216062241, "Plumstead", "South Peninsula", 4500, "Pending");
         ResponseEntity<Transfer> postResponse = restTemplate.postForEntity(baseURL+"/create", transfer, Transfer.class);
         assertNotNull(postResponse);
         assertNotNull(postResponse.getBody());

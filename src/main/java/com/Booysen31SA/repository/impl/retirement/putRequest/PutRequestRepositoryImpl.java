@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
-@Repository
+@Repository("PutRequestInMemory")
 public class PutRequestRepositoryImpl implements PutRequestRepository {
 
     private static PutRequestRepositoryImpl repository = null;

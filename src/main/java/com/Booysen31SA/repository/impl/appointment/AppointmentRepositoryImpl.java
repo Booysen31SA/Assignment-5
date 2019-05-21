@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
-@Repository("Appointment")
+@Repository("AppointmentInMemory")
 public class AppointmentRepositoryImpl implements AppointmentRepository {
 
     private static AppointmentRepositoryImpl repository = null;

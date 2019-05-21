@@ -8,6 +8,9 @@ public class Appointment implements Person, AppointmentSee{
     private String appointmentSee;
 
 
+    public Appointment() {
+    }
+
     public Appointment(Builder build) {
         this.persalNumber = build.persalNumber;
         this.appointmentSee = build.appointmentSee;
