@@ -251,7 +251,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558452453812" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558511221977" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/repository/impl" />
@@ -302,7 +302,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.FinalizeRequestControllerTest.read">
+  <component name="RunManager" selected="JUnit.AppointmentControllerTest.create">
     <configuration name="AppointmentControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Assignment-5" />
       <extension name="coverage">
@@ -314,6 +314,22 @@
       <option name="PACKAGE_NAME" value="com.Booysen31SA.controller.appointment" />
       <option name="MAIN_CLASS_NAME" value="com.Booysen31SA.controller.appointment.AppointmentControllerTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AppointmentControllerTest.create" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Assignment-5" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.Booysen31SA.controller.appointment.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.Booysen31SA.controller.appointment" />
+      <option name="MAIN_CLASS_NAME" value="com.Booysen31SA.controller.appointment.AppointmentControllerTest" />
+      <option name="METHOD_NAME" value="create" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -364,28 +380,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SchoolControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Assignment-5" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.Booysen31SA.controller.school.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.Booysen31SA.controller.school" />
-      <option name="MAIN_CLASS_NAME" value="com.Booysen31SA.controller.school.SchoolControllerTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AppointmentControllerTest.create" />
         <item itemvalue="JUnit.FinalizeRequestControllerTest.read" />
         <item itemvalue="JUnit.PutRequestControllerTest" />
         <item itemvalue="JUnit.FinalizeRequestControllerTest" />
         <item itemvalue="JUnit.AppointmentControllerTest" />
-        <item itemvalue="JUnit.SchoolControllerTest" />
       </list>
     </recent_temporary>
   </component>
