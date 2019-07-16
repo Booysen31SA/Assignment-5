@@ -3,7 +3,6 @@ package com.Booysen31SA.services.impl.teacher;
 import com.Booysen31SA.domain.teacher.Teacher;
 import com.Booysen31SA.repository.impl.teacher.TeacherRepository;
 import com.Booysen31SA.repository.impl.teacher.TeacherRepositoryImpl;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;

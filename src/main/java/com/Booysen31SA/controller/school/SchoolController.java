@@ -1,7 +1,6 @@
 package com.Booysen31SA.controller.school;
 
 import com.Booysen31SA.domain.school.Transfer;
-import com.Booysen31SA.services.impl.school.TransferService;
 import com.Booysen31SA.services.impl.school.TransferServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;

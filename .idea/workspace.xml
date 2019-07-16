@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db575afb-bea7-494f-a82d-c40e34fa18a0" name="Default Changelist" comment="Services and Controllers">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/controller/retirement/finalizeRequest/FinalizeRequestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/controller/retirement/finalizeRequest/FinalizeRequestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/controller/school/SchoolController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/controller/school/SchoolController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/controller/teacher/TeacherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/controller/teacher/TeacherController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/services/impl/teacher/TeacherServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/services/impl/teacher/TeacherServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/Booysen31SA/controller/retirement/finalizeRequest/FinalizeRequestControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/Booysen31SA/controller/retirement/finalizeRequest/FinalizeRequestControllerTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -29,15 +35,52 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/Booysen31SA/controller/appointment/AppointmentController.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+            <state relative-caret-position="170">
+              <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/Booysen31SA/controller/retirement/finalizeRequest/FinalizeRequestControllerTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="884">
+              <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/Booysen31SA/controller/retirement/finalizeRequest/FinalizeRequestController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#651#652#0" expanded="true" />
-                <element signature="e#701#702#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/Booysen31SA/controller/teacher/TeacherControllerTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="426">
+              <caret line="32" column="42" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="42" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -100,7 +143,6 @@
         <option value="$PROJECT_DIR$/src/resources/banner.txt" />
         <option value="$PROJECT_DIR$/src/resources/META-INF/resources.frontend/styles/README.md" />
         <option value="$PROJECT_DIR$/src/resources/META-INF/resources.frontend/src/README.md" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/Booysen31SA/EducationApplication.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/Booysen31SA/domain/retirement/Retirement.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/Booysen31SA/controller/retirement/finalizeRequest/FinalizeRequestController.java" />
@@ -126,6 +168,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/Booysen31SA/repository/impl/retirement/putRequest/PutRequestRepositoryImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/Booysen31SA/services/impl/retirement/putRequest/PutRequestServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/Booysen31SA/controller/retirement/putRequest/PutRequestControllerTest.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/test/java/com/Booysen31SA/controller/retirement/finalizeRequest/FinalizeRequestControllerTest.java" />
       </list>
     </option>
@@ -184,44 +227,44 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="Assignment-5.1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Assignment-5.1" type="462c0819:PsiDirectoryNode" />
+              <item name="Assignment-5" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Assignment-5" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Assignment-5.1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Assignment-5.1" type="462c0819:PsiDirectoryNode" />
+              <item name="Assignment-5" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Assignment-5" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Assignment-5.1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Assignment-5.1" type="462c0819:PsiDirectoryNode" />
+              <item name="Assignment-5" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Assignment-5" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Assignment-5.1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Assignment-5.1" type="462c0819:PsiDirectoryNode" />
+              <item name="Assignment-5" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Assignment-5" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Assignment-5.1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Assignment-5.1" type="462c0819:PsiDirectoryNode" />
+              <item name="Assignment-5" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Assignment-5" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="Booysen31SA" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Assignment-5.1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Assignment-5.1" type="462c0819:PsiDirectoryNode" />
+              <item name="Assignment-5" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Assignment-5" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -229,14 +272,85 @@
               <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Assignment-5.1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Assignment-5.1" type="462c0819:PsiDirectoryNode" />
+              <item name="Assignment-5" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Assignment-5" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="Booysen31SA" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
               <item name="appointment" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Assignment-5" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Assignment-5" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Booysen31SA" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="retirement" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Assignment-5" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Assignment-5" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Booysen31SA" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="retirement" type="462c0819:PsiDirectoryNode" />
+              <item name="finalizeRequest" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Assignment-5" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Assignment-5" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Booysen31SA" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="teacher" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Assignment-5" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Assignment-5" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Assignment-5" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Assignment-5" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Assignment-5" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Assignment-5" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Booysen31SA" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Assignment-5" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Assignment-5" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Booysen31SA" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Assignment-5" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Assignment-5" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Booysen31SA" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="teacher" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -251,7 +365,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558511221977" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563306486262" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/repository/impl" />
@@ -302,22 +416,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.AppointmentControllerTest.create">
-    <configuration name="AppointmentControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Assignment-5" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.Booysen31SA.controller.appointment.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.Booysen31SA.controller.appointment" />
-      <option name="MAIN_CLASS_NAME" value="com.Booysen31SA.controller.appointment.AppointmentControllerTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.FinalizeRequestControllerTest.read">
     <configuration name="AppointmentControllerTest.create" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Assignment-5" />
       <extension name="coverage">
@@ -334,7 +433,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FinalizeRequestControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FinalizeRequestControllerTest.delete" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Assignment-5" />
       <extension name="coverage">
         <pattern>
@@ -344,7 +443,8 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.Booysen31SA.controller.retirement.finalizeRequest" />
       <option name="MAIN_CLASS_NAME" value="com.Booysen31SA.controller.retirement.finalizeRequest.FinalizeRequestControllerTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="METHOD_NAME" value="delete" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -380,13 +480,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TeacherControllerTest.read" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Assignment-5" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.Booysen31SA.controller.teacher.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.Booysen31SA.controller.teacher" />
+      <option name="MAIN_CLASS_NAME" value="com.Booysen31SA.controller.teacher.TeacherControllerTest" />
+      <option name="METHOD_NAME" value="read" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.AppointmentControllerTest.create" />
         <item itemvalue="JUnit.FinalizeRequestControllerTest.read" />
+        <item itemvalue="JUnit.TeacherControllerTest.read" />
+        <item itemvalue="JUnit.FinalizeRequestControllerTest.delete" />
+        <item itemvalue="JUnit.AppointmentControllerTest.create" />
         <item itemvalue="JUnit.PutRequestControllerTest" />
-        <item itemvalue="JUnit.FinalizeRequestControllerTest" />
-        <item itemvalue="JUnit.AppointmentControllerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -429,6 +545,7 @@
       <workItem from="1558440486208" duration="10396000" />
       <workItem from="1558453555007" duration="662000" />
       <workItem from="1558455775201" duration="2337000" />
+      <workItem from="1563305377682" duration="936000" />
     </task>
     <task id="LOCAL-00001" summary="Basic Layout : 10 classes&#10;             : 2 Factories&#10;             : 2 Tests">
       <created>1555362412059</created>
@@ -535,19 +652,17 @@
       <option name="project" value="LOCAL" />
       <updated>1558452039980</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Merge branch 'master' of https://github.com/Booysen31SA/Assignment-5&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <created>1563300256281</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1563300256281</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SchoolControllerTest_create - 2019.05.21 at 16h 10m 10s.xml">
-      <configuration name="SchoolControllerTest.create" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SchoolControllerTest_create - 2019.05.21 at 16h 16m 19s.xml">
-      <configuration name="SchoolControllerTest.create" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SchoolControllerTest_create - 2019.05.21 at 16h 21m 21s.xml">
-      <configuration name="SchoolControllerTest.create" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="SchoolControllerTest - 2019.05.21 at 16h 21m 47s.xml">
       <configuration name="SchoolControllerTest" configurationId="JUnit" />
     </history-entry>
@@ -569,14 +684,24 @@
     <history-entry file="FinalizeRequestControllerTest_read - 2019.05.21 at 17h 05m 57s.xml">
       <configuration name="FinalizeRequestControllerTest.read" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="FinalizeRequestControllerTest_read - 2019.07.16 at 21h 44m 58s.xml">
+      <configuration name="FinalizeRequestControllerTest.read" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FinalizeRequestControllerTest_delete - 2019.07.16 at 21h 45m 36s.xml">
+      <configuration name="FinalizeRequestControllerTest.delete" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TeacherControllerTest_read - 2019.07.16 at 21h 47m 01s.xml">
+      <configuration name="TeacherControllerTest.read" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="123029000" />
+    <option name="totallyTimeSpent" value="124419000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49760765" visible="true" weight="0.2715959" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49760765" visible="true" weight="0.26793557" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -586,7 +711,7 @@
       <window_info id="Web" order="7" sideWeight="0.50239235" side_tool="true" weight="0.22557841" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3281046" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49895832" weight="0.42328042" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49895832" weight="0.42180094" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39973083" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -597,7 +722,7 @@
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.9526066" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50104165" side_tool="true" weight="0.42180094" />
       <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.49895832" weight="0.32804233" />
-      <window_info active="true" anchor="bottom" id="Inspection Results" order="13" visible="true" weight="0.3281046" />
+      <window_info anchor="bottom" id="Inspection Results" order="13" weight="0.3281046" />
       <window_info anchor="bottom" id="Spring" order="14" />
       <window_info anchor="bottom" id="Java Enterprise" order="15" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -628,13 +753,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Services and Controllers" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/Booysen31SA/domain/teacher/TeacherTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="19" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/banner.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -671,13 +789,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/dictionaries/booysen31_matthew.xml">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="901">
-          <caret line="53" column="17" selection-start-line="53" selection-start-column="17" selection-end-line="53" selection-end-column="17" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/Booysen31SA/services/impl/retirement/finalizeRequest/FinalizeRequestServiceImplTest.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -798,16 +909,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/Booysen31SA/controller/teacher/TeacherController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="489">
-          <caret line="29" column="38" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/Booysen31SA/controller/school/SchoolControllerTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -879,16 +980,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/Booysen31SA/controller/teacher/TeacherControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="32" column="42" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/Booysen31SA/controller/appointment/AppointmentControllerTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1105">
@@ -941,16 +1032,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/Booysen31SA/controller/retirement/finalizeRequest/FinalizeRequestController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="66" lean-forward="true" selection-start-line="21" selection-start-column="66" selection-end-line="21" selection-end-column="66" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1012,13 +1093,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/Booysen31SA/controller/retirement/finalizeRequest/FinalizeRequestControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="52" column="20" selection-start-line="52" selection-start-column="20" selection-end-line="52" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/Assignment-5.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1041,6 +1115,57 @@
             <element signature="imports" expanded="true" />
             <element signature="e#651#652#0" expanded="true" />
             <element signature="e#701#702#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/Booysen31SA/controller/teacher/TeacherController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/Booysen31SA/controller/retirement/finalizeRequest/FinalizeRequestControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="884">
+          <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/Booysen31SA/controller/retirement/finalizeRequest/FinalizeRequestController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/Booysen31SA/controller/teacher/TeacherControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="426">
+          <caret line="32" column="42" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -1,8 +1,6 @@
 package com.Booysen31SA.controller.retirement.finalizeRequest;
 
 import com.Booysen31SA.domain.retirement.FinalizeRequest;
-import com.Booysen31SA.repository.impl.retirement.finailzeRequest.FinalizeRequestRepository;
-import com.Booysen31SA.services.impl.retirement.finalizeRequest.FinalizeRequestService;
 import com.Booysen31SA.services.impl.retirement.finalizeRequest.FinalizeRequestServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;

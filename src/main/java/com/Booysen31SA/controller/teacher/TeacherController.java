@@ -1,10 +1,7 @@
 package com.Booysen31SA.controller.teacher;
 
 import com.Booysen31SA.domain.teacher.Teacher;
-import com.Booysen31SA.factory.teacherFactory.TeacherFactory;
-import com.Booysen31SA.services.impl.teacher.TeacherService;
 import com.Booysen31SA.services.impl.teacher.TeacherServiceImpl;
-import com.Booysen31SA.util.Misc;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
