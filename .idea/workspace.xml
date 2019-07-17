@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="db575afb-bea7-494f-a82d-c40e34fa18a0" name="Default Changelist" comment="">
+    <list default="true" id="db575afb-bea7-494f-a82d-c40e34fa18a0" name="Default Changelist" comment="Controllers tests">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/Booysen31SA/controller/appointment/AppointmentControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/Booysen31SA/controller/appointment/AppointmentControllerTest.java" afterDir="false" />
@@ -29,16 +30,15 @@
     <select />
   </component>
   <component name="DefaultGradleProjectSettings">
-    <option name="testRunner" value="GRADLE" />
-    <option name="delegatedBuild" value="true" />
+    <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
+            <state relative-caret-position="170">
+              <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -46,8 +46,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="28" column="10" selection-start-line="28" selection-start-column="10" selection-end-line="33" selection-end-column="25" />
+            <state relative-caret-position="442">
+              <caret line="38" column="33" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -57,6 +57,10 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
               <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+              <folding>
+                <element signature="e#432#433#0" expanded="true" />
+                <element signature="e#503#504#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -64,8 +68,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/Booysen31SA/controller/appointment/AppointmentControllerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="50" column="25" selection-start-line="50" selection-start-column="25" selection-end-line="50" selection-end-column="25" />
+            <state relative-caret-position="561">
+              <caret line="77" column="9" selection-start-line="77" selection-start-column="9" selection-end-line="77" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -99,9 +103,6 @@
   <component name="Git.Settings">
     <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="GithubDefaultAccount">
-    <option name="defaultAccountId" value="bccf084f-df7f-4ae2-a2b1-b4ca59474a09" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -214,6 +215,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -340,7 +342,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -465,17 +466,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SchoolControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="EducationApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="Assignment-5" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.Booysen31SA.controller.school.*" />
+          <option name="PATTERN" value="com.Booysen31SA.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.Booysen31SA.controller.school" />
-      <option name="MAIN_CLASS_NAME" value="com.Booysen31SA.controller.school.SchoolControllerTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.Booysen31SA.EducationApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -483,10 +482,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.AppointmentControllerTest" />
-        <item itemvalue="JUnit.AppointmentControllerTest.read" />
         <item itemvalue="JUnit.AppointmentControllerTest.create" />
+        <item itemvalue="Spring Boot.EducationApplication" />
+        <item itemvalue="JUnit.AppointmentControllerTest.read" />
         <item itemvalue="JUnit.AppointmentServiceImplTest" />
-        <item itemvalue="JUnit.SchoolControllerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -530,7 +529,8 @@
       <workItem from="1558453555007" duration="662000" />
       <workItem from="1558455775201" duration="2337000" />
       <workItem from="1563305377682" duration="936000" />
-      <workItem from="1563350639350" duration="1952000" />
+      <workItem from="1563350639350" duration="2103000" />
+      <workItem from="1563352850280" duration="2228000" />
     </task>
     <task id="LOCAL-00001" summary="Basic Layout : 10 classes&#10;             : 2 Factories&#10;             : 2 Tests">
       <created>1555362412059</created>
@@ -651,28 +651,17 @@
       <option name="project" value="LOCAL" />
       <updated>1563351526576</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Controllers tests">
+      <created>1563352706694</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1563352706694</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="PutRequestControllerTest - 2019.07.17 at 10h 17m 31s.xml">
-      <configuration name="PutRequestControllerTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SchoolControllerTest - 2019.07.17 at 10h 18m 08s.xml">
-      <configuration name="SchoolControllerTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AppointmentServiceImplTest - 2019.07.17 at 10h 18m 33s.xml">
-      <configuration name="AppointmentServiceImplTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AppointmentControllerTest - 2019.07.17 at 10h 19m 25s.xml">
-      <configuration name="AppointmentControllerTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AppointmentControllerTest_create - 2019.07.17 at 10h 19m 33s.xml">
-      <configuration name="AppointmentControllerTest.create" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AppointmentControllerTest_read - 2019.07.17 at 10h 19m 38s.xml">
-      <configuration name="AppointmentControllerTest.read" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="AppointmentControllerTest - 2019.07.17 at 10h 22m 39s.xml">
       <configuration name="AppointmentControllerTest" configurationId="JUnit" />
     </history-entry>
@@ -685,15 +674,32 @@
     <history-entry file="AppointmentControllerTest - 2019.07.17 at 10h 35m 44s.xml">
       <configuration name="AppointmentControllerTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="AppointmentControllerTest - 2019.07.17 at 11h 14m 43s.xml">
+      <configuration name="AppointmentControllerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AppointmentControllerTest - 2019.07.17 at 11h 15m 12s.xml">
+      <configuration name="AppointmentControllerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AppointmentControllerTest_create - 2019.07.17 at 11h 15m 20s.xml">
+      <configuration name="AppointmentControllerTest.create" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AppointmentControllerTest - 2019.07.17 at 11h 16m 17s.xml">
+      <configuration name="AppointmentControllerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AppointmentControllerTest_create - 2019.07.17 at 11h 16m 25s.xml">
+      <configuration name="AppointmentControllerTest.create" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AppointmentControllerTest - 2019.07.17 at 11h 17m 40s.xml">
+      <configuration name="AppointmentControllerTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="126371000" />
+    <option name="totallyTimeSpent" value="128750000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49760765" visible="true" weight="0.2707889" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49760765" visible="true" weight="0.27345416" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -713,7 +719,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.9526066" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50104165" side_tool="true" weight="0.42180094" />
-      <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.49895832" weight="0.32804233" />
+      <window_info active="true" anchor="bottom" id="Messages" order="12" sideWeight="0.49895832" visible="true" weight="0.32719395" />
       <window_info anchor="bottom" id="Inspection Results" order="13" weight="0.3281046" />
       <window_info anchor="bottom" id="Spring" order="14" />
       <window_info anchor="bottom" id="Java Enterprise" order="15" />
@@ -742,19 +748,8 @@
     <MESSAGE value="some of repository files added" />
     <MESSAGE value="Repository updated" />
     <MESSAGE value="Services and Controllers" />
-    <option name="LAST_COMMIT_MESSAGE" value="Services and Controllers" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/Booysen31SA/controller/appointment/AppointmentControllerTest.java</url>
-          <line>29</line>
-          <properties />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Controllers tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Controllers tests" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/resources/banner.txt">
@@ -1080,13 +1075,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/Booysen31SA/controller/retirement/finalizeRequest/FinalizeRequestController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -1153,24 +1141,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/Booysen31SA/EducationApplication.java">
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+        <state relative-caret-position="170">
+          <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="28" column="10" selection-start-line="28" selection-start-column="10" selection-end-line="33" selection-end-column="25" />
+        <state relative-caret-position="442">
+          <caret line="38" column="33" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/Booysen31SA/EducationApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+          <folding>
+            <element signature="e#432#433#0" expanded="true" />
+            <element signature="e#503#504#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/Booysen31SA/controller/appointment/AppointmentControllerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="50" column="25" selection-start-line="50" selection-start-column="25" selection-end-line="50" selection-end-column="25" />
+        <state relative-caret-position="561">
+          <caret line="77" column="9" selection-start-line="77" selection-start-column="9" selection-end-line="77" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

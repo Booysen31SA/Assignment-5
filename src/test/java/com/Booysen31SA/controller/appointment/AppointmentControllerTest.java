@@ -13,6 +13,7 @@ import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.core.annotation.Order;
 import org.springframework.http.*;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.springframework.web.client.HttpClientErrorException;
 
 
@@ -21,14 +22,14 @@ import static org.junit.Assert.*;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @RunWith(SpringRunner.class)
 
-public class AppointmentControllerTest {
+public class AppointmentControllerTest{
 
     @Autowired
     private TestRestTemplate restTemplate;
     private String baseURL = "http://localhost:8080/appointment";
 
+    //@org.testng.annotations.Test
     @Test
-    @Order(1)
     public void create() {
         Appointment appointment = AppointmentFactory.addAppointment("17/02/2019", "17:30", "Clinton Booysen", "Retirement", 216062241);
         System.out.println(appointment);
@@ -39,6 +40,8 @@ public class AppointmentControllerTest {
         System.out.println("Create");
     }
 
+
+    //@org.testng.annotations.Test(dependsOnMethods = "create")
     @Test
     public void read() {
         Appointment appointment = restTemplate.getForObject(baseURL + "/read/216062241", Appointment.class);
@@ -46,6 +49,7 @@ public class AppointmentControllerTest {
         assertNotNull(appointment);
     }
 
+    //@org.testng.annotations.Test(dependsOnMethods = "read")
     @Test
     public void update() {
         int id =216062241;
@@ -56,8 +60,9 @@ public class AppointmentControllerTest {
         assertNotNull(updatedAppointment);
     }
 
+    //@org.testng.annotations.Test(dependsOnMethods = "update")
     @Test
-    public void delete() {int id = 216062241;
+    public void delete() {int id = 216062245;
         Appointment appointment = restTemplate.getForObject(baseURL + "/delete/" + id,Appointment.class);
         assertNull(appointment);
         restTemplate.delete(baseURL + "/students/" + id);
@@ -69,6 +74,7 @@ public class AppointmentControllerTest {
     }
 
 
+    //@org.testng.annotations.Test
     @Test
     public void getAll() {
         HttpHeaders headers = new HttpHeaders();
