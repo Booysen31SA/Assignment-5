@@ -13,7 +13,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.web.client.HttpClientErrorException;
 
 import static org.junit.Assert.*;
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @RunWith(SpringRunner.class)
 public class FinalizeRequestControllerTest {
 
@@ -62,7 +62,7 @@ public class FinalizeRequestControllerTest {
     @Test
     public void read() {
         FinalizeRequest obj = restTemplate.getForObject(baseURL+"/read/216062241", FinalizeRequest.class);
-      System.out.println(obj.getPayout());
+        System.out.println(obj.getPayout());
         assertNotNull(obj);
     }
 

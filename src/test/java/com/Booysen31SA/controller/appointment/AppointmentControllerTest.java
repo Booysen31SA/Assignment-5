@@ -15,7 +15,7 @@ import org.springframework.web.client.HttpClientErrorException;
 
 import static org.junit.Assert.*;
 
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @RunWith(SpringRunner.class)
 public class AppointmentControllerTest {
 
@@ -34,6 +34,12 @@ public class AppointmentControllerTest {
     }
 
     @Test
+    public void read() {
+        Appointment appointment = restTemplate.getForObject(baseURL + "/read/216062241", Appointment.class);
+        assertNotNull(appointment);
+    }
+
+    @Test
     public void update() {
         int id =216062241;
         Appointment appoint = restTemplate.getForObject(baseURL + "/216062241/" + id, Appointment.class);
@@ -45,8 +51,8 @@ public class AppointmentControllerTest {
 
     @Test
     public void delete() {int id = 216062241;
-        Appointment appointment = restTemplate.getForObject(baseURL + "/srtudent/" + id,Appointment.class);
-        assertNotNull(appointment);
+        Appointment appointment = restTemplate.getForObject(baseURL + "/delete/" + id,Appointment.class);
+        assertNull(appointment);
         restTemplate.delete(baseURL + "/students/" + id);
         try {
             appointment = restTemplate.getForObject(baseURL + "/employees/" + id, Appointment.class);
@@ -55,11 +61,6 @@ public class AppointmentControllerTest {
         }
     }
 
-    @Test
-    public void read() {
-        Appointment appointment = restTemplate.getForObject(baseURL + "/read/216062241", Appointment.class);
-        assertNotNull(appointment);
-    }
 
     @Test
     public void getAll() {

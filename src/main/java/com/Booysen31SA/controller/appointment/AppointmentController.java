@@ -20,6 +20,11 @@ public class AppointmentController {
     public Appointment create(@RequestBody Appointment appointment){
         return service.create(appointment);
     }
+    @GetMapping("/read/{id}")
+    @ResponseBody
+    public Appointment read(@PathVariable Integer id) {
+        return service.read(id);
+    }
 
     @PostMapping("/update")
     @ResponseBody
@@ -31,12 +36,6 @@ public class AppointmentController {
     @ResponseBody
     public void delete(@PathVariable Integer id){
         service.delete(id);
-    }
-
-    @GetMapping("/read/{id}")
-    @ResponseBody
-    public Appointment read(@PathVariable Integer id) {
-        return service.read(id);
     }
 
     @GetMapping("/read/all")
