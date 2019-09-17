@@ -19,7 +19,7 @@ import static org.junit.Assert.*;
 
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class TeacherControllerTest {
 
     @Autowired
@@ -85,5 +85,20 @@ public class TeacherControllerTest {
                 HttpMethod.GET, entity, String.class);
         assertNotNull(response.getBody());
         System.out.println(response.getBody());
+    }
+
+    @Test
+    public void test1() {
+        HttpHeaders headers = new HttpHeaders();
+        HttpEntity<String> entity = new HttpEntity<>(null , headers);
+        ResponseEntity<String> response = restTemplate
+                .withBasicAuth("user", "password")
+                .postForEntity(baseURL + "/test/1", entity, String.class);
+        System.out.println(response.getStatusCode());
+        assertEquals(HttpStatus.FORBIDDEN, response.getStatusCode());
+    }
+
+    @Test
+    public void testCreate() {
     }
 }

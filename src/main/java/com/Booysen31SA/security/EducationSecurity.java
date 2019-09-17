@@ -25,7 +25,7 @@ public class EducationSecurity extends WebSecurityConfigurerAdapter {
                 .roles(USER_ROLE)
                 .and()
                 .withUser("admin")
-                .password(encoder().encode("admin"))
+                .password(encoder().encode("password"))
                 .roles(USER_ROLE, ADMIN_ROLE);
     }
 
@@ -33,10 +33,10 @@ public class EducationSecurity extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.httpBasic().and()
                 .authorizeRequests()
-                .antMatchers(HttpMethod.POST, "/**").hasRole(ADMIN_ROLE)
+                .antMatchers(HttpMethod.POST, "/teacher/**/").hasRole(ADMIN_ROLE)
                 .and()
                 .csrf().disable()
-                .formLogin().disable();
+                .formLogin();
     }
 
     @Bean

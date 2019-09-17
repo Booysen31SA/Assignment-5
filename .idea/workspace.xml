@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="db575afb-bea7-494f-a82d-c40e34fa18a0" name="Default Changelist" comment="Controllers tests">
+    <list default="true" id="db575afb-bea7-494f-a82d-c40e34fa18a0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/Booysen31SA/security/EducationSecurityTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/security/EducationSecurity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/security/EducationSecurity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/Booysen31SA/controller/teacher/TeacherControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/Booysen31SA/controller/teacher/TeacherControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/Assignment-5.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/Booysen31SA/security/EducationSecurity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Booysen31SA/security/EducationSecurity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/Booysen31SA/controller/teacher/TeacherControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/Booysen31SA/controller/teacher/TeacherControllerTest.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,20 +41,10 @@
         <option value="FxmlFile" />
         <option value="Singleton" />
         <option value="Interface" />
-        <option value="JUnit4 Test Class" />
         <option value="Class" />
+        <option value="JUnit4 Test Class" />
       </list>
     </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>setPersalNum</find>
-      <find>Misc</find>
-      <find>FinalizeRequest</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>PutRequest</replace>
-    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="ROOT_SYNC" value="DONT_SYNC" />
@@ -101,10 +97,10 @@
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
       <recent name="com.Booysen31SA.controller.teacher" />
+      <recent name="com.Booysen31SA.security" />
       <recent name="com.Booysen31SA.controller.school" />
       <recent name="com.Booysen31SA.controller.retirement.putRequest" />
       <recent name="com.Booysen31SA.controller.retirement.finalizeRequest" />
-      <recent name="com.Booysen31SA.controller.appointment" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -137,23 +133,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.EducationApplication">
-    <configuration name="FinalizeRequestControllerTest.delete" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Assignment-5" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.Booysen31SA.controller.retirement.finalizeRequest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.Booysen31SA.controller.retirement.finalizeRequest" />
-      <option name="MAIN_CLASS_NAME" value="com.Booysen31SA.controller.retirement.finalizeRequest.FinalizeRequestControllerTest" />
-      <option name="METHOD_NAME" value="delete" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.TeacherControllerTest.test1">
     <configuration name="FinalizeRequestControllerTest.read" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Assignment-5" />
       <extension name="coverage">
@@ -201,6 +181,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TeacherControllerTest.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Assignment-5" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.Booysen31SA.controller.teacher.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.Booysen31SA.controller.teacher" />
+      <option name="MAIN_CLASS_NAME" value="com.Booysen31SA.controller.teacher.TeacherControllerTest" />
+      <option name="METHOD_NAME" value="test1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="EducationApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="Assignment-5" />
       <extension name="coverage">
@@ -216,11 +212,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TeacherControllerTest.test1" />
         <item itemvalue="Spring Boot.EducationApplication" />
         <item itemvalue="JUnit.TeacherControllerTest.read" />
         <item itemvalue="JUnit.PutRequestControllerTest" />
         <item itemvalue="JUnit.FinalizeRequestControllerTest.read" />
-        <item itemvalue="JUnit.FinalizeRequestControllerTest.delete" />
       </list>
     </recent_temporary>
   </component>
@@ -384,7 +380,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568718365731</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Security class updated">
+      <created>1568720837992</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1568720837992</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -414,7 +417,8 @@
     <MESSAGE value="Repository updated" />
     <MESSAGE value="Services and Controllers" />
     <MESSAGE value="user and password using application.properties File" />
-    <option name="LAST_COMMIT_MESSAGE" value="user and password using application.properties File" />
+    <MESSAGE value="Security class updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="Security class updated" />
   </component>
   <component name="masterDetails">
     <states>
