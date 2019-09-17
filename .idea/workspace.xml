@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="db575afb-bea7-494f-a82d-c40e34fa18a0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/Booysen31SA/security/EducationSecurityTest.java" afterDir="false" />
+    <list default="true" id="db575afb-bea7-494f-a82d-c40e34fa18a0" name="Default Changelist" comment="Added security to test">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/security/EducationSecurity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/security/EducationSecurity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/Booysen31SA/controller/teacher/TeacherControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/Booysen31SA/controller/teacher/TeacherControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/Assignment-5.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/Booysen31SA/security/EducationSecurity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Booysen31SA/security/EducationSecurity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/Booysen31SA/controller/teacher/TeacherControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/Booysen31SA/controller/teacher/TeacherControllerTest.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -387,7 +381,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568720837992</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Added security to test">
+      <created>1568723428002</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1568723428002</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -418,7 +419,8 @@
     <MESSAGE value="Services and Controllers" />
     <MESSAGE value="user and password using application.properties File" />
     <MESSAGE value="Security class updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="Security class updated" />
+    <MESSAGE value="Added security to test" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added security to test" />
   </component>
   <component name="masterDetails">
     <states>

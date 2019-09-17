@@ -33,10 +33,9 @@ public class EducationSecurity extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.httpBasic().and()
                 .authorizeRequests()
-                .antMatchers(HttpMethod.POST, "/teacher/**/").hasRole(ADMIN_ROLE)
+                .antMatchers(HttpMethod.GET, "/teacher/**/").hasRole(ADMIN_ROLE)
                 .and()
-                .csrf().disable()
-                .formLogin();
+                .csrf();
     }
 
     @Bean
