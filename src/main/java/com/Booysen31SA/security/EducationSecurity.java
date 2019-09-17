@@ -33,7 +33,7 @@ public class EducationSecurity extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.httpBasic().and()
                 .authorizeRequests()
-                .antMatchers(HttpMethod.POST, "/Assignment-5/**/create/**").hasRole(ADMIN_ROLE)
+                .antMatchers(HttpMethod.POST, "/**").hasRole(ADMIN_ROLE)
                 .and()
                 .csrf().disable()
                 .formLogin().disable();
