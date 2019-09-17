@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="db575afb-bea7-494f-a82d-c40e34fa18a0" name="Default Changelist" comment="Controllers tests">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+    <list default="true" id="db575afb-bea7-494f-a82d-c40e34fa18a0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/security/EducationSecurity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/EducationApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/EducationApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/controller/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/controller/IndexController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/META-INF/resources.frontend/src/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/resources.frontend/src/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/META-INF/resources.frontend/styles/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/resources.frontend/styles/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/banner.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/banner.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/controller/teacher/TeacherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/controller/teacher/TeacherController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Booysen31SA/controller/teacher/TeacherController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Booysen31SA/controller/teacher/TeacherController.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,8 +36,8 @@
         <option value="FxmlFile" />
         <option value="Singleton" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="JUnit4 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -383,7 +378,14 @@
       <option name="project" value="LOCAL" />
       <updated>1563300256281</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="user and password using application.properties File">
+      <created>1568718365731</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1568718365731</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -410,7 +412,8 @@
     <MESSAGE value="some of repository files added" />
     <MESSAGE value="Repository updated" />
     <MESSAGE value="Services and Controllers" />
-    <option name="LAST_COMMIT_MESSAGE" value="Services and Controllers" />
+    <MESSAGE value="user and password using application.properties File" />
+    <option name="LAST_COMMIT_MESSAGE" value="user and password using application.properties File" />
   </component>
   <component name="masterDetails">
     <states>
