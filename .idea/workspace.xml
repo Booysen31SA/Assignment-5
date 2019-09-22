@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="db575afb-bea7-494f-a82d-c40e34fa18a0" name="Default Changelist" comment="" />
+    <list default="true" id="db575afb-bea7-494f-a82d-c40e34fa18a0" name="Default Changelist" comment="Controllers and security">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -258,7 +260,7 @@
       <workItem from="1558453555007" duration="662000" />
       <workItem from="1558455775201" duration="2337000" />
       <workItem from="1563305377682" duration="936000" />
-      <workItem from="1569170792116" duration="9673000" />
+      <workItem from="1569170792116" duration="10703000" />
     </task>
     <task id="LOCAL-00001" summary="Basic Layout : 10 classes&#10;             : 2 Factories&#10;             : 2 Tests">
       <created>1555362412059</created>
@@ -400,7 +402,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569180386361</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Controllers and security">
+      <created>1569180940529</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1569180940529</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
