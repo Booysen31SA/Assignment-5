@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="db575afb-bea7-494f-a82d-c40e34fa18a0" name="Default Changelist" comment="Added security to test">
       <change beforePath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/security/EducationSecurity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/security/EducationSecurity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/Booysen31SA/security/EducationSecurity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Booysen31SA/security/EducationSecurity.class" afterDir="false" />
+=======
+    <list default="true" id="db575afb-bea7-494f-a82d-c40e34fa18a0" name="Default Changelist" comment="Controllers and security">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+>>>>>>> Develop
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,13 +45,13 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="ROOT_SYNC" value="DONT_SYNC" />
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Develop" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -77,9 +82,10 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/repository/impl" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/test/java/com/Booysen31SA/controller/teacher/Demography" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -92,11 +98,11 @@
       <recent name="com.Booysen31SA.Util" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.Booysen31SA.controller.teacher.Demography" />
+      <recent name="com.Booysen31SA.repository.teacher.users" />
+      <recent name="com.Booysen31SA.factory.school" />
+      <recent name="com.Booysen31SA.controller" />
       <recent name="com.Booysen31SA.controller.teacher" />
-      <recent name="com.Booysen31SA.security" />
-      <recent name="com.Booysen31SA.controller.school" />
-      <recent name="com.Booysen31SA.controller.retirement.putRequest" />
-      <recent name="com.Booysen31SA.controller.retirement.finalizeRequest" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -106,8 +112,24 @@
       <recent name="" />
       <recent name="repository.impl.teacher" />
     </key>
+<<<<<<< HEAD
+=======
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\booysen31.matthew\Desktop\Projects\Assignment-5\src\main\java\com\Booysen31SA\services" />
+      <recent name="C:\Users\matthewboo\IdeaProjects\Assignment-5\src\main" />
+      <recent name="C:\Users\booysen31.matthew\Documents\CPUT\3rd YEAR\ADP2\Assignment-5\src\main\java\com\Booysen31SA" />
+    </key>
+>>>>>>> Develop
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\booysen31.matthew\Documents\CPUT\3rd YEAR\ADP2\ADPYearAssignment" />
+      <recent name="C:\Users\booysen31.matthew\Desktop\Projects\assignment\src\test\java\com\Booysen31SA\controller\teacher\Demography" />
+      <recent name="C:\Users\booysen31.matthew\Desktop\Projects\Assignment-5\src\main\java\com\Booysen31SA\services" />
+      <recent name="C:\Users\booysen31.matthew\Desktop\Projects\Assignment-5\src\main\java\com\Booysen31SA\services\school" />
+      <recent name="C:\Users\booysen31.matthew\Desktop\Projects\Assignment-5\src\main\java\com\Booysen31SA\services\retirement" />
+      <recent name="C:\Users\booysen31.matthew\Desktop\Projects\Assignment-5\src\main\java\com\Booysen31SA\services\appointment" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.Booysen31SA.factory" />
+      <recent name="com.Booysen31SA.domain" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\matthewboo\IdeaProjects\Assignment-5\src\main" />
@@ -126,72 +148,70 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TeacherControllerTest.test1">
-    <configuration name="FinalizeRequestControllerTest.read" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Assignment-5" />
+  <component name="RunManager" selected="JUnit.RaceControllerTest.createRace">
+    <configuration name="GenderControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="assignment" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.Booysen31SA.controller.retirement.finalizeRequest.*" />
+          <option name="PATTERN" value="com.Booysen31SA.controller.teacher.Demography.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.Booysen31SA.controller.retirement.finalizeRequest" />
-      <option name="MAIN_CLASS_NAME" value="com.Booysen31SA.controller.retirement.finalizeRequest.FinalizeRequestControllerTest" />
-      <option name="METHOD_NAME" value="read" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PutRequestControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Assignment-5" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.Booysen31SA.controller.retirement.putRequest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.Booysen31SA.controller.retirement.putRequest" />
-      <option name="MAIN_CLASS_NAME" value="com.Booysen31SA.controller.retirement.putRequest.PutRequestControllerTest" />
+      <option name="PACKAGE_NAME" value="com.Booysen31SA.controller.teacher.Demography" />
+      <option name="MAIN_CLASS_NAME" value="com.Booysen31SA.controller.teacher.Demography.GenderControllerTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TeacherControllerTest.read" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Assignment-5" />
+    <configuration name="GenderControllerTest.createGender" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="assignment" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.Booysen31SA.controller.teacher.*" />
+          <option name="PATTERN" value="com.Booysen31SA.controller.teacher.Demography.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.Booysen31SA.controller.teacher" />
-      <option name="MAIN_CLASS_NAME" value="com.Booysen31SA.controller.teacher.TeacherControllerTest" />
-      <option name="METHOD_NAME" value="read" />
+      <option name="PACKAGE_NAME" value="com.Booysen31SA.controller.teacher.Demography" />
+      <option name="MAIN_CLASS_NAME" value="com.Booysen31SA.controller.teacher.Demography.GenderControllerTest" />
+      <option name="METHOD_NAME" value="createGender" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TeacherControllerTest.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Assignment-5" />
+    <configuration name="RaceControllerTest.createRace" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="assignment" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.Booysen31SA.controller.teacher.*" />
+          <option name="PATTERN" value="com.Booysen31SA.controller.teacher.Demography.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.Booysen31SA.controller.teacher" />
-      <option name="MAIN_CLASS_NAME" value="com.Booysen31SA.controller.teacher.TeacherControllerTest" />
-      <option name="METHOD_NAME" value="test1" />
+      <option name="PACKAGE_NAME" value="com.Booysen31SA.controller.teacher.Demography" />
+      <option name="MAIN_CLASS_NAME" value="com.Booysen31SA.controller.teacher.Demography.RaceControllerTest" />
+      <option name="METHOD_NAME" value="createRace" />
       <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.Booysen31SA.services in Assignment-5" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Assignment-5" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.Booysen31SA.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.Booysen31SA.services" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="EducationApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="Assignment-5" />
+      <module name="assignment" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.Booysen31SA.*" />
@@ -205,11 +225,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TeacherControllerTest.test1" />
+        <item itemvalue="JUnit.RaceControllerTest.createRace" />
+        <item itemvalue="JUnit.GenderControllerTest.createGender" />
         <item itemvalue="Spring Boot.EducationApplication" />
-        <item itemvalue="JUnit.TeacherControllerTest.read" />
-        <item itemvalue="JUnit.PutRequestControllerTest" />
-        <item itemvalue="JUnit.FinalizeRequestControllerTest.read" />
+        <item itemvalue="JUnit.GenderControllerTest" />
+        <item itemvalue="JUnit.com.Booysen31SA.services in Assignment-5" />
       </list>
     </recent_temporary>
   </component>
@@ -253,6 +273,7 @@
       <workItem from="1558453555007" duration="662000" />
       <workItem from="1558455775201" duration="2337000" />
       <workItem from="1563305377682" duration="936000" />
+      <workItem from="1569170792116" duration="10703000" />
     </task>
     <task id="LOCAL-00001" summary="Basic Layout : 10 classes&#10;             : 2 Factories&#10;             : 2 Tests">
       <created>1555362412059</created>
@@ -387,7 +408,21 @@
       <option name="project" value="LOCAL" />
       <updated>1568723428002</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Controllers and security">
+      <created>1569180386361</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1569180386361</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Controllers and security">
+      <created>1569180940529</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1569180940529</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -419,7 +454,8 @@
     <MESSAGE value="user and password using application.properties File" />
     <MESSAGE value="Security class updated" />
     <MESSAGE value="Added security to test" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added security to test" />
+    <MESSAGE value="Controllers and security" />
+    <option name="LAST_COMMIT_MESSAGE" value="Controllers and security" />
   </component>
   <component name="masterDetails">
     <states>

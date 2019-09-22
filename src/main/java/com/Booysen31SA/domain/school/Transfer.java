@@ -3,9 +3,7 @@ package com.Booysen31SA.domain.school;
 
 public class Transfer implements School, Person {
 
-    Status status;
-
-    private int pasalNumber;
+    private String pasalNumber;
     private String previousSchool;
     private String schoolName;
     private int teacherAmount;
@@ -18,8 +16,6 @@ public class Transfer implements School, Person {
         this.previousSchool = build.previousSchool;
         this.schoolName = build.schoolName;
         this.teacherAmount = build.teacherAmount;
-        status = new Status(build.status);
-
     }
 
 
@@ -37,28 +33,22 @@ public class Transfer implements School, Person {
     }
 
     @Override
-    public int getPersalNumber() {
+    public String getPersalNumber() {
         return pasalNumber;
     }
 
     public static class Builder{
 
-        private int pasalNumber;
+        private String pasalNumber;
         private String previousSchool;
         private String schoolName;
         private int teacherAmount;
-        private String status;
-
-        public Builder setStatus(String status){
-            this.status = status;
-            return this;
-        }
 
         public Builder setPreviousSchool(String previousSchool){
             this.previousSchool = previousSchool;
             return this;
         }
-        public Builder setPasalNumber(int pasalNumber){
+        public Builder setPasalNumber(String pasalNumber){
             this.pasalNumber = pasalNumber;
             return this;
         }
@@ -84,7 +74,6 @@ public class Transfer implements School, Person {
                 "pasal Number       :" + pasalNumber+
                 "\nPrevious Transfer:"+ previousSchool+
                 "\nTransfer Name    :" + schoolName+
-                "\nteacherAmount    :" + teacherAmount+
-                "\nStatus           :" + status.getStatusRequest();
+                "\nteacherAmount    :" + teacherAmount;
     }
 }

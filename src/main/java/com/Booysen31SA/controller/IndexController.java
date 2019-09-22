@@ -9,8 +9,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class IndexController {
-    @RequestMapping(value = {"/", "/Assignment-5"})
+    @RequestMapping(value = {"/"})
     public ResponseEntity<String> home() {
         return new ResponseEntity<>("Welcome to Education App!", HttpStatus.OK);
     }
+
+    @RequestMapping(value = {"/unsuccessful", "/Assignment-5"})
+    public ResponseEntity<String> unsuccessful() {
+        return new ResponseEntity<>("Welcome to Education App!", HttpStatus.OK);
+    }
+
 }

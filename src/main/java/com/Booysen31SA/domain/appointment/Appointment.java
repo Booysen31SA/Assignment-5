@@ -1,69 +1,36 @@
 package com.Booysen31SA.domain.appointment;
 
-public class Appointment implements Person, AppointmentSee{
+public class Appointment implements Person, AppointmentToSee{
 
-    DateAndTime dat;
-    Reason reason;
-    private int persalNumber;
-    private String appointmentSee;
+    private String persal_Number;
+    private String appointmentToSee;
 
-
-    public Appointment() {
+    public Appointment(Builder build){
+        this.persal_Number = build.persal_Number;
+        this.appointmentToSee = build.appointmentToSee;
     }
-
-    public Appointment(Builder build) {
-        this.persalNumber = build.persalNumber;
-        this.appointmentSee = build.appointmentSee;
-      dat = new DateAndTime(build.dateOfAppointments, build.timeOfAppointments);
-      reason = new Reason(build.reasonForAppointment);
+    @Override
+    public String getAppointmentToSee() {
+        return appointmentToSee;
     }
 
     @Override
-    public int getPersalNumber() {
-        return persalNumber;
+    public String getPersalNumber() {
+        return persal_Number;
     }
-
-    @Override
-    public String getAppointmentSee() {
-      return appointmentSee;
-    }
-
-
 
     public static class Builder{
+        private String persal_Number;
+        private String appointmentToSee;
 
-        private String dateOfAppointments;
-        private String timeOfAppointments;
-        private String appointmentSee;
-        private String reasonForAppointment;
-        private int persalNumber;
-
-        public Builder setTimeOfAppointment(String time){
-            this.timeOfAppointments = time;
+        public Builder persal_Number(String persal_Number) {
+            this.persal_Number = persal_Number;
             return this;
         }
-
-        public Builder setpersalNumber(int persal){
-            this.persalNumber = persal;
+        public Builder appointmentToSee(String appointmentToSee) {
+            this.appointmentToSee = appointmentToSee;
             return this;
         }
-
-        public Builder setdateOfAppointments(String dateOfAppointments){
-            this.dateOfAppointments = dateOfAppointments;
-            return this;
-        }
-
-        public Builder setReason(String reason){
-            this.reasonForAppointment = reason;
-            return this;
-        }
-
-
-        public Builder setAppointmentSee(String appointmentSee){
-            this.appointmentSee = appointmentSee;
-            return this;
-        }
-
         public Appointment build() {
             return new Appointment(this);
         }
@@ -71,11 +38,9 @@ public class Appointment implements Person, AppointmentSee{
 
     @Override
     public String toString() {
-        return "\nDate   :" +dat.getDate()+
-                "\nTime  :" +dat.getTime()+
-                "\nTo See:" +appointmentSee+
-                "\nReason:" +reason.getReason()+
-                "\nVistor:" +persalNumber
-                     ;
+        return "Appointment{" +
+                "persal_Number='" + persal_Number + '\'' +
+                ", appointmentToSee='" + appointmentToSee + '\'' +
+                '}';
     }
 }

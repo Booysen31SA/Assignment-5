@@ -1,10 +1,9 @@
 6vpackage com.Booysen31SA.controller.appointment;
 
-import com.Booysen31SA.domain.appointment.Appointment;
-import com.Booysen31SA.factory.appointmentFactory.AppointmentFactory;
 import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
+<<<<<<< HEAD
 import org.junit.runner.RunWith;
 import org.junit.runners.MethodSorters;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,14 +22,27 @@ import static org.junit.Assert.*;
 @RunWith(SpringRunner.class)
 
 public class AppointmentControllerTest{
+=======
 
-    @Autowired
-    private TestRestTemplate restTemplate;
-    private String baseURL = "http://localhost:8080/appointment";
+import static org.junit.Assert.*;
 
+public class AppointmentControllerTest {
+>>>>>>> Develop
+
+    @Before
+    public void setUp() throws Exception {
+    }
+
+<<<<<<< HEAD
+=======
     @Test
-    //@org.testng.annotations.Test(priority = 1)
+    public void test1() {
+    }
+
+>>>>>>> Develop
+    @Test
     public void create() {
+<<<<<<< HEAD
         Appointment appointment = AppointmentFactory.addAppointment("17/02/2019", "17:30", "Clinton Booysen", "Retirement", 216062241);
         System.out.println(appointment);
 
@@ -47,21 +59,18 @@ public class AppointmentControllerTest{
         Appointment appointment = restTemplate.getForObject(baseURL + "/read/216062241", Appointment.class);
         System.out.println("Read");
         assertNotNull(appointment);
+=======
+>>>>>>> Develop
     }
 
     //@org.testng.annotations.Test(dependsOnMethods = "read")
     @Test
     public void update() {
-        int id =216062241;
-        Appointment appoint = restTemplate.getForObject(baseURL + "/216062241/" + id, Appointment.class);
-
-        restTemplate.put(baseURL + "/216062241/" + id, appoint);
-        Appointment updatedAppointment = restTemplate.getForObject(baseURL + "/216062245/" + id, Appointment.class);
-        assertNotNull(updatedAppointment);
     }
 
     //@org.testng.annotations.Test(dependsOnMethods = "update")
     @Test
+<<<<<<< HEAD
     public void delete() {int id = 216062245;
         Appointment appointment = restTemplate.getForObject(baseURL + "/delete/" + id,Appointment.class);
         assertNull(appointment);
@@ -71,20 +80,16 @@ public class AppointmentControllerTest{
         } catch (final HttpClientErrorException e) {
             assertEquals(e.getStatusCode(), HttpStatus.NOT_FOUND);
         }
+=======
+    public void delete() {
+>>>>>>> Develop
     }
 
     @Test
-    //@org.testng.annotations.Test(priority = 2)
     public void read() {
-        Appointment appointment = restTemplate.getForObject(baseURL + "/read/216062241", Appointment.class);
-        assertNotNull(appointment);
     }
 
-    @Test()
+    @Test
     public void getAll() {
-        HttpHeaders headers = new HttpHeaders();
-        HttpEntity<String> entity = new HttpEntity<>(null, headers);
-        ResponseEntity<String> response = restTemplate.exchange(baseURL + "/read/all", HttpMethod.GET, entity, String.class);
-        assertNotNull(response.getBody());
     }
 }
