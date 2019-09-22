@@ -1,9 +1,17 @@
 package com.Booysen31SA.controller.retirement;
 
+import com.Booysen31SA.domain.ResponseObj;
 import com.Booysen31SA.domain.retirement.Retirement;
+import com.Booysen31SA.domain.retirement.Status;
+import com.Booysen31SA.factory.ResponseObjFactory;
+import com.Booysen31SA.factory.retirement.RetirementFactory;
+import com.Booysen31SA.factory.retirement.StatusFactory;
 import com.Booysen31SA.services.retirement.impl.RetirementServiceImpl;
+import com.Booysen31SA.services.retirement.impl.StatusServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Set;
@@ -25,28 +33,66 @@ public class RetirementController {
     @Autowired
     @Qualifier("RetirementServiceImpl")
     private RetirementServiceImpl service;
+    private StatusServiceImpl service2;
 
-    @PostMapping("/create")
-    public Retirement create(@RequestBody Retirement Retirement){
-        return service.create(Retirement);
+    @PostMapping(value = "/create/{persalNumber}/{id}/{firstName}/{lastName}/{payout}/{status}")
+    public ResponseEntity create(@PathVariable String persalNumber, @PathVariable long id, @PathVariable String firstName, @PathVariable String lastName, @PathVariable double payout, @PathVariable String status){
+        ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Retirement created!");
+        Retirement app = service.read(persalNumber.trim());
+        Status dat = service2.read(persalNumber.trim());
+
+        if(app == null || dat == null){
+            responseObj.setResponseDescription("Retirement already exist!");
+        }else{
+            Retirement app2 = RetirementFactory.buildRetirement(persalNumber, id, firstName,lastName,payout);
+            Status dat2 = StatusFactory.buildStatus(persalNumber, status);
+
+            service.create(app2);
+            service2.create(dat2);
+        }
+        return ResponseEntity.ok(responseObj);
     }
 
-    @PostMapping("/update")
-    @ResponseBody
-    public Retirement update(Retirement Retirement){
-        return service.update(Retirement);
+    @PostMapping(value = "/update/{persalNumber}/{id}/{firstName}/{lastName}/{payout}/{status}")
+    public ResponseEntity updated(@PathVariable String persalNumber, @PathVariable long id, @PathVariable String firstName, @PathVariable String lastName, @PathVariable double payout, @PathVariable String status){
+        ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Retirement updated!");
+        Retirement app = service.read(persalNumber.trim());
+        Status dat = service2.read(persalNumber.trim());
+
+        if(app == null || dat == null){
+            responseObj.setResponseDescription("Retirement already exist!");
+        }else{
+            Retirement app2 = RetirementFactory.buildRetirement(persalNumber, id, firstName,lastName,payout);
+            Status dat2 = StatusFactory.buildStatus(persalNumber, status);
+
+            service.update(app2);
+            service2.update(dat2);
+        }
+        return ResponseEntity.ok(responseObj);
     }
 
-    @GetMapping("/delete/{id}")
-    @ResponseBody
-    public void delete(@PathVariable String id){
-        service.delete(id);
+    @PostMapping("/delete/{persalNumber}")
+    public ResponseEntity delete(@PathVariable String persalNumber){
+        ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Retirement Delete!");
+        Retirement app = service.read(persalNumber.trim());
+        if(app == null){
+            responseObj.setResponseDescription("Retirement Dont exist!");
+        }else{
+            service.delete(persalNumber);
+        }
+        return ResponseEntity.ok(responseObj);
     }
 
-    @GetMapping("/read/{id}")
-    @ResponseBody
-    public Retirement read(@PathVariable String id) {
-        return service.read(id);
+    @PostMapping("/read/{persalNumber}")
+    public ResponseEntity read(@PathVariable String persalNumber){
+        ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Retirement created!");
+        Retirement app = service.read(persalNumber.trim());
+        if(app == null){
+            responseObj.setResponseDescription("Retirement Dont exist!");
+        }else{
+            app = service.read(persalNumber);
+        }
+        return ResponseEntity.ok(app);
     }
 
     @GetMapping("/read/all")

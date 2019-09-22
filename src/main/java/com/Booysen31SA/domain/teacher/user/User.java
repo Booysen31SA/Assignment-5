@@ -2,7 +2,6 @@ package com.Booysen31SA.domain.teacher.user;
 
 import com.Booysen31SA.domain.teacher.interfaces.TeacherIdentity;
 import com.Booysen31SA.domain.teacher.interfaces.TeacherName;
-import sun.launcher.resources.launcher_sv;
 
 import java.util.Objects;
 
