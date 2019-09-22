@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db575afb-bea7-494f-a82d-c40e34fa18a0" name="Default Changelist" comment="Added security to test">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/security/EducationSecurity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/security/EducationSecurity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/Booysen31SA/security/EducationSecurity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Booysen31SA/security/EducationSecurity.class" afterDir="false" />
     </list>
@@ -89,6 +88,9 @@
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.Booysen31SA.Util" />
+    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="com.Booysen31SA.controller.teacher" />
       <recent name="com.Booysen31SA.security" />
@@ -104,15 +106,12 @@
       <recent name="" />
       <recent name="repository.impl.teacher" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\matthewboo\IdeaProjects\Assignment-5\src\main" />
-      <recent name="C:\Users\booysen31.matthew\Documents\CPUT\3rd YEAR\ADP2\Assignment-5\src\main\java\com\Booysen31SA" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\booysen31.matthew\Documents\CPUT\3rd YEAR\ADP2\ADPYearAssignment" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.Booysen31SA.Util" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\matthewboo\IdeaProjects\Assignment-5\src\main" />
+      <recent name="C:\Users\booysen31.matthew\Documents\CPUT\3rd YEAR\ADP2\Assignment-5\src\main\java\com\Booysen31SA" />
     </key>
   </component>
   <component name="RunDashboard">
