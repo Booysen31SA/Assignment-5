@@ -1,7 +1,7 @@
 package com.Booysen31SA.controller.appointment;
 
 import com.Booysen31SA.domain.appointment.Appointment;
-import com.Booysen31SA.services.impl.appointment.AppointmentService;
+import com.Booysen31SA.services.appointment.impl.AppointmentServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
@@ -12,36 +12,46 @@ import java.util.Set;
 @RequestMapping("/appointment")
 public class AppointmentController {
 
-    @Autowired
-    @Qualifier("AppointmentServiceImpl")
-    private AppointmentService service;
+        @GetMapping("/test/{id}")
+        @ResponseBody
+        public String test(@PathVariable String id) {
+            if(id.equalsIgnoreCase("1")){
+                return "Correct ID";
+            }else{
+                return "Wrong";
+            }
+        }
 
-    @PostMapping("/create")
-    public Appointment create(@RequestBody Appointment appointment){
-        return service.create(appointment);
-    }
+        @Autowired
+        @Qualifier("AppointmentServiceImpl")
+        private AppointmentServiceImpl service;
 
-    @PostMapping("/update")
-    @ResponseBody
-    public Appointment update(Appointment appointment){
-        return service.update(appointment);
-    }
+        @PostMapping("/create")
+        public Appointment create(@RequestBody Appointment appointment){
+            return service.create(appointment);
+        }
 
-    @GetMapping("/delete/{id}")
-    @ResponseBody
-    public void delete(@PathVariable Integer id){
-        service.delete(id);
-    }
+        @PostMapping("/update")
+        @ResponseBody
+        public Appointment update(Appointment appointment){
+            return service.update(appointment);
+        }
 
-    @GetMapping("/read/{id}")
-    @ResponseBody
-    public Appointment read(@PathVariable Integer id) {
-        return service.read(id);
-    }
+        @GetMapping("/delete/{id}")
+        @ResponseBody
+        public void delete(@PathVariable String id){
+            service.delete(id);
+        }
 
-    @GetMapping("/read/all")
-    @ResponseBody
-    public Set<Appointment> getAll() {
-        return service.getAll();
+        @GetMapping("/read/{id}")
+        @ResponseBody
+        public Appointment read(@PathVariable String id) {
+            return service.read(id);
+        }
+
+        @GetMapping("/read/all")
+        @ResponseBody
+        public Set<Appointment> getAll() {
+            return service.getAll();
+        }
     }
-}

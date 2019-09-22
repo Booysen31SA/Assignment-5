@@ -1,7 +1,7 @@
 package com.Booysen31SA.controller.teacher;
 
-import com.Booysen31SA.domain.teacher.Teacher;
-import com.Booysen31SA.services.impl.teacher.TeacherServiceImpl;
+import com.Booysen31SA.domain.teacher.user.User;
+import com.Booysen31SA.services.teacher.users.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
@@ -12,52 +12,46 @@ import java.util.Set;
 @RequestMapping("/teacher")
 public class TeacherController {
 
-    @Autowired
-    @Qualifier("TeacherServiceImpl")
-    private TeacherServiceImpl service;
-
-//    @GetMapping("/create/{persal_Num}/{first_Name}")
-//    public @ResponseBody
-//    Teacher create(@PathVariable Integer persal_Num,@PathVariable String first_Name){//http://localhost:8080/teacher/create/216062241/Booysen
-//        Teacher teacher = TeacherFactory.AddTeacher(persal_Num, first_Name, "Booysen", "17/02/1997", Misc.generateId(), null, null, "Male", "White", null);
-//        return service.create(teacher);
-//    }
     @GetMapping("/test/{id}")
     @ResponseBody
     public String test(@PathVariable String id) {
-    if(id.equalsIgnoreCase("1")){
-        return "Correct ID";
-    }else{
-        return "Wrong";
+        if(id.equalsIgnoreCase("1")){
+            return "Correct ID";
+        }else{
+            return "Wrong";
+        }
     }
-}
+
+    @Autowired
+    @Qualifier("UserServiceImpl")
+    private UserServiceImpl service;
 
     @PostMapping("/create")
-    public Teacher create(@RequestBody Teacher teacher){
-        return service.create(teacher);
+    public User create(@RequestBody User User){
+        return service.create(User);
     }
 
     @PostMapping("/update")
     @ResponseBody
-    public Teacher update(Teacher teacher){
-        return service.update(teacher);
+    public User update(User User){
+        return service.update(User);
     }
 
     @GetMapping("/delete/{id}")
     @ResponseBody
-    public void delete(@PathVariable Integer id){
+    public void delete(@PathVariable String id){
         service.delete(id);
     }
 
     @GetMapping("/read/{id}")
     @ResponseBody
-    public Teacher read(@PathVariable Integer id) {
+    public User read(@PathVariable String id) {
         return service.read(id);
     }
 
     @GetMapping("/read/all")
     @ResponseBody
-    public Set<Teacher> getAll() {
+    public Set<User> getAll() {
         return service.getAll();
     }
 }
