@@ -1,37 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="db575afb-bea7-494f-a82d-c40e34fa18a0" name="Default Changelist" comment="Added security to test">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/controller/teacher/Demography/GenderController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/controller/teacher/Demography/RaceController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/domain/ResponseObj.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/factory/ResponseObjFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/Booysen31SA/controller/teacher/Demography/GenderControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/Booysen31SA/controller/teacher/Demography/RaceControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/controller/appointment/AppointmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/controller/appointment/AppointmentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/controller/retirement/RetirementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/controller/retirement/RetirementController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/controller/school/TransferController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/controller/school/TransferController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/controller/teacher/TeacherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/controller/teacher/TeacherController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/domain/teacher/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/domain/teacher/user/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/security/EducationSecurity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/security/EducationSecurity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/services/.idea/$PRODUCT_WORKSPACE_FILE$" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/services/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/services/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/services/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/services/.idea/services.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/services/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/Assignment-5.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Booysen31SA/controller/appointment/AppointmentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Booysen31SA/controller/appointment/AppointmentController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Booysen31SA/controller/retirement/RetirementController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Booysen31SA/controller/retirement/RetirementController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Booysen31SA/controller/school/TransferController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Booysen31SA/controller/school/TransferController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Booysen31SA/controller/teacher/TeacherController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Booysen31SA/controller/teacher/TeacherController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Booysen31SA/domain/teacher/user/User$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Booysen31SA/domain/teacher/user/User$Builder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Booysen31SA/domain/teacher/user/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Booysen31SA/domain/teacher/user/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/META-INF/Assignment-5.kotlin_module" beforeDir="false" />
-    </list>
+    <list default="true" id="db575afb-bea7-494f-a82d-c40e34fa18a0" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -288,7 +258,7 @@
       <workItem from="1558453555007" duration="662000" />
       <workItem from="1558455775201" duration="2337000" />
       <workItem from="1563305377682" duration="936000" />
-      <workItem from="1569170792116" duration="9331000" />
+      <workItem from="1569170792116" duration="9673000" />
     </task>
     <task id="LOCAL-00001" summary="Basic Layout : 10 classes&#10;             : 2 Factories&#10;             : 2 Tests">
       <created>1555362412059</created>
@@ -423,7 +393,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568723428002</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Controllers and security">
+      <created>1569180386361</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1569180386361</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -455,7 +432,8 @@
     <MESSAGE value="user and password using application.properties File" />
     <MESSAGE value="Security class updated" />
     <MESSAGE value="Added security to test" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added security to test" />
+    <MESSAGE value="Controllers and security" />
+    <option name="LAST_COMMIT_MESSAGE" value="Controllers and security" />
   </component>
   <component name="masterDetails">
     <states>
