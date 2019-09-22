@@ -22,6 +22,15 @@ public class TeacherController {
 //        Teacher teacher = TeacherFactory.AddTeacher(persal_Num, first_Name, "Booysen", "17/02/1997", Misc.generateId(), null, null, "Male", "White", null);
 //        return service.create(teacher);
 //    }
+    @GetMapping("/test/{id}")
+    @ResponseBody
+    public String test(@PathVariable String id) {
+    if(id.equalsIgnoreCase("1")){
+        return "Correct ID";
+    }else{
+        return "Wrong";
+    }
+}
 
     @PostMapping("/create")
     public Teacher create(@RequestBody Teacher teacher){

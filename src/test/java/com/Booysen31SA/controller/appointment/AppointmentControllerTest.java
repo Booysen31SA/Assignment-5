@@ -1,4 +1,4 @@
-package com.Booysen31SA.controller.appointment;
+6vpackage com.Booysen31SA.controller.appointment;
 
 import com.Booysen31SA.domain.appointment.Appointment;
 import com.Booysen31SA.factory.appointmentFactory.AppointmentFactory;
@@ -28,8 +28,8 @@ public class AppointmentControllerTest{
     private TestRestTemplate restTemplate;
     private String baseURL = "http://localhost:8080/appointment";
 
-    //@org.testng.annotations.Test
     @Test
+    //@org.testng.annotations.Test(priority = 1)
     public void create() {
         Appointment appointment = AppointmentFactory.addAppointment("17/02/2019", "17:30", "Clinton Booysen", "Retirement", 216062241);
         System.out.println(appointment);
@@ -73,9 +73,14 @@ public class AppointmentControllerTest{
         }
     }
 
-
-    //@org.testng.annotations.Test
     @Test
+    //@org.testng.annotations.Test(priority = 2)
+    public void read() {
+        Appointment appointment = restTemplate.getForObject(baseURL + "/read/216062241", Appointment.class);
+        assertNotNull(appointment);
+    }
+
+    @Test()
     public void getAll() {
         HttpHeaders headers = new HttpHeaders();
         HttpEntity<String> entity = new HttpEntity<>(null, headers);
