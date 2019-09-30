@@ -31,27 +31,22 @@ public class EducationSecurity extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
-             .csrf().disable()
+                .httpBasic()
+                .and()
                 .authorizeRequests()
-                .antMatchers("/appointment/**/**").hasRole(TEACHER_ROLE)
+                .antMatchers(HttpMethod.POST, "/appointment/**/**").hasRole(ADMIN_ROLE)
                 .antMatchers("/retirement/**/**").hasRole(TEACHER_ROLE)
                 .antMatchers("/school/**/**").hasRole(TEACHER_ROLE)
                 .antMatchers("/teacher/**/**").hasRole(USER_ROLE)
                 .antMatchers("/").hasRole(TEACHER_ROLE)
                 .antMatchers("/**").hasRole(ADMIN_ROLE)
-                .anyRequest().authenticated()
-                    .and()
-                .formLogin()
-                    .defaultSuccessUrl("/", true)
-                     .and()
-                .logout()
-                  .permitAll()
-                  .deleteCookies("JSESSIONID")
+        .and()
+        .csrf().disable()
                 ;
 
 //        http.httpBasic().and()
 //                .authorizeRequests()
-//                .antMatchers(HttpMethod.GET, "/**").hasRole(ADMIN_ROLE)
+//                .antMatchers(HttpMethod.POST, "/**").hasRole(ADMIN_ROLE)
 //                .and()
 //                .csrf();
     }
