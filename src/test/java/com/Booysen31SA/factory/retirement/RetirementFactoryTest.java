@@ -12,7 +12,7 @@ public class RetirementFactoryTest {
     @Before
     public void setUp() throws Exception {
         retirement = RetirementFactory.buildRetirement("216062241"
-                                                               , 97021873430L
+                                                               , "215823684652"
                                                                , "Matthew"
                                                                , "Booysen"
                                                                , 17500);

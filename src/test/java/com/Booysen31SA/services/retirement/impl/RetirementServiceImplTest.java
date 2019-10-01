@@ -23,22 +23,22 @@ public class RetirementServiceImplTest {
 
     @Test
     public void create() {
-        retirement = RetirementFactory.buildRetirement("216062241", 215823684652L, "ascascasc", "scsdssdv", 500000);
+        retirement = RetirementFactory.buildRetirement("216062241", "215823684652", "ascascasc", "scsdssdv", 500000);
         service.create(retirement);
         assertNotNull(service.read(retirement.getPersal_Num()));
     }
 
     @Test
     public void read() {
-        retirement = RetirementFactory.buildRetirement("216062241", 215823684652L, "ascascasc", "scsdssdv", 500000);
+        retirement = RetirementFactory.buildRetirement("216062241", "215823684652", "ascascasc", "scsdssdv", 500000);
         service.create(retirement);
         assertNotNull(service.read(retirement.getPersal_Num()));
     }
 
     @Test
     public void update() {
-        retirement = RetirementFactory.buildRetirement("216062241", 215823684652L, "ascascasc", "scsdssdv", 500000);
-        Retirement Updated = RetirementFactory.buildRetirement("216062241", 215823684652L, "ascascasc", "scsdssdv", 600000);
+        retirement = RetirementFactory.buildRetirement("216062241", "215823684652", "ascascasc", "scsdssdv", 500000);
+        Retirement Updated = RetirementFactory.buildRetirement("216062241", "215823684652", "ascascasc", "scsdssdv", 600000);
         service.create(retirement);
         service.update(Updated);
 
@@ -48,7 +48,7 @@ public class RetirementServiceImplTest {
 
     @Test
     public void delete() {
-        retirement = RetirementFactory.buildRetirement("216062241", 215823684652L, "ascascasc", "scsdssdv", 500000);
+        retirement = RetirementFactory.buildRetirement("216062241", "215823684652", "ascascasc", "scsdssdv", 500000);
         service.create(retirement);
         service.delete(retirement.getPersal_Num());
         assertNull(service.read(retirement.getPersal_Num()));
@@ -56,7 +56,7 @@ public class RetirementServiceImplTest {
 
     @Test
     public void getAll() {
-        retirement = RetirementFactory.buildRetirement("216062241", 215823684652L, "ascascasc", "scsdssdv", 500000);
+        retirement = RetirementFactory.buildRetirement("216062241", "215823684652", "ascascasc", "scsdssdv", 500000);
         service.create(retirement);
         assertNotNull(service.getAll());
     }

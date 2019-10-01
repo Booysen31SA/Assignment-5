@@ -23,22 +23,22 @@ public class RetirementRepositoryImplTest {
 
     @Test
     public void create() {
-        retirement = RetirementFactory.buildRetirement("216062241", 215823684652L, "ascascasc", "scsdssdv", 500000);
+        retirement = RetirementFactory.buildRetirement("216062241", "215823684652", "ascascasc", "scsdssdv", 500000);
         repository.create(retirement);
         assertNotNull(repository.read(retirement.getPersal_Num()));
     }
 
     @Test
     public void read() {
-        retirement = RetirementFactory.buildRetirement("216062241", 215823684652L, "ascascasc", "scsdssdv", 500000);
+        retirement = RetirementFactory.buildRetirement("216062241", "215823684652", "ascascasc", "scsdssdv", 500000);
         repository.create(retirement);
         assertNotNull(repository.read(retirement.getPersal_Num()));
     }
 
     @Test
     public void update() {
-        retirement = RetirementFactory.buildRetirement("216062241", 215823684652L, "ascascasc", "scsdssdv", 500000);
-        Retirement Updated = RetirementFactory.buildRetirement("216062241", 215823684652L, "ascascasc", "scsdssdv", 600000);
+        retirement = RetirementFactory.buildRetirement("216062241", "215823684652", "ascascasc", "scsdssdv", 500000);
+        Retirement Updated = RetirementFactory.buildRetirement("216062241", "215823684652", "ascascasc", "scsdssdv", 600000);
         repository.create(retirement);
         repository.update(Updated);
 
@@ -48,7 +48,7 @@ public class RetirementRepositoryImplTest {
 
     @Test
     public void delete() {
-        retirement = RetirementFactory.buildRetirement("216062241", 215823684652L, "ascascasc", "scsdssdv", 500000);
+        retirement = RetirementFactory.buildRetirement("216062241", "215823684652", "ascascasc", "scsdssdv", 500000);
         repository.create(retirement);
         repository.delete(retirement.getPersal_Num());
         assertNull(repository.read(retirement.getPersal_Num()));
@@ -56,7 +56,7 @@ public class RetirementRepositoryImplTest {
 
     @Test
     public void getAll() {
-        retirement = RetirementFactory.buildRetirement("216062241", 215823684652L, "ascascasc", "scsdssdv", 500000);
+        retirement = RetirementFactory.buildRetirement("216062241", "215823684652", "ascascasc", "scsdssdv", 500000);
         repository.create(retirement);
         assertNotNull(repository.getAll());
     }

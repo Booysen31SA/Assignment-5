@@ -12,7 +12,7 @@ public class UserFactoryTest {
     @Before
     public void setUp() throws Exception {
         user = UserFactory.buildUser("216062241"
-        ,518151181L, "Matthew"
+        ,"51515415458L", "Matthew"
         ,"Booysen");
     }
 

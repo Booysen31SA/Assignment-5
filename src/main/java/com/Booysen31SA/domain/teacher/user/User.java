@@ -8,7 +8,7 @@ import java.util.Objects;
 public class User implements TeacherIdentity, TeacherName {
 
     private String persal_Number = "";
-    private long id = 0;
+    private String id;
     private String first_Name = "";
     private String last_Name = "";
 
@@ -19,6 +19,12 @@ public class User implements TeacherIdentity, TeacherName {
         this.last_Name = build.last_Name;
     }
 
+    public User(String persal_Number, String id, String first_Name, String last_Name) {
+        this.persal_Number = persal_Number;
+        this.id = id;
+        this.first_Name = first_Name;
+        this.last_Name = last_Name;
+    }
 
     @Override
     public String getPersal_Number() {
@@ -26,7 +32,7 @@ public class User implements TeacherIdentity, TeacherName {
     }
 
     @Override
-    public long getId() {
+    public String getId() {
         return id;
     }
 
@@ -42,7 +48,7 @@ public class User implements TeacherIdentity, TeacherName {
 
     public static class Builder{
         private String persal_Number = "";
-        private long id = 0;
+        private String id;
         private String first_Name = "";
         private String last_Name = "";
 
@@ -50,7 +56,7 @@ public class User implements TeacherIdentity, TeacherName {
             this.persal_Number = persal_Number;
             return this;
         }
-        public Builder id(long id) {
+        public Builder id(String id) {
             this.id = id;
             return this;
         }

@@ -16,7 +16,9 @@ public class TransferFactoryTest {
     }
 
     @Test
-    public void buildTransfer() {
+    public void buildTransfer()
+    {
+        System.out.println(transfer);
         assertNotNull(transfer);
     }
 }

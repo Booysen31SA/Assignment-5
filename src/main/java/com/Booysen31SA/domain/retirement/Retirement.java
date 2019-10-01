@@ -3,10 +3,18 @@ package com.Booysen31SA.domain.retirement;
 public class Retirement implements RetirementIdentity, RetirementNames, Payout {
 
     private String persal_Number;
-    private long id;
+    private String id;
     private String firstName;
     private String lastName;
     private double payout;
+
+    public Retirement(String persal_Number, String id, String firstName, String lastName, double payout) {
+        this.persal_Number = persal_Number;
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.payout = payout;
+    }
 
     public Retirement(Builder build){
         this.persal_Number = build.persal_Number;
@@ -17,32 +25,32 @@ public class Retirement implements RetirementIdentity, RetirementNames, Payout {
     }
     @Override
     public double getPayout() {
-        return 0;
+        return payout;
     }
 
     @Override
     public String getPersal_Num() {
-        return null;
+        return persal_Number;
     }
 
     @Override
     public String getiD() {
-        return null;
+        return id;
     }
 
     @Override
     public String getFirstName() {
-        return null;
+        return firstName;
     }
 
     @Override
     public String getLastName() {
-        return null;
+        return lastName;
     }
 
     public static class Builder{
         private String persal_Number;
-        private long id;
+        private String id;
         private String firstName;
         private String lastName;
         private double payout;
@@ -51,7 +59,7 @@ public class Retirement implements RetirementIdentity, RetirementNames, Payout {
             this.persal_Number = persal_Number;
             return this;
         }
-        public Builder id(long id) {
+        public Builder id(String id) {
             this.id = id;
             return this;
         }

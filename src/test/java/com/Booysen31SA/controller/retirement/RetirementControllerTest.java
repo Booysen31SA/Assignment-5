@@ -1,37 +1,71 @@
 package com.Booysen31SA.controller.retirement;
 
+import com.Booysen31SA.controller.appointment.AppointmentCreation;
+import com.Booysen31SA.domain.retirement.Retirement;
+import com.Booysen31SA.domain.retirement.Status;
+import com.Booysen31SA.factory.retirement.RetirementFactory;
+import com.Booysen31SA.factory.retirement.StatusFactory;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.boot.test.web.client.TestRestTemplate;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.ResponseEntity;
+import org.springframework.test.context.junit4.SpringRunner;
+
+import java.io.IOException;
+import java.net.URI;
 
 import static org.junit.Assert.*;
 
+@RunWith(SpringRunner.class)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class RetirementControllerTest {
 
+    private static final String BASE_URL = "http://localhost:8080/retirement";
+
+    @Autowired
+    private TestRestTemplate restTemplate;
     @Before
     public void setUp() throws Exception {
     }
 
-    @Test
-    public void test1() {
+    protected String mapToJson(Object obj) throws JsonProcessingException {
+        ObjectMapper objectMapper = new ObjectMapper();
+        return objectMapper.writeValueAsString(obj);
+    }
+    protected <T> T mapFromJson(String json, Class<T> clazz)
+            throws IOException {
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        return objectMapper.readValue(json, clazz);
     }
 
-    @Test
-    public void create() {
-    }
+    @MockBean
+    private RetirementCreation retirementCreation;
 
     @Test
-    public void updated() {
-    }
+    public void create() throws Exception {
+        Retirement retirement = RetirementFactory.buildRetirement("216062241", "1234567890", "Matjew", "Booysen", 45000);
+        Status status = StatusFactory.buildStatus("216062241", "retirement");
 
-    @Test
-    public void delete() {
-    }
+        RetirementCreation retirementCreation = new RetirementCreation(retirement, status);
+        URI uri = new URI(BASE_URL+"/create");
 
-    @Test
-    public void read() {
-    }
+        HttpHeaders headers = new HttpHeaders();
+        headers.set("X-COM-PERSIST", "true");
 
-    @Test
-    public void getAll() {
+        HttpEntity<RetirementCreation> request = new HttpEntity<>(retirementCreation, headers);
+
+        ResponseEntity<String> result = this.restTemplate.withBasicAuth("admin", "password").postForEntity(uri, request, String.class);
+
+        System.out.println(result.getBody());
+        assertEquals(200, result.getStatusCodeValue());
     }
 }

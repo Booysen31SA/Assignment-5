@@ -43,12 +43,6 @@ public class EducationSecurity extends WebSecurityConfigurerAdapter {
         .and()
         .csrf().disable()
                 ;
-
-//        http.httpBasic().and()
-//                .authorizeRequests()
-//                .antMatchers(HttpMethod.POST, "/**").hasRole(ADMIN_ROLE)
-//                .and()
-//                .csrf();
     }
 
     @Bean
