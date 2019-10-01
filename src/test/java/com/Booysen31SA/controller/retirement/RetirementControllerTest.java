@@ -1,10 +1,15 @@
 package com.Booysen31SA.controller.retirement;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
 public class RetirementControllerTest {
+
+    @Before
+    public void setUp() throws Exception {
+    }
 
     @Test
     public void test1() {
@@ -15,7 +20,7 @@ public class RetirementControllerTest {
     }
 
     @Test
-    public void update() {
+    public void updated() {
     }
 
     @Test

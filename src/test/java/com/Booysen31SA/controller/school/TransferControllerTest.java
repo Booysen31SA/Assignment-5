@@ -20,7 +20,7 @@ public class TransferControllerTest {
     }
 
     @Test
-    public void update() {
+    public void updated() {
     }
 
     @Test

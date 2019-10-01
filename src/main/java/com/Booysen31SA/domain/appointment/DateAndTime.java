@@ -6,6 +6,15 @@ public class DateAndTime {
     private String date;
     private String time;
 
+    @Override
+    public String toString() {
+        return "DateAndTime{" +
+                "persal_Number='" + persal_Number + '\'' +
+                ", date='" + date + '\'' +
+                ", time='" + time + '\'' +
+                '}';
+    }
+
     public DateAndTime(String persal_Number, String date, String time) {
         this.persal_Number = persal_Number;
         this.date = date;

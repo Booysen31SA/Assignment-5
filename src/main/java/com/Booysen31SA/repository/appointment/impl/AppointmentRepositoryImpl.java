@@ -35,7 +35,7 @@ public class AppointmentRepositoryImpl implements IAppointmentRepository {
 
     @Override
     public Appointment read(String s) {
-        return AppointmentDB.stream().filter(appointment -> appointment.getPersalNumber().equalsIgnoreCase(s)).findAny().orElse(null);
+        return AppointmentDB.stream().filter(appointment -> appointment.getPersalNumber()==s).findAny().orElse(null);
 
     }
 

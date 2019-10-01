@@ -8,6 +8,7 @@ import com.Booysen31SA.factory.ResponseObjFactory;
 import com.Booysen31SA.factory.appointment.AppointmentFactory;
 import com.Booysen31SA.factory.appointment.DateAndTimeFactory;
 import com.Booysen31SA.factory.appointment.ReasonFactory;
+import com.Booysen31SA.factory.teacher.user.appointed.DateAppointedFactory;
 import com.Booysen31SA.services.appointment.impl.AppointmentServiceImpl;
 import com.Booysen31SA.services.appointment.impl.DateAndTimeServiceImpl;
 import com.Booysen31SA.services.appointment.impl.ReasonServiceImpl;
@@ -36,19 +37,54 @@ public class AppointmentController {
         @Autowired
         @Qualifier("AppointmentServiceImpl")
         private AppointmentServiceImpl service;
+        @Qualifier("DateAndTimeServiceImpl")
         private DateAndTimeServiceImpl service2;
+        @Qualifier("ReasonServiceImpl")
         private ReasonServiceImpl service3;
 
-        @PostMapping(value = "/create/{persalNumber}/{appointToSee}/{date}/{time}/{reason}")
+        @PostMapping(value = "/create")
+        public ResponseEntity createA( @RequestBody AppointmentCreation appointmentCreation){
+            service2 = DateAndTimeServiceImpl.getService();
+            service3 = ReasonServiceImpl.getService();
+            ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Appointment created!");
+
+            Appointment appointment = appointmentCreation.getAppointment();
+            DateAndTime dateAndTime = appointmentCreation.getDateAndTime();
+            Reason reason = appointmentCreation.getReason();
+
+            DateAndTime dateAndTime1;
+            Appointment appointment1;
+            Reason reason1;
+            if (appointment == null) {
+                responseObj.setResponse(appointmentCreation);
+                responseObj.setResponseCode(HttpStatus.PRECONDITION_FAILED.toString());
+                responseObj.setResponseDescription("Provide an appointment!");
+            }else{
+
+                    appointment1 = AppointmentFactory.buildAppointment(appointment.getPersalNumber(), appointment.getAppointmentToSee());
+                    dateAndTime1 = DateAndTimeFactory.buildDateAndTime(appointment.getPersalNumber(), dateAndTime.getDate(), dateAndTime.getTime());
+                    reason1 = ReasonFactory.buildReason(appointment.getPersalNumber(), reason.getReason());
+
+                    service.create(appointment1);
+                    service2.create(dateAndTime1);
+                    service3.create(reason1);
+
+                responseObj.setResponse(appointmentCreation);
+            }
+            return ResponseEntity.ok(responseObj);
+
+        }
+        @PostMapping(value = "/create/1")
         public ResponseEntity create(@PathVariable String persalNumber, @PathVariable String appointToSee, @PathVariable String date, @PathVariable String time, @PathVariable String reason){
             ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Appointment created!");
             Appointment app = service.read(persalNumber.trim());
             DateAndTime dat = service2.read(persalNumber.trim());
             Reason reasonV = service3.read(persalNumber.trim());
 
-           if(app == null || dat == null || reasonV == null){
+           if(app != null || dat != null || reasonV != null){
                responseObj.setResponseDescription("Appointment already exist!");
            }else{
+               System.out.println("Checking");
                Appointment app2 = AppointmentFactory.buildAppointment(persalNumber, appointToSee);
                DateAndTime dat2 = DateAndTimeFactory.buildDateAndTime(persalNumber, date,time);
                Reason reasonV2 = ReasonFactory.buildReason(persalNumber, reason);
