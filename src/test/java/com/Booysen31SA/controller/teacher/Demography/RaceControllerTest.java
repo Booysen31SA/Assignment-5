@@ -42,4 +42,12 @@ public class RaceControllerTest {
         System.out.println(result.getBody());
         assertEquals(HttpStatus.OK, result.getStatusCode());
     }
+
+    @Test
+    public void read(){
+        ResponseEntity<String> result = restTemplate.withBasicAuth("admin", "password")
+                .getForEntity(BASE_URL + "/read/Male",  String.class);
+        System.out.println(result.getBody());
+        assertEquals(HttpStatus.OK, result.getStatusCode());
+    }
 }

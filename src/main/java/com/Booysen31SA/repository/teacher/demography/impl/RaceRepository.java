@@ -38,7 +38,7 @@ public class RaceRepository implements IRaceRepository {
 
     @Override
     public Race read(String integer) {
-        return races.stream().filter(race -> race.getRaceId() == integer).findAny().orElse(null);
+        return races.stream().filter(race -> race.getRaceId().equalsIgnoreCase(integer)).findAny().orElse(null);
     }
 
     @Override

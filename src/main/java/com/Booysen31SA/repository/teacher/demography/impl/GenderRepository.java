@@ -39,7 +39,7 @@ public class GenderRepository implements IGenderRepository {
 
     @Override
     public Gender read(String integer) {
-        return genders.stream().filter(gender -> gender.getGenderId() == integer).findAny().orElse(null);
+        return genders.stream().filter(gender -> gender.getGenderId()== integer).findAny().orElse(null);
     }
 
     @Override

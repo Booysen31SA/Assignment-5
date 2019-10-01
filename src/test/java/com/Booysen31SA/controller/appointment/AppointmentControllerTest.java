@@ -38,6 +38,7 @@ import org.springframework.web.context.WebApplicationContext;
 
 import java.io.IOException;
 import java.net.URI;
+import java.util.Set;
 
 import static com.sun.javaws.JnlpxArgs.verify;
 import static org.junit.Assert.*;
@@ -54,8 +55,12 @@ public class AppointmentControllerTest {
     @Autowired
     private TestRestTemplate restTemplate;
 
+    @Autowired
+    AppointmentServiceImpl service;
+
 
     protected void setUp() {
+        service = AppointmentServiceImpl.getService();
     }
     protected String mapToJson(Object obj) throws JsonProcessingException {
         ObjectMapper objectMapper = new ObjectMapper();
@@ -92,5 +97,13 @@ private AppointmentCreation appointmentCreation;
 
         System.out.println(result.getBody());
         assertEquals(200, result.getStatusCodeValue());
+    }
+
+    @Test
+    public void read(){
+        ResponseEntity<String> result = restTemplate.withBasicAuth("admin", "password")
+                .getForEntity(BASE_URL + "/read/216062241",  String.class);
+        System.out.println(result.getBody());
+        assertEquals(HttpStatus.OK, result.getStatusCode());
     }
 }

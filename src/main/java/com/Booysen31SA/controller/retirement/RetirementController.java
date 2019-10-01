@@ -64,5 +64,22 @@ public class RetirementController {
         }
         return ResponseEntity.ok(responseObj);
     }
+    @GetMapping("/read/{id}")
+    public ResponseEntity read(@PathVariable String id){
 
+        ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Get Retirement!");
+
+        Retirement retirement = service.read(id);
+        Status status = service2.read(id);
+
+        if(retirement == null){
+            responseObj.setResponse(id);
+            responseObj.setResponseCode(HttpStatus.PRECONDITION_FAILED.toString());
+            responseObj.setResponseDescription("Retirement Doesnt exist!");
+        }else{
+            RetirementCreation retirementCreation = new RetirementCreation(retirement, status);
+            responseObj.setResponse(retirementCreation);
+        }
+        return ResponseEntity.ok(responseObj);
+    }
 }

@@ -11,6 +11,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
 import java.util.Set;
 
 @RestController
@@ -44,6 +45,14 @@ public class GenderController {
     public ResponseEntity getAll(){
         ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Success");
         Set<Gender> genders = genderService.getAll();
+        responseObj.setResponse(genders);
+        return ResponseEntity.ok(responseObj);
+    }
+
+    @GetMapping(value = "/read/{id}")
+    public ResponseEntity read(@PathVariable String id){
+        ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Success");
+        Gender genders = genderService.getByName(id);
         responseObj.setResponse(genders);
         return ResponseEntity.ok(responseObj);
     }

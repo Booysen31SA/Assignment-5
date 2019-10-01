@@ -16,6 +16,7 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -67,5 +68,13 @@ public class RetirementControllerTest {
 
         System.out.println(result.getBody());
         assertEquals(200, result.getStatusCodeValue());
+    }
+
+    @Test
+    public void read(){
+        ResponseEntity<String> result = restTemplate.withBasicAuth("admin", "password")
+                .getForEntity(BASE_URL + "/read/216062241",  String.class);
+        System.out.println(result.getBody());
+        assertEquals(HttpStatus.OK, result.getStatusCode());
     }
 }

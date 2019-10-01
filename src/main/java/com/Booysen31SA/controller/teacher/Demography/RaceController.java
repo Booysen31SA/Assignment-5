@@ -48,4 +48,12 @@ public class RaceController {
         responseObj.setResponse(races);
         return ResponseEntity.ok(responseObj);
     }
+
+    @GetMapping(value = "/read/{id}")
+    public ResponseEntity read(@PathVariable String id){
+        ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Success");
+        Race race = raceService.getByName(id);
+        responseObj.setResponse(race);
+        return ResponseEntity.ok(responseObj);
+    }
 }

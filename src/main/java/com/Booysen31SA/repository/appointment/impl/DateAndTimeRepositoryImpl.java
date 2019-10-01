@@ -31,7 +31,7 @@ public class DateAndTimeRepositoryImpl implements IDateAndTimeRepository {
 
     @Override
     public DateAndTime read(String s) {
-        return dateAndTimeDB.stream().filter(dateAndTime -> dateAndTime.getPersal_Number() == s).findAny().orElse(null);
+        return dateAndTimeDB.stream().filter(dateAndTime -> dateAndTime.getPersal_Number().equalsIgnoreCase(s)).findAny().orElse(null);
 
     }
 

@@ -31,7 +31,7 @@ public class RetirementRepositoryImpl implements IRetirementRepository {
 
     @Override
     public Retirement read(String s) {
-        return retirementDB.stream().filter(retirement -> retirement.getPersal_Num() == s).findAny().orElse(null);
+        return retirementDB.stream().filter(retirement -> retirement.getPersal_Num().equalsIgnoreCase(s)).findAny().orElse(null);
 
     }
 

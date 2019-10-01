@@ -105,4 +105,24 @@ public class TeacherController {
         return ResponseEntity.ok(responseObj);
     }
 
+    @GetMapping("/read/{id}")
+    public ResponseEntity read(@PathVariable String id){
+
+        ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Get Teacher!");
+
+        User buildUser = service.read(id);
+        Address buildAddress = service2.read(id);
+        DateAppointed buildDateAppointed = service3.read(id);
+
+        if(buildUser == null){
+            responseObj.setResponse(id);
+            responseObj.setResponseCode(HttpStatus.PRECONDITION_FAILED.toString());
+            responseObj.setResponseDescription("appointment Doesnt exist!");
+        }else{
+            TeacherCreation teacherCreation = new TeacherCreation(buildUser, buildDateAppointed, buildAddress);
+            responseObj.setResponse(teacherCreation);
+        }
+        return ResponseEntity.ok(responseObj);
+    }
+
 }

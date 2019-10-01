@@ -31,7 +31,7 @@ public class ReasonRepositoryImpl implements IReasonRepository {
 
     @Override
     public Reason read(String s) {
-        return reason.stream().filter(dateAndTime -> dateAndTime.getPersal_Number() == s).findAny().orElse(null);
+        return reason.stream().filter(dateAndTime -> dateAndTime.getPersal_Number().equalsIgnoreCase(s)).findAny().orElse(null);
 
     }
 

@@ -21,7 +21,21 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/appointment")
 public class AppointmentController {
 
-        @GetMapping("/test/{id}")
+    @Autowired
+    @Qualifier("AppointmentServiceImpl")
+    private AppointmentServiceImpl service;
+    @Qualifier("DateAndTimeServiceImpl")
+    private DateAndTimeServiceImpl service2;
+    @Qualifier("ReasonServiceImpl")
+    private ReasonServiceImpl service3;
+
+    public AppointmentController() {
+        service = AppointmentServiceImpl.getService();
+        service2  = DateAndTimeServiceImpl.getService();
+        service3 = ReasonServiceImpl.getService();
+    }
+
+    @GetMapping("/test/{id}")
         @ResponseBody
         public String test(@PathVariable String id) {
             if(id.equalsIgnoreCase("1")){
@@ -31,18 +45,9 @@ public class AppointmentController {
             }
         }
 
-        @Autowired
-        @Qualifier("AppointmentServiceImpl")
-        private AppointmentServiceImpl service;
-        @Qualifier("DateAndTimeServiceImpl")
-        private DateAndTimeServiceImpl service2;
-        @Qualifier("ReasonServiceImpl")
-        private ReasonServiceImpl service3;
-
         @PostMapping(value = "/create")
         public ResponseEntity createA( @RequestBody AppointmentCreation appointmentCreation){
-            service2 = DateAndTimeServiceImpl.getService();
-            service3 = ReasonServiceImpl.getService();
+
             ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Appointment created!");
 
             Appointment appointment = appointmentCreation.getAppointment();
@@ -70,5 +75,25 @@ public class AppointmentController {
             }
             return ResponseEntity.ok(responseObj);
 
+        }
+
+        @GetMapping("/read/{id}")
+    public ResponseEntity read(@PathVariable String id){
+
+            ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Get Appointment!");
+
+            Appointment appointment = service.read(id);
+            DateAndTime dateAndTime = service2.read(id);
+            Reason reason = service3.read(id);
+
+            if(appointment == null){
+                responseObj.setResponse(id);
+                responseObj.setResponseCode(HttpStatus.PRECONDITION_FAILED.toString());
+                responseObj.setResponseDescription("appointment Doesnt exist!");
+            }else{
+                AppointmentCreation appointmentCreation = new AppointmentCreation(appointment, dateAndTime, reason);
+                responseObj.setResponse(appointmentCreation);
+            }
+            return ResponseEntity.ok(responseObj);
         }
     }

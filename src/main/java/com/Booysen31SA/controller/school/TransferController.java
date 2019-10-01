@@ -65,4 +65,23 @@ public class TransferController {
         }
         return ResponseEntity.ok(responseObj);
     }
+
+    @GetMapping("/read/{id}")
+    public ResponseEntity read(@PathVariable String id){
+
+        ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Get Transfer!");
+
+        Transfer buildTransfer = service.read(id);
+        Status buildStatus = service2.read(id);
+
+        if(buildTransfer == null){
+            responseObj.setResponse(id);
+            responseObj.setResponseCode(HttpStatus.PRECONDITION_FAILED.toString());
+            responseObj.setResponseDescription("appointment Doesnt exist!");
+        }else{
+            TransferCreation transferCreation = new TransferCreation(buildTransfer, buildStatus);
+            responseObj.setResponse(transferCreation);
+        }
+        return ResponseEntity.ok(responseObj);
+    }
     }

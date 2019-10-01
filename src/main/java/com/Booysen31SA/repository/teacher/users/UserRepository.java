@@ -39,7 +39,7 @@ public class UserRepository implements IUserRepository {
 
     @Override
     public User read(String integer) {
-        return userDB.stream().filter(User -> User.getPersal_Number() == integer).findAny().orElse(null);
+        return userDB.stream().filter(User -> User.getPersal_Number().equalsIgnoreCase(integer)).findAny().orElse(null);
     }
 
     @Override
