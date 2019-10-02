@@ -3,14 +3,14 @@ package com.Booysen31SA.domain.retirement;
 public class Retirement implements RetirementIdentity, RetirementNames, Payout {
 
     private String persal_Num;
-    private String id;
+    private String iD;
     private String firstName;
     private String lastName;
     private double payout;
 
-    public Retirement(String persal_Num, String id, String firstName, String lastName, double payout) {
+    public Retirement(String persal_Num, String iD, String firstName, String lastName, double payout) {
         this.persal_Num = persal_Num;
-        this.id = id;
+        this.iD = iD;
         this.firstName = firstName;
         this.lastName = lastName;
         this.payout = payout;
@@ -18,7 +18,7 @@ public class Retirement implements RetirementIdentity, RetirementNames, Payout {
 
     public Retirement(Builder build){
         this.persal_Num = build.persal_Num;
-        this.id = build.id;
+        this.iD = build.iD;
         this.firstName = build.firstName;
         this.lastName = build.lastName;
         this.payout = build.payout;
@@ -35,7 +35,7 @@ public class Retirement implements RetirementIdentity, RetirementNames, Payout {
 
     @Override
     public String getiD() {
-        return id;
+        return iD;
     }
 
     @Override
@@ -50,7 +50,7 @@ public class Retirement implements RetirementIdentity, RetirementNames, Payout {
 
     public static class Builder{
         private String persal_Num;
-        private String id;
+        private String iD;
         private String firstName;
         private String lastName;
         private double payout;
@@ -59,8 +59,8 @@ public class Retirement implements RetirementIdentity, RetirementNames, Payout {
             this.persal_Num = persal_Num;
             return this;
         }
-        public Builder id(String id) {
-            this.id = id;
+        public Builder iD(String iD) {
+            this.iD = iD;
             return this;
         }
         public Builder firstName(String firstName) {
@@ -84,7 +84,7 @@ public class Retirement implements RetirementIdentity, RetirementNames, Payout {
     @Override
     public String toString() {
         return  "persal_Num:" + persal_Num +
-                "\nid       :" + id +
+                "\niD       :" + iD +
                 "\nfirstName:" + firstName  +
                 "\nlastName :" + lastName +
                 "\npayout   :" + payout;
