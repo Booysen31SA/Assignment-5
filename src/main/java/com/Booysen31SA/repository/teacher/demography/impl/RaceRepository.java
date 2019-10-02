@@ -14,7 +14,7 @@ public class RaceRepository implements IRaceRepository {
     private Set<Race> races;
 
     public RaceRepository(){
-        races = new HashSet<>();
+        races = new HashSet<Race>();
     }
     public static RaceRepository raceRepository(){
         if(repository == null){
@@ -30,7 +30,7 @@ public class RaceRepository implements IRaceRepository {
 
     @Override
     public Race create(Race race) {
-        if(read(race.getRaceId()) == null){
+        if(read(race.getRaceDescription()) == null){
             races.add(race);
         }
         return race;
@@ -43,7 +43,7 @@ public class RaceRepository implements IRaceRepository {
 
     @Override
     public Race update(Race race) {
-        if(read(race.getRaceId()) != null){
+        if(read(race.getRaceDescription()) != null){
             delete(race.getRaceId());
             create(race);
         }
@@ -54,7 +54,7 @@ public class RaceRepository implements IRaceRepository {
     public void delete(String integer) {
       Race race = read(integer);
       if(race != null){
-          races.remove(race);
+          races.remove(race.getRaceId());
       }
     }
 }
