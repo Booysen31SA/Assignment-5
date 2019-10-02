@@ -14,7 +14,7 @@ public class GenderRepository implements IGenderRepository {
     private static GenderRepository genderRepository = null;
     Set<Gender> genders;
     public GenderRepository(){
-        genders = new HashSet<>();
+        genders = new HashSet<Gender>();
     }
 
     public static GenderRepository getRepository(){
@@ -44,7 +44,7 @@ public class GenderRepository implements IGenderRepository {
 
     @Override
     public Gender update(Gender gender) {
-        if(read(gender.getGenderId()) != null){
+        if(read(gender.getGenderDescription()) != null){
             delete(gender.getGenderId());
             create(gender);
         }
@@ -55,7 +55,7 @@ public class GenderRepository implements IGenderRepository {
     public void delete(String integer) {
         if(read(integer) != null){
             Gender g = read(integer);
-            genders.remove(g);
+            genders.remove(g.getGenderId());
         }
     }
 }

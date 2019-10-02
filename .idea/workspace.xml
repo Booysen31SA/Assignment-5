@@ -2,18 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db575afb-bea7-494f-a82d-c40e34fa18a0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/controller/retirement/RetirementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/controller/retirement/RetirementController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/domain/retirement/Retirement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/domain/retirement/Retirement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/factory/retirement/RetirementFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/factory/retirement/RetirementFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/Booysen31SA/controller/retirement/RetirementController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Booysen31SA/controller/retirement/RetirementController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Booysen31SA/domain/teacher/user/User$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Booysen31SA/domain/teacher/user/User$Builder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Booysen31SA/domain/teacher/user/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Booysen31SA/domain/teacher/user/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Booysen31SA/factory/teacher/user/UserFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Booysen31SA/factory/teacher/user/UserFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Booysen31SA/repository/retirement/impl/RetirementRepositoryImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Booysen31SA/repository/retirement/impl/RetirementRepositoryImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/Booysen31SA/repository/teacher/demography/impl/GenderRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Booysen31SA/repository/teacher/demography/impl/GenderRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/Booysen31SA/repository/teacher/demography/impl/RaceRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Booysen31SA/repository/teacher/demography/impl/RaceRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Booysen31SA/repository/teacher/users/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Booysen31SA/repository/teacher/users/UserRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/Booysen31SA/controller/retirement/RetirementControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/Booysen31SA/controller/retirement/RetirementControllerTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/Booysen31SA/controller/teacher/Demography/GenderControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/Booysen31SA/controller/teacher/Demography/GenderControllerTest.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -146,7 +139,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.EducationApplication">
+  <component name="RunManager" selected="JUnit.RetirementControllerTest.create">
     <configuration name="AppointmentControllerTest.create" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Assignment-5" />
       <extension name="coverage">
@@ -222,8 +215,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.EducationApplication" />
         <item itemvalue="JUnit.RetirementControllerTest.create" />
+        <item itemvalue="Spring Boot.EducationApplication" />
         <item itemvalue="JUnit.AppointmentControllerTest.create" />
         <item itemvalue="JUnit.com.Booysen31SA.repository in Assignment-5" />
         <item itemvalue="JUnit.com.Booysen31SA in Assignment-5" />
@@ -273,7 +266,7 @@
       <workItem from="1569170792116" duration="10703000" />
       <workItem from="1569781162617" duration="28532000" />
       <workItem from="1570000525778" duration="10316000" />
-      <workItem from="1570013949786" duration="7000000" />
+      <workItem from="1570013949786" duration="7673000" />
     </task>
     <task id="LOCAL-00001" summary="Basic Layout : 10 classes&#10;             : 2 Factories&#10;             : 2 Tests">
       <created>1555362412059</created>
@@ -457,7 +450,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570020924158</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Fix Retirement Controller bug">
+      <created>1570021537301</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1570021537301</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -495,7 +495,8 @@
     <MESSAGE value="Controller create and read, Postman Collection addded" />
     <MESSAGE value="Controller create and read, Postman Collection added" />
     <MESSAGE value="Controller Tests complete" />
-    <option name="LAST_COMMIT_MESSAGE" value="Controller Tests complete" />
+    <MESSAGE value="Fix Retirement Controller bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix Retirement Controller bug" />
   </component>
   <component name="masterDetails">
     <states>
