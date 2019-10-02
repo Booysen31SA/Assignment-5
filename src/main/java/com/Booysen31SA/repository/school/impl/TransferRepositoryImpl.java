@@ -30,7 +30,7 @@ public class TransferRepositoryImpl implements ITransfer {
 
     @Override
     public Transfer read(String s) {
-        return transferDB.stream().filter(transfer -> transfer.getPersalNumber() == s).findAny().orElse(null);
+        return transferDB.stream().filter(transfer -> transfer.getPersalNumber().equalsIgnoreCase(s)).findAny().orElse(null);
 
     }
 

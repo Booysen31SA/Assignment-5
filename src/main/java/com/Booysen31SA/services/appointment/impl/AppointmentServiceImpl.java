@@ -1,6 +1,7 @@
 package com.Booysen31SA.services.appointment.impl;
 
 import com.Booysen31SA.domain.appointment.Appointment;
+import com.Booysen31SA.repository.appointment.IAppointmentRepository;
 import com.Booysen31SA.repository.appointment.impl.AppointmentRepositoryImpl;
 import com.Booysen31SA.services.appointment.IAppointmentService;
 import org.springframework.stereotype.Service;
@@ -12,7 +13,7 @@ import java.util.Set;
 public class AppointmentServiceImpl implements IAppointmentService {
 
     private static AppointmentServiceImpl service = null;
-    private AppointmentRepositoryImpl repository;
+    private IAppointmentRepository repository;
 
     public AppointmentServiceImpl(){
         repository = AppointmentRepositoryImpl.getAppointmentRepository();

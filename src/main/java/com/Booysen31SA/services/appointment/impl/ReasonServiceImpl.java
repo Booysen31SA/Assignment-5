@@ -1,6 +1,7 @@
 package com.Booysen31SA.services.appointment.impl;
 
 import com.Booysen31SA.domain.appointment.Reason;
+import com.Booysen31SA.repository.appointment.IReasonRepository;
 import com.Booysen31SA.repository.appointment.impl.ReasonRepositoryImpl;
 import com.Booysen31SA.services.appointment.IReasonService;
 import org.springframework.stereotype.Service;
@@ -11,7 +12,7 @@ import java.util.Set;
 public class ReasonServiceImpl implements IReasonService {
 
     private static ReasonServiceImpl service = null;
-    private ReasonRepositoryImpl repository;
+    private IReasonRepository repository;
 
     public ReasonServiceImpl(){
         repository = ReasonRepositoryImpl.getReasonRepository();

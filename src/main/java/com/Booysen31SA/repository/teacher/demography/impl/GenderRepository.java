@@ -31,7 +31,7 @@ public class GenderRepository implements IGenderRepository {
 
     @Override
     public Gender create(Gender gender) {
-        if(read(gender.getGenderId()) == null){
+        if(read(gender.getGenderDescription()) == null){
             genders.add(gender);
         }
         return gender;
@@ -39,7 +39,7 @@ public class GenderRepository implements IGenderRepository {
 
     @Override
     public Gender read(String integer) {
-        return genders.stream().filter(gender -> gender.getGenderId() == integer).findAny().orElse(null);
+        return genders.stream().filter(gender -> gender.getGenderDescription().equalsIgnoreCase(integer)).findAny().orElse(null);
     }
 
     @Override

@@ -48,4 +48,44 @@ public class RaceController {
         responseObj.setResponse(races);
         return ResponseEntity.ok(responseObj);
     }
+
+    @GetMapping(value = "/read/{id}")
+    public ResponseEntity read(@PathVariable String id){
+        ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Success");
+        Race race = raceService.getByName(id);
+        responseObj.setResponse(race);
+        return ResponseEntity.ok(responseObj);
+    }
+
+    @PostMapping(value = "/update/{race}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity updateRace(@PathVariable String race) {
+        System.out.println("Entered Value: " + race);
+        ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Race updated!");
+        Race savedRace;
+
+        Race checkRace = raceService.getByName(race);
+        if (checkRace == null || race.trim().isEmpty() || race.trim().equalsIgnoreCase("null")) {
+            responseObj.setResponseCode(HttpStatus.PRECONDITION_FAILED.toString());
+            responseObj.setResponseDescription("Provide a race!");
+        } else {
+            savedRace = raceService.getByName(race);
+            if (savedRace != null) {
+                responseObj.setResponseDescription("Race already exist!");
+            } else {
+                savedRace = RaceFactory.buildRace(race);
+                savedRace = raceService.update(savedRace);
+            }
+            responseObj.setResponse(savedRace);
+        }
+        return ResponseEntity.ok(responseObj);
+    }
+
+    @GetMapping(value = "/delete/{id}")
+    public ResponseEntity delete(@PathVariable String id){
+        ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Success");
+        Race race = raceService.getByName(id);
+        raceService.delete(race.getRaceId());
+        responseObj.setResponse(race);
+        return ResponseEntity.ok(responseObj);
+    }
 }

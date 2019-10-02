@@ -52,7 +52,7 @@ public class RaceService implements IRaceService {
 
     public Race getByName(String raceDesc){
         return repository.getAll()
-                .stream().filter(race -> race.getRaceDescription().equals(raceDesc))
+                .stream().filter(race -> race.getRaceDescription().equalsIgnoreCase(raceDesc))
                 .findAny()
                 .orElse(null);
     }

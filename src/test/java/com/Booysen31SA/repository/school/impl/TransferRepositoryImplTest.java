@@ -25,6 +25,7 @@ public class TransferRepositoryImplTest {
     public void create() {
         transfer = TransferFactory.buildTransfer("216062241", "sdvsdvvsvd", "dvvvvsdvsd", 555454);
         repository.create(transfer);
+        System.out.println(repository.read(transfer.getPersalNumber()));
         assertNotNull(repository.read(transfer.getPersalNumber()));
     }
 

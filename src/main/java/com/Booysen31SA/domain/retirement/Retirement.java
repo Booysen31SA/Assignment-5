@@ -2,14 +2,22 @@ package com.Booysen31SA.domain.retirement;
 
 public class Retirement implements RetirementIdentity, RetirementNames, Payout {
 
-    private String persal_Number;
-    private long id;
+    private String persal_Num;
+    private String id;
     private String firstName;
     private String lastName;
     private double payout;
 
+    public Retirement(String persal_Num, String id, String firstName, String lastName, double payout) {
+        this.persal_Num = persal_Num;
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.payout = payout;
+    }
+
     public Retirement(Builder build){
-        this.persal_Number = build.persal_Number;
+        this.persal_Num = build.persal_Num;
         this.id = build.id;
         this.firstName = build.firstName;
         this.lastName = build.lastName;
@@ -17,41 +25,41 @@ public class Retirement implements RetirementIdentity, RetirementNames, Payout {
     }
     @Override
     public double getPayout() {
-        return 0;
+        return payout;
     }
 
     @Override
     public String getPersal_Num() {
-        return null;
+        return persal_Num;
     }
 
     @Override
     public String getiD() {
-        return null;
+        return id;
     }
 
     @Override
     public String getFirstName() {
-        return null;
+        return firstName;
     }
 
     @Override
     public String getLastName() {
-        return null;
+        return lastName;
     }
 
     public static class Builder{
-        private String persal_Number;
-        private long id;
+        private String persal_Num;
+        private String id;
         private String firstName;
         private String lastName;
         private double payout;
 
-        public Builder persal_Number(String persal_Number) {
-            this.persal_Number = persal_Number;
+        public Builder persal_Num(String persal_Num) {
+            this.persal_Num = persal_Num;
             return this;
         }
-        public Builder id(long id) {
+        public Builder id(String id) {
             this.id = id;
             return this;
         }
@@ -75,7 +83,7 @@ public class Retirement implements RetirementIdentity, RetirementNames, Payout {
 
     @Override
     public String toString() {
-        return  "pasalNumber:" + persal_Number +
+        return  "persal_Num:" + persal_Num +
                 "\nid       :" + id +
                 "\nfirstName:" + firstName  +
                 "\nlastName :" + lastName +

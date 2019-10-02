@@ -28,7 +28,4 @@ public class EducationSecurityTest {
         assertEquals(HttpStatus.OK, result.getStatusCode());
     }
 
-    @Test
-    public void encoder() {
-    }
 }

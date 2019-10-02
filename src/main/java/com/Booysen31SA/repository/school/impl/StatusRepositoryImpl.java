@@ -32,7 +32,7 @@ public class StatusRepositoryImpl implements IStatus {
 
     @Override
     public Status read(String s) {
-        return statusDB.stream().filter(status -> status.getPersal_Number() == s).findAny().orElse(null);
+        return statusDB.stream().filter(status -> status.getPersal_Number().equalsIgnoreCase(s)).findAny().orElse(null);
 
     }
 

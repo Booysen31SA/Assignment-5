@@ -8,6 +8,8 @@ import com.Booysen31SA.domain.teacher.user.address.Address;
 import com.Booysen31SA.domain.teacher.user.appointed.DateAppointed;
 import com.Booysen31SA.domain.teacher.user.userDemography.UserDemography;
 import com.Booysen31SA.factory.ResponseObjFactory;
+import com.Booysen31SA.factory.appointment.DateAndTimeFactory;
+import com.Booysen31SA.factory.teacher.demography.GenderFactory;
 import com.Booysen31SA.factory.teacher.user.UserFactory;
 import com.Booysen31SA.factory.teacher.user.address.AddressFactory;
 import com.Booysen31SA.factory.teacher.user.appointed.DateAppointedFactory;
@@ -33,9 +35,9 @@ public class TeacherController {
     @GetMapping("/test/{id}")
     @ResponseBody
     public String test(@PathVariable String id) {
-        if(id.equalsIgnoreCase("1")){
+        if (id.equalsIgnoreCase("1")) {
             return "Correct ID";
-        }else{
+        } else {
             return "Wrong";
         }
     }
@@ -43,100 +45,169 @@ public class TeacherController {
     @Autowired
     @Qualifier("UserServiceImpl")
     private UserServiceImpl service;
+    @Qualifier("AddressServiceImpl")
     private AddressServiceImpl service2;
+    @Qualifier("AppointedServiceImpl")
     private AppointedServiceImpl service3;
+    @Qualifier("UserDemographyServiceImpl")
     private UserDemographyServiceImpl service4;
+    @Qualifier("GenderService")
     private GenderService service5;
+    @Qualifier("RaceService")
     private RaceService service6;
 
+    public TeacherController() {
+        service = UserServiceImpl.getService();
+        service2 = AddressServiceImpl.getService();
+        service3 = AppointedServiceImpl.getService();
+        service4 = UserDemographyServiceImpl.getService();
+        service5 = GenderService.getService();
+        service6 = RaceService.getService();
+    }
 
-    @PostMapping(value = "/create/{persalNumber}/{id}/{firstName}/{LastName}/{gender}/{race}/{DateAppointed}/{address}/{postalAddress}")
-    public ResponseEntity create(@PathVariable String persalNumber, @PathVariable String firstName,
-                                 @PathVariable String LastName, @PathVariable long id, @PathVariable String gender,
-                                 @PathVariable String race, @PathVariable String appointed,
-                                 @PathVariable String address, @PathVariable String postalAddress){
+    @PostMapping(value = "/create")
+    public ResponseEntity createA(@RequestBody TeacherCreation teacherCreation){
 
-        ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Teacher created!");
-        User app = service.read(persalNumber.trim());
-        Address dat = service2.read(persalNumber.trim());
-        DateAppointed appoint = service3.read(persalNumber.trim());
-        UserDemography ud = service4.read(persalNumber.trim());
-        Gender g = service5.getByName(gender);
-        Race r = service6.getByName(race);
 
-        if(app == null){
+
+        ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "User Created!");
+
+        User user = teacherCreation.getUser();
+        Address address = teacherCreation.getAddress();
+        DateAppointed dateAppointed = teacherCreation.getDateAppointed();
+
+
+        User buildUser;
+        Address buildAddress;
+        DateAppointed buildDateAppointed;
+        UserDemography buildUserDemography;
+        Gender buildGender;
+        Race buildRace;
+
+        User check = service.read(user.getPersal_Number());
+        if(user == null){
+            responseObj.setResponse(teacherCreation);
+            responseObj.setResponseCode(HttpStatus.PRECONDITION_FAILED.toString());
+            responseObj.setResponseDescription("Provide an user!");
+        }else if(address == null){
+            responseObj.setResponse(teacherCreation);
+            responseObj.setResponseCode(HttpStatus.PRECONDITION_FAILED.toString());
+            responseObj.setResponseDescription("Provide an address!");
+        }else if(check != null){
+            responseObj.setResponse(teacherCreation);
+            responseObj.setResponseCode(HttpStatus.PRECONDITION_FAILED.toString());
             responseObj.setResponseDescription("User already exist!");
         }else{
-            User app2 = UserFactory.buildUser(persalNumber, id, firstName, LastName);
-            Address dat2 = AddressFactory.buildAddress(persalNumber, address, postalAddress);
-            DateAppointed ap2= DateAppointedFactory.buildDateAppointed(persalNumber, appointed);
-            UserDemography demo = UserDemographyFactory.buildUserDemography(persalNumber, g.getGenderId(), r.getRaceId());
 
-            service.create(app2);
-            service2.create(dat2);
-            service3.create(ap2);
-            service4.create(demo);
+
+                buildUser = UserFactory.buildUser(user.getPersal_Number(), user.getId(), user.getFirst_Names(), user.getLast_Name());
+                buildAddress = AddressFactory.buildAddress(user.getPersal_Number(), address.getPhysicalAddress(), address.getPostalAddress());
+                buildDateAppointed = DateAppointedFactory.buildDateAppointed(user.getPersal_Number(), dateAppointed.getDate());
+//                buildUserDemography = UserDemographyFactory.buildUserDemography(user.getPersal_Number(), buildGender.getGenderId(), buildRace.getRaceId());
+
+                service.create(buildUser);
+                service2.create(buildAddress);
+                service3.create(buildDateAppointed);
+//                service4.create(buildUserDemography);
+                responseObj.setResponse(teacherCreation);
+            }
+
+        return ResponseEntity.ok(responseObj);
+    }
+
+    @GetMapping("/read/{id}")
+    public ResponseEntity read(@PathVariable String id){
+
+        ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Get Teacher!");
+
+        User buildUser = service.read(id);
+        Address buildAddress = service2.read(id);
+        DateAppointed buildDateAppointed = service3.read(id);
+
+        if(buildUser == null){
+            responseObj.setResponse(id);
+            responseObj.setResponseCode(HttpStatus.PRECONDITION_FAILED.toString());
+            responseObj.setResponseDescription("teacher Doesnt exist!");
+        }else{
+            TeacherCreation teacherCreation = new TeacherCreation(buildUser, buildDateAppointed, buildAddress);
+            responseObj.setResponse(teacherCreation);
         }
         return ResponseEntity.ok(responseObj);
     }
 
-    @PostMapping(value = "/update/{persalNumber}/{id}/{firstName}/{LastName}/{gender}/{race}/{DateAppointed}/{address}/{postalAddress}")
-    public ResponseEntity update(@PathVariable String persalNumber, @PathVariable String firstName,
-                                 @PathVariable String LastName, @PathVariable long id, @PathVariable String gender,
-                                 @PathVariable String race, @PathVariable String appointed,
-                                 @PathVariable String address, @PathVariable String postalAddress){
 
-        ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Teacher updated!");
-        User app = service.read(persalNumber.trim());
-        Address dat = service2.read(persalNumber.trim());
-        DateAppointed appoint2 = service3.read(persalNumber.trim());
-        UserDemography ud2 = service4.read(persalNumber.trim());
-        Gender g = service5.getByName(gender);
-        Race r = service6.getByName(race);
+    @GetMapping("/delete/{id}")
+    public ResponseEntity delete(@PathVariable String id){
 
-        if(app != null){
-            responseObj.setResponseDescription("User Dont exist!");
+        ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Delete Teacher!");
+
+        User buildUser = service.read(id);
+        Address buildAddress = service2.read(id);
+        DateAppointed buildDateAppointed = service3.read(id);
+
+        if(buildUser == null){
+            responseObj.setResponse(id);
+            responseObj.setResponseCode(HttpStatus.PRECONDITION_FAILED.toString());
+            responseObj.setResponseDescription("appointment Doesnt exist!");
         }else{
-            User app2 = UserFactory.buildUser(persalNumber, id, firstName, LastName);
-            Address dat2 = AddressFactory.buildAddress(persalNumber, address, postalAddress);
-            DateAppointed ap2= DateAppointedFactory.buildDateAppointed(persalNumber, appointed);
-            UserDemography demo = UserDemographyFactory.buildUserDemography(persalNumber, g.getGenderId(), r.getRaceId());
+            TeacherCreation teacherCreation = new TeacherCreation(buildUser, buildDateAppointed, buildAddress);
 
-            service.update(app2);
-            service2.update(dat2);
-            service3.update(ap2);
-            service4.update(demo);
+            service.delete(buildUser.getPersal_Number());
+            service2.delete(buildAddress.getPersal_Number());
+            service3.delete(buildDateAppointed.getPersal_Number());
+            responseObj.setResponse(teacherCreation);
         }
         return ResponseEntity.ok(responseObj);
     }
 
-    @PostMapping("/delete/{persalNumber}")
-    public ResponseEntity delete(@PathVariable String persalNumber){
-        ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "User Delete!");
-        User app = service.read(persalNumber.trim());
-        if(app == null){
-            responseObj.setResponseDescription("User Dont exist!");
+    @PostMapping(value = "/update")
+    public ResponseEntity update(@RequestBody TeacherCreation teacherCreation){
+
+
+
+        ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "User updated!");
+
+        User user = teacherCreation.getUser();
+        Address address = teacherCreation.getAddress();
+        DateAppointed dateAppointed = teacherCreation.getDateAppointed();
+
+
+        User buildUser;
+        Address buildAddress;
+        DateAppointed buildDateAppointed;
+        UserDemography buildUserDemography;
+        Gender buildGender;
+        Race buildRace;
+
+        User check = service.read(user.getPersal_Number());
+        if(user == null){
+            responseObj.setResponse(teacherCreation);
+            responseObj.setResponseCode(HttpStatus.PRECONDITION_FAILED.toString());
+            responseObj.setResponseDescription("Provide an user!");
+        }else if(address == null){
+            responseObj.setResponse(teacherCreation);
+            responseObj.setResponseCode(HttpStatus.PRECONDITION_FAILED.toString());
+            responseObj.setResponseDescription("Provide an address!");
+        }else if(check == null){
+            responseObj.setResponse(teacherCreation);
+            responseObj.setResponseCode(HttpStatus.PRECONDITION_FAILED.toString());
+            responseObj.setResponseDescription("Dont exist!");
         }else{
-            service.delete(persalNumber);
+
+
+            buildUser = UserFactory.buildUser(user.getPersal_Number(), user.getId(), user.getFirst_Names(), user.getLast_Name());
+            buildAddress = AddressFactory.buildAddress(user.getPersal_Number(), address.getPhysicalAddress(), address.getPostalAddress());
+            buildDateAppointed = DateAppointedFactory.buildDateAppointed(user.getPersal_Number(), dateAppointed.getDate());
+//                buildUserDemography = UserDemographyFactory.buildUserDemography(user.getPersal_Number(), buildGender.getGenderId(), buildRace.getRaceId());
+
+            service.update(buildUser);
+            service2.update(buildAddress);
+            service3.update(buildDateAppointed);
+//                service4.create(buildUserDemography);
+            responseObj.setResponse(teacherCreation);
         }
+
         return ResponseEntity.ok(responseObj);
     }
 
-    @PostMapping("/read/{persalNumber}")
-    public ResponseEntity read(@PathVariable String persalNumber){
-        ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "User created!");
-        User app = service.read(persalNumber.trim());
-        if(app == null){
-            responseObj.setResponseDescription("User Dont exist!");
-        }else{
-            app = service.read(persalNumber);
-        }
-        return ResponseEntity.ok(app);
-    }
-
-    @GetMapping("/read/all")
-    @ResponseBody
-    public Set<User> getAll() {
-        return service.getAll();
-    }
 }

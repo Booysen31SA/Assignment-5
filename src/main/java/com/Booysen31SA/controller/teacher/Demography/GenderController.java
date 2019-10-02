@@ -11,6 +11,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
 import java.util.Set;
 
 @RestController
@@ -44,6 +45,44 @@ public class GenderController {
     public ResponseEntity getAll(){
         ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Success");
         Set<Gender> genders = genderService.getAll();
+        responseObj.setResponse(genders);
+        return ResponseEntity.ok(responseObj);
+    }
+
+    @GetMapping(value = "/read/{id}")
+    public ResponseEntity read(@PathVariable String id){
+        ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Success");
+        Gender genders = genderService.getByName(id);
+        responseObj.setResponse(genders);
+        return ResponseEntity.ok(responseObj);
+    }
+
+    @PostMapping(value = "/update/{gender}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity updateGender(@PathVariable String gender) {
+        System.out.println("Entered Value: " + gender);
+        ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Gender updated!");
+        Gender savedGender;
+        Gender checkGender = genderService.getByName(gender);
+        if (checkGender == null || gender.trim().isEmpty() || gender.trim().equalsIgnoreCase("null")) {
+            responseObj.setResponseCode(HttpStatus.PRECONDITION_FAILED.toString());
+            responseObj.setResponseDescription("Provide a gender!");
+        } else {
+            savedGender = genderService.getByName(gender);
+            if (savedGender != null) {
+                responseObj.setResponseDescription("Gender already exist!");
+            } else {
+                savedGender = GenderFactory.buildGender(gender);
+                savedGender = genderService.update(savedGender);
+            }
+            responseObj.setResponse(savedGender);
+        }
+        return ResponseEntity.ok(responseObj);
+    }
+    @GetMapping(value = "/delete/{id}")
+    public ResponseEntity delete(@PathVariable String id){
+        ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Success");
+        Gender genders = genderService.getByName(id);
+        genderService.delete(genders.getGenderId());
         responseObj.setResponse(genders);
         return ResponseEntity.ok(responseObj);
     }

@@ -37,7 +37,7 @@ public class UserDemographyRepositoryImpl implements IUserDemography {
 
     @Override
     public UserDemography read(String integer) {
-        return UserDemographys.stream().filter(UserDemography -> UserDemography.getPersal_Number() == integer).findAny().orElse(null);
+        return UserDemographys.stream().filter(UserDemography -> UserDemography.getPersal_Number().equalsIgnoreCase(integer)).findAny().orElse(null);
     }
 
     @Override

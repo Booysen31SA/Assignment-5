@@ -51,7 +51,7 @@ public class GenderService implements IGenderService {
 
     public Gender getByName(String genderDesc){
         return repository.getAll()
-                .stream().filter(gender -> gender.getGenderDescription().equals(genderDesc))
+                .stream().filter(gender -> gender.getGenderDescription().equalsIgnoreCase(genderDesc))
                 .findAny()
                 .orElse(null);
     }

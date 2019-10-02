@@ -29,7 +29,7 @@ public class RaceControllerTest {
         ResponseEntity<String> response
                 = restTemplate
                 .withBasicAuth("admin", "password")
-                .postForEntity(BASE_URL+"gender/Male", entity, String.class);
+                .postForEntity(BASE_URL+"/create/Coloured", entity, String.class);
         System.out.println(response.getStatusCode());
         assertEquals(HttpStatus.OK, response.getStatusCode());
     }
@@ -37,8 +37,35 @@ public class RaceControllerTest {
     @Test
     public void getAll() {
 
-        ResponseEntity<String> result = restTemplate.withBasicAuth("user", "password")
+        ResponseEntity<String> result = restTemplate.withBasicAuth("admin", "password")
                 .getForEntity(BASE_URL + "/getall", String.class);
+        System.out.println(result.getBody());
+        assertEquals(HttpStatus.OK, result.getStatusCode());
+    }
+
+    @Test
+    public void read(){
+        ResponseEntity<String> result = restTemplate.withBasicAuth("admin", "password")
+                .getForEntity(BASE_URL + "/read/Male",  String.class);
+        System.out.println(result.getBody());
+        assertEquals(HttpStatus.OK, result.getStatusCode());
+    }
+
+    @Test
+    public void updateRace() {
+        HttpHeaders headers = new HttpHeaders();
+        HttpEntity<String> entity = new HttpEntity<>(null, headers);
+        ResponseEntity<String> response
+                = restTemplate
+                .withBasicAuth("admin", "password")
+                .postForEntity(BASE_URL+"/update/Coloured", entity, String.class);
+        System.out.println(response.getStatusCode());
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+    }
+    @Test
+    public void delete(){
+        ResponseEntity<String> result = restTemplate.withBasicAuth("admin", "password")
+                .getForEntity(BASE_URL + "/delete/216062241",  String.class);
         System.out.println(result.getBody());
         assertEquals(HttpStatus.OK, result.getStatusCode());
     }

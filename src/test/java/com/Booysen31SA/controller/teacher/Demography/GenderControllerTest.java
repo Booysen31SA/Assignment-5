@@ -1,5 +1,6 @@
 package com.Booysen31SA.controller.teacher.Demography;
 
+import com.Booysen31SA.domain.teacher.demography.Gender;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,9 +30,30 @@ public class GenderControllerTest {
     }
 
     @Test
+    public void read(){
+        ResponseEntity<String> result = restTemplate.withBasicAuth("admin", "password")
+                .getForEntity(BASE_URL + "/read/female",  String.class);
+        System.out.println(result.getBody());
+        assertEquals(HttpStatus.OK, result.getStatusCode());
+    }
+    @Test
     public void getAll() {
-        ResponseEntity<String> result = restTemplate.withBasicAuth("user", "password")
+        ResponseEntity<String> result = restTemplate.withBasicAuth("admin", "password")
                 .getForEntity(BASE_URL + "/getall", String.class);
+        System.out.println(result.getBody());
+        assertEquals(HttpStatus.OK, result.getStatusCode());
+    }
+    @Test
+    public void updateGender() {
+        ResponseEntity result = restTemplate.withBasicAuth("admin", "password")
+                .postForEntity(BASE_URL + "/update/female", null, String.class);
+        System.out.println(result.getBody());
+        assertEquals(HttpStatus.OK, result.getStatusCode());
+    }
+    @Test
+    public void delete(){
+        ResponseEntity<String> result = restTemplate.withBasicAuth("admin", "password")
+                .getForEntity(BASE_URL + "/delete/216062241",  String.class);
         System.out.println(result.getBody());
         assertEquals(HttpStatus.OK, result.getStatusCode());
     }

@@ -23,22 +23,22 @@ public class UserRepositoryTest {
 
     @Test
     public void create() {
-        user = UserFactory.buildUser("216062241", 51515415458L,"sdvsdvvsvd", "dvvvvsdvsd");
+        user = UserFactory.buildUser("216062241", "51515415458L","sdvsdvvsvd", "dvvvvsdvsd");
         repository.create(user);
         assertNotNull(repository.read(user.getPersal_Number()));
     }
 
     @Test
     public void read() {
-        user = UserFactory.buildUser("216062241", 51515415458L,"sdvsdvvsvd", "dvvvvsdvsd");
+        user = UserFactory.buildUser("216062241", "51515415458L","sdvsdvvsvd", "dvvvvsdvsd");
         repository.create(user);
         assertNotNull(repository.read(user.getPersal_Number()));
     }
 
     @Test
     public void update() {
-        user = UserFactory.buildUser("216062241", 51515415458L,"Matthew", "dvvvvsdvsd");
-        User Updated = UserFactory.buildUser("216062241", 51515415458L,"Matthew", "sdvsd");
+        user = UserFactory.buildUser("216062241", "51515415458L","Matthew", "dvvvvsdvsd");
+        User Updated = UserFactory.buildUser("216062241", "51515415458L","Matthew", "sdvsd");
         repository.create(user);
         repository.update(Updated);
 
@@ -48,7 +48,7 @@ public class UserRepositoryTest {
 
     @Test
     public void delete() {
-        user = UserFactory.buildUser("216062241", 51515415458L,"sdvsdvvsvd", "dvvvvsdvsd");
+        user = UserFactory.buildUser("216062241", "51515415458L","sdvsdvvsvd", "dvvvvsdvsd");
         repository.create(user);
         repository.delete(user.getPersal_Number());
         assertNull(repository.read(user.getPersal_Number()));
@@ -56,7 +56,7 @@ public class UserRepositoryTest {
 
     @Test
     public void getAll() {
-        user = UserFactory.buildUser("216062241", 51515415458L,"sdvsdvvsvd", "dvvvvsdvsd");
+        user = UserFactory.buildUser("216062241", "51515415458L","sdvsdvvsvd", "dvvvvsdvsd");
         repository.create(user);
         assertNotNull(repository.getAll());
     }

@@ -15,6 +15,7 @@ public class StatusFactoryTest {
 
     @Test
     public void buildStatus() {
+        System.out.println(status);
         assertNotNull(status);
     }
 }

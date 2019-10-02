@@ -3,7 +3,7 @@ package com.Booysen31SA.domain.school;
 
 public class Transfer implements School, Person {
 
-    private String pasalNumber;
+    private String persalNumber;
     private String previousSchool;
     private String schoolName;
     private int teacherAmount;
@@ -11,8 +11,15 @@ public class Transfer implements School, Person {
     public Transfer() {
     }
 
+    public Transfer(String persalNumber, String previousSchool, String schoolName, int teacherAmount) {
+        this.persalNumber = persalNumber;
+        this.previousSchool = previousSchool;
+        this.schoolName = schoolName;
+        this.teacherAmount = teacherAmount;
+    }
+
     public Transfer(Builder build) {
-        this.pasalNumber = build.pasalNumber;
+        this.persalNumber = build.persalNumber;
         this.previousSchool = build.previousSchool;
         this.schoolName = build.schoolName;
         this.teacherAmount = build.teacherAmount;
@@ -34,12 +41,12 @@ public class Transfer implements School, Person {
 
     @Override
     public String getPersalNumber() {
-        return pasalNumber;
+        return persalNumber;
     }
 
     public static class Builder{
 
-        private String pasalNumber;
+        private String persalNumber;
         private String previousSchool;
         private String schoolName;
         private int teacherAmount;
@@ -48,8 +55,8 @@ public class Transfer implements School, Person {
             this.previousSchool = previousSchool;
             return this;
         }
-        public Builder setPasalNumber(String pasalNumber){
-            this.pasalNumber = pasalNumber;
+        public Builder setpersalNumber(String persalNumber){
+            this.persalNumber = persalNumber;
             return this;
         }
         public Builder setSchoolName(String schoolName){
@@ -71,7 +78,7 @@ public class Transfer implements School, Person {
     @Override
     public String toString() {
         return
-                "pasal Number       :" + pasalNumber+
+                "pasal Number       :" + persalNumber+
                 "\nPrevious Transfer:"+ previousSchool+
                 "\nTransfer Name    :" + schoolName+
                 "\nteacherAmount    :" + teacherAmount;

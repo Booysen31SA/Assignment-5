@@ -11,6 +11,12 @@ public class Address {
         this.postalAddress = build.postalAddress;
     }
 
+    public Address(String persal_Number, String physicalAddress, String postalAddress) {
+        this.persal_Number = persal_Number;
+        this.physicalAddress = physicalAddress;
+        this.postalAddress = postalAddress;
+    }
+
     public String getPersal_Number() {
         return persal_Number;
     }
