@@ -36,11 +36,13 @@ public class TransferController {
     @Qualifier("StatusSchoolServiceImpl")
     private StatusServiceImpl service2;
 
-    @PostMapping(value = "/create")
-    public ResponseEntity createA( @RequestBody TransferCreation transferCreation) {
-
+    public TransferController() {
         service = TransferServiceImpl.getService();
         service2 = StatusServiceImpl.getService();
+    }
+
+    @PostMapping(value = "/create")
+    public ResponseEntity createA( @RequestBody TransferCreation transferCreation) {
 
         ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Transfer Created created!");
 
@@ -55,8 +57,8 @@ public class TransferController {
             responseObj.setResponseCode(HttpStatus.PRECONDITION_FAILED.toString());
             responseObj.setResponseDescription("Provide an Transfer!");
         }else {
-               buildTransfer = TransferFactory.buildTransfer("216062241", "SP", "mat", 80000);
-               buildStatus = StatusFactory.buildStatus("216062241", "New");
+               buildTransfer = TransferFactory.buildTransfer(transfer.getPersalNumber(), transfer.getPreviousSchool(), transfer.getSchoolName(), transfer.getTeacherAmount());
+               buildStatus = StatusFactory.buildStatus(status.getPersal_Number(), status.getStatusRequest());
 
             service.create(buildTransfer);
             service2.create(buildStatus);
@@ -80,6 +82,56 @@ public class TransferController {
             responseObj.setResponseDescription("appointment Doesnt exist!");
         }else{
             TransferCreation transferCreation = new TransferCreation(buildTransfer, buildStatus);
+            responseObj.setResponse(transferCreation);
+        }
+        return ResponseEntity.ok(responseObj);
+    }
+
+    @PostMapping(value = "/update")
+    public ResponseEntity update( @RequestBody TransferCreation transferCreation) {
+
+        ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Transfer updated!");
+
+        Transfer transfer = transferCreation.getTransfer();
+        Status status = transferCreation.getStatus();
+
+        Transfer buildTransfer;
+        Status buildStatus;
+
+        Transfer checkTransfer = service.read(transfer.getPersalNumber());
+        if(checkTransfer == null){
+            responseObj.setResponse(transferCreation);
+            responseObj.setResponseCode(HttpStatus.PRECONDITION_FAILED.toString());
+            responseObj.setResponseDescription("Transfer dont exist!");
+        }else {
+            buildTransfer = TransferFactory.buildTransfer(transfer.getPersalNumber(), transfer.getPreviousSchool(), transfer.getSchoolName(), transfer.getTeacherAmount());
+            buildStatus = StatusFactory.buildStatus(status.getPersal_Number(), status.getStatusRequest());
+
+            service.update(buildTransfer);
+            service2.update(buildStatus);
+
+            responseObj.setResponse(transferCreation);
+        }
+        return ResponseEntity.ok(responseObj);
+    }
+
+    @GetMapping("/delete/{id}")
+    public ResponseEntity delete(@PathVariable String id){
+
+        ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Delete Transfer!");
+
+        Transfer buildTransfer = service.read(id);
+        Status buildStatus = service2.read(id);
+
+        if(buildTransfer == null){
+            responseObj.setResponse(id);
+            responseObj.setResponseCode(HttpStatus.PRECONDITION_FAILED.toString());
+            responseObj.setResponseDescription("appointment Doesnt exist!");
+        }else{
+            TransferCreation transferCreation = new TransferCreation(buildTransfer, buildStatus);
+
+            service.delete(buildTransfer.getPersalNumber());
+            service2.delete(buildStatus.getPersal_Number());
             responseObj.setResponse(transferCreation);
         }
         return ResponseEntity.ok(responseObj);

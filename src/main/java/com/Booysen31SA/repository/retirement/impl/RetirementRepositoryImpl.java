@@ -14,7 +14,7 @@ public class RetirementRepositoryImpl implements IRetirementRepository {
     private static RetirementRepositoryImpl RetirementRepository = null;
 
     private RetirementRepositoryImpl() {
-        this.retirementDB = new HashSet<>();
+        this.retirementDB = new HashSet<Retirement>();
     }
 
     public static RetirementRepositoryImpl getRetirementRepository() {
@@ -31,7 +31,7 @@ public class RetirementRepositoryImpl implements IRetirementRepository {
 
     @Override
     public Retirement read(String s) {
-        return retirementDB.stream().filter(retirement -> retirement.getPersal_Num().equalsIgnoreCase(s)).findAny().orElse(null);
+        return retirementDB.stream().filter(retirement -> retirement.getPersal_Num().trim().equalsIgnoreCase(s)).findAny().orElse(null);
 
     }
 

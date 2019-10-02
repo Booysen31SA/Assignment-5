@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "ca62e259-8114-4308-a3f2-2859405090a8",
+		"_postman_id": "b45b2436-5524-45b2-aeb1-20e222dac317",
 		"name": "Assignment",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -37,7 +37,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"appointment\":{\n\t\t\"persal_Number\" : \"2\",\n\t\t\"appointmentToSee\": \"Matt\"\n\t},\n\t\"dateAndTime\":{\n\t\t\"persal_Number\" : \"2\",\n\t\t\"date\" : \"17/5\",\n\t\t\"time\" : \"17h30\"\n\t},\n\t\"reason\":{\n\t\t\"persal_Number\" : \"2\",\n\t\t\"rason\" : \"vist\"\n\t}\n}",
+							"raw": "{\n\t\"appointment\":{\n\t\t\"persalNumber\" : \"2\",\n\t\t\"appointmentToSee\": \"Matt\"\n\t},\n\t\"dateAndTime\":{\n\t\t\"persal_Number\" : \"2\",\n\t\t\"date\" : \"17/5\",\n\t\t\"time\" : \"17h30\"\n\t},\n\t\"reason\":{\n\t\t\"persal_Number\" : \"2\",\n\t\t\"rason\" : \"vist\"\n\t}\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -95,6 +95,42 @@
 							"path": [
 								"gender",
 								"getall"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"appointment\":{\n\t\t\"persalNumber\" : \"2\",\n\t\t\"appointmentToSee\": \"Matthew\"\n\t},\n\t\"dateAndTime\":{\n\t\t\"persal_Number\" : \"2\",\n\t\t\"date\" : \"17/5\",\n\t\t\"time\" : \"17h30\"\n\t},\n\t\"reason\":{\n\t\t\"persal_Number\" : \"2\",\n\t\t\"reason\" : \"vist\"\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/appointment/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"appointment",
+								"update"
 							]
 						}
 					},
@@ -162,6 +198,83 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/retirement/getall",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"retirement",
+								"getall"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"retirement\" : {\n\t\t\"persal_Number\" : \"216062241\",\n\t\t\"id\" : \"18454545\",\n\t\t\"firstName\" : \"Matthew\", \n\t\t\"lastName\" : \"Booysen\", \n\t\t\"payout\" : 45005.5\n\t},\n\t\"status\" : {\n\t\t\"persal_Number\" : \"216062241\", \n\t\t\"request\" : \"retirement\"\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/retirement/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"retirement",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/retirement/delete/216062241",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"retirement",
+								"delete",
+								"216062241"
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"protocolProfileBehavior": {}
@@ -211,7 +324,94 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": ""
+							"raw": "http://localhost:8080/transfer/read/216062241",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"transfer",
+								"read",
+								"216062241"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/gender/getall",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"gender",
+								"getall"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"transfer\" : {\n\t\t\"persalNumber\":\"216062241\", \n\t\t\"previousSchool\":\"SP\", \n\t\t\"schoolName\": \"Booysen\",\n\t\t\"teacherAmount\": 80000\n\t},\n\t\"status\" : {\n\t\t\"persal_Number\" : \"216062241\", \n\t\t\"statusRequest\" : \"retirement\"\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/transfer/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"transfer",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/transfer/delete/216062241",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"transfer",
+								"delete",
+								"216062241"
+							]
 						}
 					},
 					"response": []
@@ -283,6 +483,83 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/gender/getall",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"gender",
+								"getall"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"user\":{\n\t\t\"persal_Number\":\"216062241\",\n\t\t\"id\" : \"1234567890\",\n\t\t\"first_Name\" : \"Matthew\",\n\t\t\"last_Name\" : \"Booysen\"\n\t},\n\t\"dateAppointed\":{\n\t\t\"persal_Number\":\"216062241\",\n\t\t\"date\":\"17/02/2005\"\n\t},\n\t\"address\":{\n\t\t\"persal_Number\":\"216062241\",\n\t\t\"physicalAddress\":\"32 South Road\",\n\t\t\"postalAddress\":\"32 South Road\"\n\t\t\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/teacher/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"teacher",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/teacher/delete/216062241",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"teacher",
+								"delete",
+								"216062241"
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"protocolProfileBehavior": {}
@@ -331,6 +608,26 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/gender/getall",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"gender",
+								"getall"
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"protocolProfileBehavior": {}
@@ -366,6 +663,26 @@
 						"header": [],
 						"url": {
 							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/gender/getall",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"gender",
+								"getall"
+							]
 						}
 					},
 					"response": []

@@ -2,14 +2,14 @@ package com.Booysen31SA.domain.retirement;
 
 public class Retirement implements RetirementIdentity, RetirementNames, Payout {
 
-    private String persal_Number;
+    private String persal_Num;
     private String id;
     private String firstName;
     private String lastName;
     private double payout;
 
-    public Retirement(String persal_Number, String id, String firstName, String lastName, double payout) {
-        this.persal_Number = persal_Number;
+    public Retirement(String persal_Num, String id, String firstName, String lastName, double payout) {
+        this.persal_Num = persal_Num;
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -17,7 +17,7 @@ public class Retirement implements RetirementIdentity, RetirementNames, Payout {
     }
 
     public Retirement(Builder build){
-        this.persal_Number = build.persal_Number;
+        this.persal_Num = build.persal_Num;
         this.id = build.id;
         this.firstName = build.firstName;
         this.lastName = build.lastName;
@@ -30,7 +30,7 @@ public class Retirement implements RetirementIdentity, RetirementNames, Payout {
 
     @Override
     public String getPersal_Num() {
-        return persal_Number;
+        return persal_Num;
     }
 
     @Override
@@ -49,14 +49,14 @@ public class Retirement implements RetirementIdentity, RetirementNames, Payout {
     }
 
     public static class Builder{
-        private String persal_Number;
+        private String persal_Num;
         private String id;
         private String firstName;
         private String lastName;
         private double payout;
 
-        public Builder persal_Number(String persal_Number) {
-            this.persal_Number = persal_Number;
+        public Builder persal_Num(String persal_Num) {
+            this.persal_Num = persal_Num;
             return this;
         }
         public Builder id(String id) {
@@ -83,7 +83,7 @@ public class Retirement implements RetirementIdentity, RetirementNames, Payout {
 
     @Override
     public String toString() {
-        return  "pasalNumber:" + persal_Number +
+        return  "persal_Num:" + persal_Num +
                 "\nid       :" + id +
                 "\nfirstName:" + firstName  +
                 "\nlastName :" + lastName +

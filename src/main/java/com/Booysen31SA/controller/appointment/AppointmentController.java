@@ -14,6 +14,7 @@ import com.Booysen31SA.services.appointment.impl.ReasonServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -77,7 +78,7 @@ public class AppointmentController {
 
         }
 
-        @GetMapping("/read/{id}")
+        @GetMapping(value = "/read/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity read(@PathVariable String id){
 
             ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Get Appointment!");
@@ -85,6 +86,7 @@ public class AppointmentController {
             Appointment appointment = service.read(id);
             DateAndTime dateAndTime = service2.read(id);
             Reason reason = service3.read(id);
+            System.out.println(appointment +" "+ dateAndTime + reason);
 
             if(appointment == null){
                 responseObj.setResponse(id);
@@ -96,4 +98,63 @@ public class AppointmentController {
             }
             return ResponseEntity.ok(responseObj);
         }
+
+    @PostMapping(value = "/update")
+    public ResponseEntity update( @RequestBody AppointmentCreation appointmentCreation){
+
+        ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Appointment updated!");
+
+        Appointment appointment = appointmentCreation.getAppointment();
+        DateAndTime dateAndTime = appointmentCreation.getDateAndTime();
+        Reason reason = appointmentCreation.getReason();
+
+        DateAndTime dateAndTime1;
+        Appointment appointment1;
+        Reason reason1;
+
+        Appointment appointment2 = service.read(appointment.getPersalNumber());
+
+        if (appointment2 == null) {
+            responseObj.setResponse(appointmentCreation);
+            responseObj.setResponseCode(HttpStatus.PRECONDITION_FAILED.toString());
+            responseObj.setResponseDescription("Appointment dont exist!");
+        }else{
+
+            appointment1 = AppointmentFactory.buildAppointment(appointment.getPersalNumber(), appointment.getAppointmentToSee());
+            dateAndTime1 = DateAndTimeFactory.buildDateAndTime(appointment.getPersalNumber(), dateAndTime.getDate(), dateAndTime.getTime());
+            reason1 = ReasonFactory.buildReason(appointment.getPersalNumber(), reason.getReason());
+
+            service.update(appointment1);
+            service2.update(dateAndTime1);
+            service3.update(reason1);
+
+            responseObj.setResponse(appointmentCreation);
+        }
+        return ResponseEntity.ok(responseObj);
+
+    }
+
+    @GetMapping(value = "/delete/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity delete(@PathVariable String id){
+
+        ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Deleted Appointment!");
+
+        Appointment appointment = service.read(id);
+        DateAndTime dateAndTime = service2.read(id);
+        Reason reason = service3.read(id);
+
+        if(appointment == null){
+            responseObj.setResponse(id);
+            responseObj.setResponseCode(HttpStatus.PRECONDITION_FAILED.toString());
+            responseObj.setResponseDescription("appointment Doesnt exist!");
+        }else{
+            AppointmentCreation appointmentCreation = new AppointmentCreation(appointment, dateAndTime, reason);
+
+            service.delete(appointment.getPersalNumber());
+            service2.delete(dateAndTime.getPersal_Number());
+            service3.delete(reason.getPersal_Number());
+            responseObj.setResponse(appointmentCreation);
+        }
+        return ResponseEntity.ok(responseObj);
+    }
     }

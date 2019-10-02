@@ -89,7 +89,7 @@ private AppointmentCreation appointmentCreation;
         URI uri = new URI(BASE_URL+"/create");
 
         HttpHeaders headers = new HttpHeaders();
-        headers.set("X-COM-PERSIST", "true");
+//        headers.set("X-COM-PERSIST", "true");
 
         HttpEntity<AppointmentCreation> request = new HttpEntity<>(appointmentCreation, headers);
 
@@ -103,6 +103,35 @@ private AppointmentCreation appointmentCreation;
     public void read(){
         ResponseEntity<String> result = restTemplate.withBasicAuth("admin", "password")
                 .getForEntity(BASE_URL + "/read/216062241",  String.class);
+        System.out.println(result.getBody());
+        assertEquals(HttpStatus.OK, result.getStatusCode());
+    }
+    @Test
+    public void update() throws Exception{
+        Appointment appointment = AppointmentFactory.buildAppointment("216062241", "MAt");
+        DateAndTime dateAndTime = DateAndTimeFactory.buildDateAndTime("216062241", "17h30", "17h30");
+        Reason reason = ReasonFactory.buildReason("216062241", "visit");
+
+        AppointmentCreation appointmentCreation = new AppointmentCreation(appointment, dateAndTime, reason);
+
+        String inputJson = mapToJson(appointmentCreation);
+        URI uri = new URI(BASE_URL+"/update");
+
+        HttpHeaders headers = new HttpHeaders();
+//        headers.set("X-COM-PERSIST", "true");
+
+        HttpEntity<AppointmentCreation> request = new HttpEntity<>(appointmentCreation, headers);
+
+        ResponseEntity<String> result = this.restTemplate.withBasicAuth("admin", "password").postForEntity(uri, request, String.class);
+
+        System.out.println(result.getBody());
+        assertEquals(200, result.getStatusCodeValue());
+    }
+
+    @Test
+    public void delete(){
+        ResponseEntity<String> result = restTemplate.withBasicAuth("admin", "password")
+                .getForEntity(BASE_URL + "/delete/216062241",  String.class);
         System.out.println(result.getBody());
         assertEquals(HttpStatus.OK, result.getStatusCode());
     }

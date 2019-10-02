@@ -77,4 +77,30 @@ public class RetirementControllerTest {
         System.out.println(result.getBody());
         assertEquals(HttpStatus.OK, result.getStatusCode());
     }
+
+    @Test
+    public void update() throws Exception{
+        Retirement retirement = RetirementFactory.buildRetirement("216062241", "1234567890", "Matthew", "Booysen", 55000);
+        Status status = StatusFactory.buildStatus("216062241", "retirement");
+
+        RetirementCreation retirementCreation = new RetirementCreation(retirement, status);
+        URI uri = new URI(BASE_URL+"/update");
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.set("X-COM-PERSIST", "true");
+
+        HttpEntity<RetirementCreation> request = new HttpEntity<>(retirementCreation, headers);
+
+        ResponseEntity<String> result = this.restTemplate.withBasicAuth("admin", "password").postForEntity(uri, request, String.class);
+
+        System.out.println(result.getBody());
+        assertEquals(200, result.getStatusCodeValue());
+    }
+    @Test
+    public void delete(){
+        ResponseEntity<String> result = restTemplate.withBasicAuth("admin", "password")
+                .getForEntity(BASE_URL + "/delete/216062241",  String.class);
+        System.out.println(result.getBody());
+        assertEquals(HttpStatus.OK, result.getStatusCode());
+    }
 }

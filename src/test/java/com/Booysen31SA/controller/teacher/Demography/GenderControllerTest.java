@@ -43,4 +43,18 @@ public class GenderControllerTest {
         System.out.println(result.getBody());
         assertEquals(HttpStatus.OK, result.getStatusCode());
     }
+    @Test
+    public void updateGender() {
+        ResponseEntity result = restTemplate.withBasicAuth("admin", "password")
+                .postForEntity(BASE_URL + "/update/female", null, String.class);
+        System.out.println(result.getBody());
+        assertEquals(HttpStatus.OK, result.getStatusCode());
+    }
+    @Test
+    public void delete(){
+        ResponseEntity<String> result = restTemplate.withBasicAuth("admin", "password")
+                .getForEntity(BASE_URL + "/delete/216062241",  String.class);
+        System.out.println(result.getBody());
+        assertEquals(HttpStatus.OK, result.getStatusCode());
+    }
 }

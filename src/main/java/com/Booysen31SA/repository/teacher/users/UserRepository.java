@@ -14,7 +14,7 @@ public class UserRepository implements IUserRepository {
     private Set<User> userDB;
 
     public UserRepository(){
-        userDB = new HashSet<>();
+        userDB = new HashSet<User>();
     }
 
     public static UserRepository getRepository(){
@@ -39,7 +39,7 @@ public class UserRepository implements IUserRepository {
 
     @Override
     public User read(String integer) {
-        return userDB.stream().filter(User -> User.getPersal_Number().equalsIgnoreCase(integer)).findAny().orElse(null);
+        return userDB.stream().filter(User -> User.getPersal_Number().trim().equalsIgnoreCase(integer)).findAny().orElse(null);
     }
 
     @Override

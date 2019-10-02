@@ -1,6 +1,7 @@
 package com.Booysen31SA.services.appointment.impl;
 
 import com.Booysen31SA.domain.appointment.DateAndTime;
+import com.Booysen31SA.repository.appointment.IDateAndTimeRepository;
 import com.Booysen31SA.repository.appointment.impl.DateAndTimeRepositoryImpl;
 import com.Booysen31SA.services.appointment.IDateAndTimeService;
 import org.springframework.stereotype.Service;
@@ -11,7 +12,7 @@ import java.util.Set;
 public class DateAndTimeServiceImpl implements IDateAndTimeService {
 
     private static DateAndTimeServiceImpl service = null;
-    private DateAndTimeRepositoryImpl repository;
+    private IDateAndTimeRepository repository;
 
     public DateAndTimeServiceImpl(){
         repository = DateAndTimeRepositoryImpl.getDateAndTimeRepository();
