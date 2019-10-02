@@ -45,19 +45,23 @@ public class RetirementController {
     @PostMapping(value = "/create")
     public ResponseEntity createA( @RequestBody RetirementCreation retirementCreation){
 
-        ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Retirement Created created!");
+        ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Retirement Created!");
 
         Retirement retirement = retirementCreation.getRetirement();
         Status status = retirementCreation.getStatus();
 
         Retirement buildRetirement;
         Status buildStatus;
-
+         Retirement check = service.read(retirement.getPersal_Num());
         if(retirement == null){
             responseObj.setResponse(retirementCreation);
             responseObj.setResponseCode(HttpStatus.PRECONDITION_FAILED.toString());
             responseObj.setResponseDescription("Provide an retirement!");
-        }else {
+        }else if(check != null){
+            responseObj.setResponse(retirementCreation);
+            responseObj.setResponseCode(HttpStatus.PRECONDITION_FAILED.toString());
+            responseObj.setResponseDescription("Retirement already exists!");
+        }  else{
             buildRetirement = RetirementFactory.buildRetirement(retirement.getPersal_Num(), retirement.getiD(), retirement.getFirstName(), retirement.getLastName(), retirement.getPayout());
             buildStatus = StatusFactory.buildStatus(retirement.getPersal_Num(), status.getRequest());
 

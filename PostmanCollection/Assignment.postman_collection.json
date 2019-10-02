@@ -233,7 +233,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"retirement\" : {\n\t\t\"persal_Number\" : \"216062241\",\n\t\t\"id\" : \"18454545\",\n\t\t\"firstName\" : \"Matthew\", \n\t\t\"lastName\" : \"Booysen\", \n\t\t\"payout\" : 45005.5\n\t},\n\t\"status\" : {\n\t\t\"persal_Number\" : \"216062241\", \n\t\t\"request\" : \"retirement\"\n\t}\n}",
+							"raw": "{\n\t\"retirement\" : {\n\t\t\"persal_Num\" : \"216062241\",\n\t\t\"id\" : \"18454545\",\n\t\t\"firstName\" : \"Matthew\", \n\t\t\"lastName\" : \"Booysen\", \n\t\t\"payout\" : 45005.5\n\t},\n\t\"status\" : {\n\t\t\"persal_Number\" : \"216062241\", \n\t\t\"request\" : \"retirement\"\n\t}\n}",
 							"options": {
 								"raw": {
 									"language": "json"
