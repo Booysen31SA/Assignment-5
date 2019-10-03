@@ -3,15 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="db575afb-bea7-494f-a82d-c40e34fa18a0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/controller/teacher/TeacherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/controller/teacher/TeacherController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/controller/teacher/TeacherCreation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/controller/teacher/TeacherCreation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/domain/teacher/demography/Gender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/domain/teacher/demography/Gender.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/domain/teacher/demography/Race.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/domain/teacher/demography/Race.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Booysen31SA/controller/teacher/TeacherController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Booysen31SA/controller/teacher/TeacherController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Booysen31SA/domain/teacher/demography/Gender.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Booysen31SA/domain/teacher/demography/Gender.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Booysen31SA/domain/teacher/demography/Race.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Booysen31SA/domain/teacher/demography/Race.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Booysen31SA/domain/teacher/user/address/Address.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Booysen31SA/domain/teacher/user/address/Address.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Booysen31SA/domain/teacher/user/appointed/DateAppointed.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Booysen31SA/domain/teacher/user/appointed/DateAppointed.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/controller/appointment/AppointmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/controller/appointment/AppointmentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/controller/appointment/AppointmentCreation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/controller/appointment/AppointmentCreation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Booysen31SA/controller/appointment/AppointmentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Booysen31SA/controller/appointment/AppointmentController.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

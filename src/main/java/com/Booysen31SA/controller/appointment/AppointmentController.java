@@ -51,7 +51,7 @@ public class AppointmentController {
         }
 
         @PostMapping(value = "/create")
-        public ResponseEntity createA( @RequestBody AppointmentCreation appointmentCreation){
+        public AppointmentCreation createA( @RequestBody AppointmentCreation appointmentCreation){
 
             ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Appointment created!");
 
@@ -78,32 +78,25 @@ public class AppointmentController {
 
                 responseObj.setResponse(appointmentCreation);
             }
-            return ResponseEntity.ok(responseObj);
+            return new AppointmentCreation(appointmentCreation.getAppointment(), appointmentCreation.getDateAndTime(), appointmentCreation.getReason());
 
         }
 
         @GetMapping(value = "/read/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity read(@PathVariable String id){
+    public AppointmentCreation read(@PathVariable String id){
 
             ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Get Appointment!");
 
             Appointment appointment = service.read(id);
             DateAndTime dateAndTime = service2.read(id);
             Reason reason = service3.read(id);
+            AppointmentCreation appointmentCreation = new AppointmentCreation(appointment, dateAndTime, reason);
 
-            if(appointment == null){
-                responseObj.setResponse(id);
-                responseObj.setResponseCode(HttpStatus.PRECONDITION_FAILED.toString());
-                responseObj.setResponseDescription("appointment Doesnt exist!");
-            }else{
-                AppointmentCreation appointmentCreation = new AppointmentCreation(appointment, dateAndTime, reason);
-                responseObj.setResponse(appointmentCreation);
-            }
-            return ResponseEntity.ok(responseObj);
+            return new AppointmentCreation(appointmentCreation.getAppointment(), appointmentCreation.getDateAndTime(), appointmentCreation.getReason());
         }
 
     @PostMapping(value = "/update")
-    public ResponseEntity update( @RequestBody AppointmentCreation appointmentCreation){
+    public AppointmentCreation update( @RequestBody AppointmentCreation appointmentCreation){
 
         ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Appointment updated!");
 
@@ -133,32 +126,32 @@ public class AppointmentController {
 
             responseObj.setResponse(appointmentCreation);
         }
-        return ResponseEntity.ok(responseObj);
+        return new AppointmentCreation(appointmentCreation.getAppointment(), appointmentCreation.getDateAndTime(), appointmentCreation.getReason());
 
     }
 
     @GetMapping(value = "/delete/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity delete(@PathVariable String id){
+    public AppointmentCreation delete(@PathVariable String id){
 
         ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Deleted Appointment!");
 
         Appointment appointment = service.read(id);
         DateAndTime dateAndTime = service2.read(id);
         Reason reason = service3.read(id);
-
+        AppointmentCreation appointmentCreation = new AppointmentCreation();
         if(appointment == null){
             responseObj.setResponse(id);
             responseObj.setResponseCode(HttpStatus.PRECONDITION_FAILED.toString());
             responseObj.setResponseDescription("appointment Doesnt exist!");
         }else{
-            AppointmentCreation appointmentCreation = new AppointmentCreation(appointment, dateAndTime, reason);
+            AppointmentCreation appointmentCreationUpdated = new AppointmentCreation(appointment, dateAndTime, reason);
 
             service.delete(appointment.getPersalNumber());
             service2.delete(dateAndTime.getPersal_Number());
             service3.delete(reason.getPersal_Number());
             responseObj.setResponse(appointmentCreation);
         }
-        return ResponseEntity.ok(responseObj);
+        return new AppointmentCreation(appointmentCreation.getAppointment(), appointmentCreation.getDateAndTime(), appointmentCreation.getReason());
     }
 
     @GetMapping(value = "/getall", produces = MediaType.APPLICATION_JSON_VALUE)
