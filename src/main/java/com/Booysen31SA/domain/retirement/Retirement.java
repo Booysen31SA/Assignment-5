@@ -1,12 +1,20 @@
 package com.Booysen31SA.domain.retirement;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Retirement implements RetirementIdentity, RetirementNames, Payout {
 
+    @Id
     private String persal_Num;
     private String iD;
     private String firstName;
     private String lastName;
     private double payout;
+
+    public Retirement() {
+    }
 
     public Retirement(String persal_Num, String iD, String firstName, String lastName, double payout) {
         this.persal_Num = persal_Num;

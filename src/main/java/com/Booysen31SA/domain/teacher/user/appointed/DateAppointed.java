@@ -1,8 +1,16 @@
 package com.Booysen31SA.domain.teacher.user.appointed;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class DateAppointed {
-    String persal_Number;
-    String date;
+    @Id
+    private String persal_Number;
+    private String date;
+
+    public DateAppointed() {
+    }
 
     public DateAppointed(String persal_Number, String date){
       this.persal_Number = persal_Number;

@@ -1,8 +1,11 @@
 package com.Booysen31SA.domain.school;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
+@Entity
 public class Transfer implements School, Person {
-
+    @Id
     private String persalNumber;
     private String previousSchool;
     private String schoolName;

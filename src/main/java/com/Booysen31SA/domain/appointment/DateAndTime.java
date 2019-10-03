@@ -1,10 +1,18 @@
 package com.Booysen31SA.domain.appointment;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class DateAndTime {
 
+    @Id
     private String persal_Number;
     private String date;
     private String time;
+
+    public DateAndTime() {
+    }
 
     @Override
     public String toString() {

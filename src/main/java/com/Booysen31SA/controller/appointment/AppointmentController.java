@@ -18,6 +18,8 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Set;
+
 @RestController
 @RequestMapping("/appointment")
 public class AppointmentController {
@@ -25,8 +27,10 @@ public class AppointmentController {
     @Autowired
     @Qualifier("AppointmentServiceImpl")
     private AppointmentServiceImpl service;
+    @Autowired
     @Qualifier("DateAndTimeServiceImpl")
     private DateAndTimeServiceImpl service2;
+    @Autowired
     @Qualifier("ReasonServiceImpl")
     private ReasonServiceImpl service3;
 
@@ -86,7 +90,6 @@ public class AppointmentController {
             Appointment appointment = service.read(id);
             DateAndTime dateAndTime = service2.read(id);
             Reason reason = service3.read(id);
-            System.out.println(appointment +" "+ dateAndTime + reason);
 
             if(appointment == null){
                 responseObj.setResponse(id);
@@ -155,6 +158,14 @@ public class AppointmentController {
             service3.delete(reason.getPersal_Number());
             responseObj.setResponse(appointmentCreation);
         }
+        return ResponseEntity.ok(responseObj);
+    }
+
+    @GetMapping(value = "/getall", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity getAll(){
+        ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Success");
+        Set<Appointment> genders = service.getAll();
+        responseObj.setResponse(genders);
         return ResponseEntity.ok(responseObj);
     }
     }

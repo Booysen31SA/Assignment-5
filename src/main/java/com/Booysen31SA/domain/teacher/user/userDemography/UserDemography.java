@@ -1,9 +1,17 @@
 package com.Booysen31SA.domain.teacher.user.userDemography;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.util.Objects;
-
+@Entity
 public class UserDemography {
-    private String persal_Number, genderId, raceId;
+    @Id
+    private String persal_Number;
+    private String genderId;
+    private String raceId;
+
+    public UserDemography() {
+    }
 
     public UserDemography(String persal_Number, String genderId, String raceId) {
         this.persal_Number = persal_Number;

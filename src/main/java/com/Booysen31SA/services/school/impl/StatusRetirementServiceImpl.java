@@ -1,8 +1,9 @@
-package com.Booysen31SA.services.retirement.impl;
+package com.Booysen31SA.services.school.impl;
 
-import com.Booysen31SA.domain.retirement.Status;
-import com.Booysen31SA.repository.retirement.IStatusRepository;
-import com.Booysen31SA.services.retirement.IStatusService;
+
+import com.Booysen31SA.domain.school.Status;
+import com.Booysen31SA.repository.school.IStatus;
+import com.Booysen31SA.services.school.IStatusRetirement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,34 +11,34 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+@Service("StatusSchoolServiceImpl")
+public class StatusRetirementServiceImpl implements IStatusRetirement {
 
-@Service("StatusRetirementServiceImpl")
-public class StatusServiceImpl implements IStatusService {
 
-    private static StatusServiceImpl service = null;
+    private static StatusRetirementServiceImpl service = null;
     @Autowired
-    private IStatusRepository repository;
+    private IStatus repository;
 
-    public StatusServiceImpl(){
+    public StatusRetirementServiceImpl(){
 
     }
-    public static StatusServiceImpl getService(){
+    public static StatusRetirementServiceImpl getService(){
         if(service == null){
-            return new StatusServiceImpl();
+            return new StatusRetirementServiceImpl();
         }
         return service;
     }
 
     @Override
     public Set<Status> getAll() {
-        List<Status> list = (List<Status>) repository.findAll();
+        List<Status> list = (List<Status>) this.repository.findAll();
 
         return new HashSet<>(list);
     }
 
     @Override
     public Status create(Status appointment) {
-        return repository.save(appointment);
+        return this.repository.save(appointment);
     }
 
     @Override
@@ -52,6 +53,7 @@ public class StatusServiceImpl implements IStatusService {
 
     @Override
     public void delete(String integer) {
-        this.repository.deleteById(integer);
+
+        repository.deleteById(integer);
     }
 }

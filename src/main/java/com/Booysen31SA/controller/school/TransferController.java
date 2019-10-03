@@ -6,11 +6,12 @@ import com.Booysen31SA.domain.school.Transfer;
 import com.Booysen31SA.factory.ResponseObjFactory;
 import com.Booysen31SA.factory.school.StatusFactory;
 import com.Booysen31SA.factory.school.TransferFactory;
-import com.Booysen31SA.services.school.impl.StatusServiceImpl;
+import com.Booysen31SA.services.school.impl.StatusRetirementServiceImpl;
 import com.Booysen31SA.services.school.impl.TransferServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -33,12 +34,13 @@ public class TransferController {
     @Autowired
     @Qualifier("TransferServiceImpl")
     private TransferServiceImpl service;
+    @Autowired
     @Qualifier("StatusSchoolServiceImpl")
-    private StatusServiceImpl service2;
+    private StatusRetirementServiceImpl service2;
 
     public TransferController() {
         service = TransferServiceImpl.getService();
-        service2 = StatusServiceImpl.getService();
+        service2 = StatusRetirementServiceImpl.getService();
     }
 
     @PostMapping(value = "/create")
@@ -134,6 +136,13 @@ public class TransferController {
             service2.delete(buildStatus.getPersal_Number());
             responseObj.setResponse(transferCreation);
         }
+        return ResponseEntity.ok(responseObj);
+    }
+    @GetMapping(value = "/getall", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity getAll(){
+        ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Success");
+        Set<Transfer> genders = service.getAll();
+        responseObj.setResponse(genders);
         return ResponseEntity.ok(responseObj);
     }
     }

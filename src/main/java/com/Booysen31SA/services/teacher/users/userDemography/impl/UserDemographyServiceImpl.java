@@ -1,19 +1,23 @@
 package com.Booysen31SA.services.teacher.users.userDemography.impl;
 
 import com.Booysen31SA.domain.teacher.user.userDemography.UserDemography;
-import com.Booysen31SA.repository.teacher.users.userDemography.impl.UserDemographyRepositoryImpl;
+import com.Booysen31SA.repository.teacher.users.userDemography.IUserDemography;
 import com.Booysen31SA.services.teacher.users.userDemography.IUserDemographyService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Service("UserDemographyServiceImpl")
 public class UserDemographyServiceImpl implements IUserDemographyService {
     private static UserDemographyServiceImpl service = null;
-    private UserDemographyRepositoryImpl repository;
+    @Autowired
+    private IUserDemography repository;
 
     public UserDemographyServiceImpl(){
-        repository = UserDemographyRepositoryImpl.getRepository();
+
     }
     public static UserDemographyServiceImpl getService(){
         if(service == null){
@@ -24,26 +28,28 @@ public class UserDemographyServiceImpl implements IUserDemographyService {
 
     @Override
     public Set<UserDemography> getAll() {
-        return repository.getAll();
+        List<UserDemography> list = (List<UserDemography>) repository.findAll();
+
+        return new HashSet<>(list);
     }
 
     @Override
-    public UserDemography create(UserDemography gender) {
-        return repository.create(gender);
+    public UserDemography create(UserDemography account) {
+        return repository.save(account);
     }
 
     @Override
     public UserDemography read(String integer) {
-        return repository.read(integer);
+        return repository.findById(integer).orElse(null);
     }
 
     @Override
-    public UserDemography update(UserDemography gender) {
-        return repository.update(gender);
+    public UserDemography update(UserDemography account) {
+        return repository.save(account);
     }
 
     @Override
     public void delete(String integer) {
-        repository.delete(integer);
+        repository.deleteById(integer);
     }
 }

@@ -23,6 +23,7 @@ import com.Booysen31SA.services.teacher.users.userDemography.impl.UserDemography
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -31,6 +32,25 @@ import java.util.Set;
 @RestController
 @RequestMapping("/teacher")
 public class TeacherController {
+
+    @Autowired
+    @Qualifier("UserServiceImpl")
+    private UserServiceImpl service;
+    @Autowired
+    @Qualifier("AddressServiceImpl")
+    private AddressServiceImpl service2;
+    @Autowired
+    @Qualifier("AppointedServiceImpl")
+    private AppointedServiceImpl service3;
+    @Autowired
+    @Qualifier("UserDemographyServiceImpl")
+    private UserDemographyServiceImpl service4;
+    @Autowired
+    @Qualifier("GenderService")
+    private GenderService service5;
+    @Autowired
+    @Qualifier("RaceService")
+    private RaceService service6;
 
     @GetMapping("/test/{id}")
     @ResponseBody
@@ -41,20 +61,6 @@ public class TeacherController {
             return "Wrong";
         }
     }
-
-    @Autowired
-    @Qualifier("UserServiceImpl")
-    private UserServiceImpl service;
-    @Qualifier("AddressServiceImpl")
-    private AddressServiceImpl service2;
-    @Qualifier("AppointedServiceImpl")
-    private AppointedServiceImpl service3;
-    @Qualifier("UserDemographyServiceImpl")
-    private UserDemographyServiceImpl service4;
-    @Qualifier("GenderService")
-    private GenderService service5;
-    @Qualifier("RaceService")
-    private RaceService service6;
 
     public TeacherController() {
         service = UserServiceImpl.getService();
@@ -209,5 +215,11 @@ public class TeacherController {
 
         return ResponseEntity.ok(responseObj);
     }
-
+    @GetMapping(value = "/getall", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity getAll(){
+        ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Success");
+        Set<User> genders = service.getAll();
+        responseObj.setResponse(genders);
+        return ResponseEntity.ok(responseObj);
+    }
 }

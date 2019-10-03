@@ -1,20 +1,24 @@
 package com.Booysen31SA.services.retirement.impl;
 
 import com.Booysen31SA.domain.retirement.Retirement;
-import com.Booysen31SA.repository.retirement.impl.RetirementRepositoryImpl;
+import com.Booysen31SA.repository.retirement.IRetirementRepository;
 import com.Booysen31SA.services.retirement.IRetirementService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Service("RetirementServiceImpl")
 public class RetirementServiceImpl implements IRetirementService {
 
     private static RetirementServiceImpl service = null;
-    private RetirementRepositoryImpl repository;
+    @Autowired
+    private IRetirementRepository repository;
 
     public RetirementServiceImpl(){
-        repository = RetirementRepositoryImpl.getRetirementRepository();
+
     }
     public static RetirementServiceImpl getService(){
         if(service == null){
@@ -24,27 +28,28 @@ public class RetirementServiceImpl implements IRetirementService {
     }
 
     @Override
-    public Set<Retirement> getAll() {
-        return repository.getAll();
+    public Set<Retirement> getAll()  {List<Retirement> list = (List<Retirement>) repository.findAll();
+
+        return new HashSet<>(list);
     }
 
     @Override
     public Retirement create(Retirement appointment) {
-        return repository.create(appointment);
+        return repository.save(appointment);
     }
 
     @Override
     public Retirement read(String integer) {
-        return repository.read(integer);
+        return this.repository.findById(integer).orElse(null);
     }
 
     @Override
     public Retirement update(Retirement appointment) {
-        return repository.update(appointment);
+        return this.repository.save(appointment);
     }
 
     @Override
     public void delete(String integer) {
-        repository.delete(integer);
+        this.repository.deleteById(integer);
     }
 }

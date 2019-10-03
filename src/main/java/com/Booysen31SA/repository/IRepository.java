@@ -7,5 +7,4 @@ public interface IRepository<T, ID> {
     T read(ID id);
     T update(T t);
     void delete(ID id);
-    Set<T> getAll();
 }

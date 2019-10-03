@@ -34,6 +34,7 @@ public class RetirementController {
     @Autowired
     @Qualifier("RetirementServiceImpl")
     private RetirementServiceImpl service;
+    @Autowired
     @Qualifier("StatusRetirementServiceImpl")
     private StatusServiceImpl service2;
 
@@ -142,4 +143,11 @@ public class RetirementController {
         return ResponseEntity.ok(responseObj);
     }
 
+    @GetMapping(value = "/getall", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity getAll(){
+        ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Success");
+        Set<Retirement> genders = service.getAll();
+        responseObj.setResponse(genders);
+        return ResponseEntity.ok(responseObj);
+    }
 }
