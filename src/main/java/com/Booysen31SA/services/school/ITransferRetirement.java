@@ -4,5 +4,8 @@ import com.Booysen31SA.domain.school.Transfer;
 import com.Booysen31SA.repository.IRepository;
 import com.Booysen31SA.services.IService;
 
-public interface ITransfer extends IService<Transfer, String> {
+import java.util.Set;
+
+public interface ITransferRetirement extends IService<Transfer, String> {
+    Set<Transfer> getAll();
 }

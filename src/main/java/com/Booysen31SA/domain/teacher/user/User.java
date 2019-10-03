@@ -3,14 +3,22 @@ package com.Booysen31SA.domain.teacher.user;
 import com.Booysen31SA.domain.teacher.interfaces.TeacherIdentity;
 import com.Booysen31SA.domain.teacher.interfaces.TeacherName;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 import java.util.Objects;
-
+@Entity
 public class User implements TeacherIdentity, TeacherName {
 
+
+    @Id
     private String persal_Number = "";
     private String id;
     private String first_Names = "";
     private String last_Name = "";
+
+    public User() {
+    }
 
     public User(Builder build){
         this.persal_Number = build.persal_Number;

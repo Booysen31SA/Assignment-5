@@ -1,20 +1,24 @@
 package com.Booysen31SA.services.teacher.users.address.impl;
 
 import com.Booysen31SA.domain.teacher.user.address.Address;
-import com.Booysen31SA.repository.teacher.users.address.impl.AddressRepositoryImpl;
+import com.Booysen31SA.repository.teacher.users.address.IAddressRepository;
 import com.Booysen31SA.services.teacher.users.address.IAddressService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Service("AddressServiceImpl")
 public class AddressServiceImpl implements IAddressService {
 
     private static AddressServiceImpl service = null;
-    private AddressRepositoryImpl repository;
+    @Autowired
+    private IAddressRepository repository;
 
     public AddressServiceImpl() {
-        repository = AddressRepositoryImpl.getRepository();
+
     }
 
     public static AddressServiceImpl getService() {
@@ -26,26 +30,28 @@ public class AddressServiceImpl implements IAddressService {
 
     @Override
     public Set<Address> getAll() {
-        return repository.getAll();
+        List<Address> list = (List<Address>) repository.findAll();
+
+        return new HashSet<>(list);
     }
 
     @Override
-    public Address create(Address gender) {
-        return repository.create(gender);
+    public Address create(Address account) {
+        return repository.save(account);
     }
 
     @Override
     public Address read(String integer) {
-        return repository.read(integer);
+        return repository.findById(integer).orElse(null);
     }
 
     @Override
-    public Address update(Address gender) {
-        return repository.update(gender);
+    public Address update(Address account) {
+        return repository.save(account);
     }
 
     @Override
     public void delete(String integer) {
-        repository.delete(integer);
+        repository.deleteById(integer);
     }
 }

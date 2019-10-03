@@ -1,8 +1,14 @@
 package com.Booysen31SA.domain.teacher.demography;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Race {
 
-    private String raceId, raceDescription;
+    @Id
+    private String raceId;
+    private String raceDescription;
 
     private Race() {}
 

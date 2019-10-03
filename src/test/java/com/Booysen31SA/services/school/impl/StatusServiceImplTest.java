@@ -10,15 +10,15 @@ import static org.junit.Assert.*;
 public class StatusServiceImplTest {
 
     private Status status;
-    private StatusServiceImpl service;
+    private StatusRetirementServiceImpl service;
 
     @Before
     public void setUp() throws Exception {
-        service = StatusServiceImpl.getService();
+        service = StatusRetirementServiceImpl.getService();
     }
     @Test
     public void getStatusService() {
-        service = StatusServiceImpl.getService();
+        service = StatusRetirementServiceImpl.getService();
     }
 
     @Test

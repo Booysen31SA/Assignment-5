@@ -1,9 +1,17 @@
 package com.Booysen31SA.domain.teacher.user.address;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Address {
-    String persal_Number;
-    String physicalAddress;
-    String postalAddress;
+    @Id
+    private String persal_Number;
+    private String physicalAddress;
+    private String postalAddress;
+
+    public Address() {
+    }
 
     public Address(Builder build){
         this.persal_Number = build.persal_Number;

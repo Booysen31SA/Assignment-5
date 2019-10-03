@@ -2,10 +2,17 @@ package com.Booysen31SA.domain.appointment;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
+import javax.persistence.*;
+
+@Entity
 public class Appointment implements Person, AppointmentToSee{
 
+    @Id
     private String persalNumber;
     private String appointmentToSee;
+
+    public Appointment() {
+    }
 
     public Appointment(Builder build){
         this.persalNumber = build.persalNumber;
