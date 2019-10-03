@@ -10,7 +10,7 @@ public class Gender {
     private String genderId;
     private String genderDescription;
 
-    private Gender() {}
+    public Gender() {}
 
     public Gender(Builder builder){
         this.genderId = builder.genderId;

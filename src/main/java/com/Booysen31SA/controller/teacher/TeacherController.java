@@ -71,16 +71,16 @@ public class TeacherController {
         service6 = RaceService.getService();
     }
 
-    @PostMapping(value = "/create")
-    public ResponseEntity createA(@RequestBody TeacherCreation teacherCreation){
-
-
+    @PostMapping(value = "/create/{gender}/{race}")
+    public ResponseEntity createA(@RequestBody TeacherCreation teacherCreation, @PathVariable String gender, @PathVariable String race){
 
         ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "User Created!");
 
         User user = teacherCreation.getUser();
         Address address = teacherCreation.getAddress();
         DateAppointed dateAppointed = teacherCreation.getDateAppointed();
+        Gender genderCheck = service5.getByName(gender);
+        Race raceCheck = service6.getByName(race);
 
 
         User buildUser;
@@ -103,21 +103,29 @@ public class TeacherController {
             responseObj.setResponse(teacherCreation);
             responseObj.setResponseCode(HttpStatus.PRECONDITION_FAILED.toString());
             responseObj.setResponseDescription("User already exist!");
-        }else{
+        }else {
 
-
+            if (genderCheck == null) {
+                responseObj.setResponse(teacherCreation);
+                responseObj.setResponseCode(HttpStatus.PRECONDITION_FAILED.toString());
+                responseObj.setResponseDescription("Please Create the Correct Gender!");
+            } else if (raceCheck == null) {
+                responseObj.setResponse(teacherCreation);
+                responseObj.setResponseCode(HttpStatus.PRECONDITION_FAILED.toString());
+                responseObj.setResponseDescription("Please Create the Correct Race!");
+            } else {
                 buildUser = UserFactory.buildUser(user.getPersal_Number(), user.getId(), user.getFirst_Names(), user.getLast_Name());
                 buildAddress = AddressFactory.buildAddress(user.getPersal_Number(), address.getPhysicalAddress(), address.getPostalAddress());
                 buildDateAppointed = DateAppointedFactory.buildDateAppointed(user.getPersal_Number(), dateAppointed.getDate());
-//                buildUserDemography = UserDemographyFactory.buildUserDemography(user.getPersal_Number(), buildGender.getGenderId(), buildRace.getRaceId());
+                buildUserDemography = UserDemographyFactory.buildUserDemography(user.getPersal_Number(), genderCheck.getGenderId(), raceCheck.getRaceId());
 
                 service.create(buildUser);
                 service2.create(buildAddress);
                 service3.create(buildDateAppointed);
-//                service4.create(buildUserDemography);
+                service4.create(buildUserDemography);
                 responseObj.setResponse(teacherCreation);
             }
-
+        }
         return ResponseEntity.ok(responseObj);
     }
 
@@ -129,13 +137,16 @@ public class TeacherController {
         User buildUser = service.read(id);
         Address buildAddress = service2.read(id);
         DateAppointed buildDateAppointed = service3.read(id);
+        UserDemography user = service4.read(id);
 
         if(buildUser == null){
             responseObj.setResponse(id);
             responseObj.setResponseCode(HttpStatus.PRECONDITION_FAILED.toString());
             responseObj.setResponseDescription("teacher Doesnt exist!");
         }else{
-            TeacherCreation teacherCreation = new TeacherCreation(buildUser, buildDateAppointed, buildAddress);
+            Gender checkGender = service5.read(user.getGenderId());
+            Race checkRace = service6.read(user.getRaceId());
+            TeacherCreation teacherCreation = new TeacherCreation(buildUser, buildDateAppointed, buildAddress,checkGender,checkRace);
             responseObj.setResponse(teacherCreation);
         }
         return ResponseEntity.ok(responseObj);
@@ -150,17 +161,21 @@ public class TeacherController {
         User buildUser = service.read(id);
         Address buildAddress = service2.read(id);
         DateAppointed buildDateAppointed = service3.read(id);
+        UserDemography user = service4.read(id);
 
         if(buildUser == null){
             responseObj.setResponse(id);
             responseObj.setResponseCode(HttpStatus.PRECONDITION_FAILED.toString());
             responseObj.setResponseDescription("appointment Doesnt exist!");
         }else{
-            TeacherCreation teacherCreation = new TeacherCreation(buildUser, buildDateAppointed, buildAddress);
+            Gender checkGender = service5.read(user.getGenderId());
+            Race checkRace = service6.read(user.getRaceId());
+            TeacherCreation teacherCreation = new TeacherCreation(buildUser, buildDateAppointed, buildAddress,checkGender,checkRace);
 
             service.delete(buildUser.getPersal_Number());
-            service2.delete(buildAddress.getPersal_Number());
-            service3.delete(buildDateAppointed.getPersal_Number());
+            service2.delete(buildUser.getPersal_Number());
+            service3.delete(buildUser.getPersal_Number());
+            service4.delete(buildUser.getPersal_Number());
             responseObj.setResponse(teacherCreation);
         }
         return ResponseEntity.ok(responseObj);

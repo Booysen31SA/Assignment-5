@@ -12,11 +12,25 @@ public class TeacherCreation {
     private User user;
     private DateAppointed dateAppointed;
     private Address address;
+    private Gender gender;
+    private Race race;
+
+    public TeacherCreation() {
+    }
 
     public TeacherCreation(User user, DateAppointed dateAppointed, Address address) {
         this.user = user;
         this.dateAppointed = dateAppointed;
         this.address = address;
+        this.gender = null;
+        this.race = null;
+    }
+    public TeacherCreation(User user, DateAppointed dateAppointed, Address address, Gender gender, Race race) {
+        this.user = user;
+        this.dateAppointed = dateAppointed;
+        this.address = address;
+        this.gender = gender;
+        this.race = race;
     }
 
     public User getUser() {
@@ -31,4 +45,11 @@ public class TeacherCreation {
         return address;
     }
 
+    public Gender getGender() {
+        return gender;
+    }
+
+    public Race getRace() {
+        return race;
+    }
 }

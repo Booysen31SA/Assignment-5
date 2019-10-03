@@ -10,7 +10,7 @@ public class Race {
     private String raceId;
     private String raceDescription;
 
-    private Race() {}
+    public Race() {}
 
     public Race(Builder builder) {
         this.raceDescription = builder.raceDescription;
