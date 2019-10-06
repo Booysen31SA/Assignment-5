@@ -3,6 +3,7 @@ package com.Booysen31SA.controller.teacher;
 import com.Booysen31SA.domain.ResponseObj;
 import com.Booysen31SA.domain.teacher.demography.Gender;
 import com.Booysen31SA.domain.teacher.demography.Race;
+import com.Booysen31SA.domain.teacher.user.Role.UserRole;
 import com.Booysen31SA.domain.teacher.user.User;
 import com.Booysen31SA.domain.teacher.user.address.Address;
 import com.Booysen31SA.domain.teacher.user.appointed.DateAppointed;
@@ -10,6 +11,7 @@ import com.Booysen31SA.domain.teacher.user.userDemography.UserDemography;
 import com.Booysen31SA.factory.ResponseObjFactory;
 import com.Booysen31SA.factory.appointment.DateAndTimeFactory;
 import com.Booysen31SA.factory.teacher.demography.GenderFactory;
+import com.Booysen31SA.factory.teacher.user.Role.UserRoleFactory;
 import com.Booysen31SA.factory.teacher.user.UserFactory;
 import com.Booysen31SA.factory.teacher.user.address.AddressFactory;
 import com.Booysen31SA.factory.teacher.user.appointed.DateAppointedFactory;
@@ -20,6 +22,7 @@ import com.Booysen31SA.services.teacher.users.UserServiceImpl;
 import com.Booysen31SA.services.teacher.users.address.impl.AddressServiceImpl;
 import com.Booysen31SA.services.teacher.users.appointed.impl.AppointedServiceImpl;
 import com.Booysen31SA.services.teacher.users.userDemography.impl.UserDemographyServiceImpl;
+import com.Booysen31SA.services.teacher.users.userRole.Impl.UserRoleServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
@@ -51,6 +54,9 @@ public class TeacherController {
     @Autowired
     @Qualifier("RaceService")
     private RaceService service6;
+    @Autowired
+    @Qualifier("UserRoleServiceImpl")
+    private UserRoleServiceImpl service7;
 
     @GetMapping("/test/{id}")
     @ResponseBody
@@ -69,6 +75,7 @@ public class TeacherController {
         service4 = UserDemographyServiceImpl.getService();
         service5 = GenderService.getService();
         service6 = RaceService.getService();
+        service7 = UserRoleServiceImpl.getService();
     }
 
     @PostMapping(value = "/create/{gender}/{race}")
@@ -81,6 +88,7 @@ public class TeacherController {
         DateAppointed dateAppointed = teacherCreation.getDateAppointed();
         Gender genderCheck = service5.getByName(gender);
         Race raceCheck = service6.getByName(race);
+        UserRole userRole = teacherCreation.getUserRole();
 
 
         User buildUser;
@@ -89,6 +97,7 @@ public class TeacherController {
         UserDemography buildUserDemography;
         Gender buildGender;
         Race buildRace;
+        UserRole buildUserRole;
 
         User check = service.read(user.getPersal_Number());
         if(user == null){
@@ -118,11 +127,12 @@ public class TeacherController {
                 buildAddress = AddressFactory.buildAddress(user.getPersal_Number(), address.getPhysicalAddress(), address.getPostalAddress());
                 buildDateAppointed = DateAppointedFactory.buildDateAppointed(user.getPersal_Number(), dateAppointed.getDate());
                 buildUserDemography = UserDemographyFactory.buildUserDemography(user.getPersal_Number(), genderCheck.getGenderId(), raceCheck.getRaceId());
-
+                buildUserRole = UserRoleFactory.BuildUserRole(user.getPersal_Number(), userRole.getUserRole(), userRole.getUserPassword());
                 service.create(buildUser);
                 service2.create(buildAddress);
                 service3.create(buildDateAppointed);
                 service4.create(buildUserDemography);
+                service7.create(buildUserRole);
                 responseObj.setResponse(teacherCreation);
             }
         }
@@ -138,6 +148,7 @@ public class TeacherController {
         Address buildAddress = service2.read(id);
         DateAppointed buildDateAppointed = service3.read(id);
         UserDemography user = service4.read(id);
+        UserRole userRole = service7.read(id);
 
         if(buildUser == null){
             responseObj.setResponse(id);
@@ -146,7 +157,7 @@ public class TeacherController {
         }else{
             Gender checkGender = service5.read(user.getGenderId());
             Race checkRace = service6.read(user.getRaceId());
-            TeacherCreation teacherCreation = new TeacherCreation(buildUser, buildDateAppointed, buildAddress,checkGender,checkRace);
+            TeacherCreation teacherCreation = new TeacherCreation(buildUser, buildDateAppointed, buildAddress,checkGender,checkRace,userRole);
             responseObj.setResponse(teacherCreation);
         }
         return ResponseEntity.ok(responseObj);
@@ -162,6 +173,7 @@ public class TeacherController {
         Address buildAddress = service2.read(id);
         DateAppointed buildDateAppointed = service3.read(id);
         UserDemography user = service4.read(id);
+        UserRole userRole = service7.read(id);
 
         if(buildUser == null){
             responseObj.setResponse(id);
@@ -170,7 +182,7 @@ public class TeacherController {
         }else{
             Gender checkGender = service5.read(user.getGenderId());
             Race checkRace = service6.read(user.getRaceId());
-            TeacherCreation teacherCreation = new TeacherCreation(buildUser, buildDateAppointed, buildAddress,checkGender,checkRace);
+            TeacherCreation teacherCreation = new TeacherCreation(buildUser, buildDateAppointed, buildAddress,checkGender,checkRace, userRole);
 
             service.delete(buildUser.getPersal_Number());
             service2.delete(buildUser.getPersal_Number());

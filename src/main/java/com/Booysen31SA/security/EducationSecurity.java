@@ -40,6 +40,7 @@ public class EducationSecurity extends WebSecurityConfigurerAdapter {
                 .antMatchers("/teacher/**/**").hasRole(USER_ROLE)
                 .antMatchers("/").hasRole(TEACHER_ROLE)
                 .antMatchers("/**").hasRole(ADMIN_ROLE)
+                .antMatchers("/userRole").hasRole(TEACHER_ROLE)
         .and()
         .csrf().disable()
                 ;

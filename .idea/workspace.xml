@@ -2,10 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db575afb-bea7-494f-a82d-c40e34fa18a0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/controller/UserRoleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/domain/teacher/user/Role/UserRole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/factory/teacher/user/Role/UserRoleFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/repository/teacher/users/userRole/IUserRole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/services/teacher/users/userRole/IUserRoleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/services/teacher/users/userRole/Impl/UserRoleServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/controller/appointment/AppointmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/controller/appointment/AppointmentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/controller/appointment/AppointmentCreation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/controller/appointment/AppointmentCreation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Booysen31SA/controller/appointment/AppointmentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Booysen31SA/controller/appointment/AppointmentController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PostmanCollection/Assignment.postman_collection.json" beforeDir="false" afterPath="$PROJECT_DIR$/PostmanCollection/Assignment.postman_collection.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/controller/teacher/TeacherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/controller/teacher/TeacherController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/controller/teacher/TeacherCreation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/controller/teacher/TeacherCreation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/security/EducationSecurity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/security/EducationSecurity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/services/teacher/users/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/services/teacher/users/IUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/Booysen31SA/controller/teacher/TeacherControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/Booysen31SA/controller/teacher/TeacherControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Booysen31SA/controller/appointment/AppointmentCreation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Booysen31SA/controller/appointment/AppointmentCreation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Booysen31SA/controller/teacher/TeacherController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Booysen31SA/controller/teacher/TeacherController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Booysen31SA/controller/teacher/TeacherCreation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Booysen31SA/controller/teacher/TeacherCreation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Booysen31SA/domain/teacher/user/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Booysen31SA/domain/teacher/user/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Booysen31SA/factory/appointment/AppointmentFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Booysen31SA/factory/appointment/AppointmentFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Booysen31SA/factory/retirement/RetirementFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Booysen31SA/factory/retirement/RetirementFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Booysen31SA/factory/school/TransferFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Booysen31SA/factory/school/TransferFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Booysen31SA/factory/teacher/demography/GenderFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Booysen31SA/factory/teacher/demography/GenderFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Booysen31SA/factory/teacher/demography/RaceFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Booysen31SA/factory/teacher/demography/RaceFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Booysen31SA/factory/teacher/user/UserFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Booysen31SA/factory/teacher/user/UserFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Booysen31SA/factory/teacher/user/address/AddressFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Booysen31SA/factory/teacher/user/address/AddressFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Booysen31SA/security/EducationSecurity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Booysen31SA/security/EducationSecurity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/META-INF/Assignment-5.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/META-INF/assignment.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/Booysen31SA/controller/teacher/TeacherControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/Booysen31SA/controller/teacher/TeacherControllerTest.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,8 +59,8 @@
       <list>
         <option value="FxmlFile" />
         <option value="Singleton" />
-        <option value="Interface" />
         <option value="JUnit4 Test Class" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -98,6 +122,9 @@
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.Booysen31SA.Util" />
+    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="com.Booysen31SA.controller.retirement" />
       <recent name="com.Booysen31SA.controller.appointment" />
@@ -108,12 +135,8 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\matthewboo\IdeaProjects\Assignment-5\PostmanCollection" />
-      <recent name="C:\Users\matthewboo\IdeaProjects\Assignment-5\src\main" />
-      <recent name="C:\Users\booysen31.matthew\Documents\CPUT\3rd YEAR\ADP2\Assignment-5\src\main\java\com\Booysen31SA" />
-    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.Booysen31SA.controller" />
       <recent name="com.Booysen31SA" />
       <recent name="" />
       <recent name="repository.impl.teacher" />
@@ -126,11 +149,14 @@
       <recent name="C:\Users\booysen31.matthew\Desktop\Projects\Assignment-5\src\main\java\com\Booysen31SA\services\appointment" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.Booysen31SA.factory.teacher.user.Role" />
       <recent name="com.Booysen31SA.factory" />
       <recent name="com.Booysen31SA.domain" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.Booysen31SA.Util" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\matthewboo\IdeaProjects\Assignment-5\PostmanCollection" />
+      <recent name="C:\Users\matthewboo\IdeaProjects\Assignment-5\src\main" />
+      <recent name="C:\Users\booysen31.matthew\Documents\CPUT\3rd YEAR\ADP2\Assignment-5\src\main\java\com\Booysen31SA" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -273,6 +299,7 @@
       <workItem from="1569781162617" duration="28532000" />
       <workItem from="1570000525778" duration="10316000" />
       <workItem from="1570013949786" duration="7673000" />
+      <workItem from="1570370637095" duration="8782000" />
     </task>
     <task id="LOCAL-00001" summary="Basic Layout : 10 classes&#10;             : 2 Factories&#10;             : 2 Tests">
       <created>1555362412059</created>
@@ -502,7 +529,8 @@
     <MESSAGE value="Controller create and read, Postman Collection added" />
     <MESSAGE value="Controller Tests complete" />
     <MESSAGE value="Fix Retirement Controller bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix Retirement Controller bug" />
+    <MESSAGE value="added user Roles" />
+    <option name="LAST_COMMIT_MESSAGE" value="added user Roles" />
   </component>
   <component name="masterDetails">
     <states>
