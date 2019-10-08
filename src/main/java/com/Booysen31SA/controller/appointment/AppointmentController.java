@@ -82,8 +82,6 @@ public class AppointmentController {
         @GetMapping(value = "/read/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public AppointmentCreation read(@PathVariable String id){
 
-            ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Get Appointment!");
-
             Appointment appointment = service.read(id);
             DateAndTime dateAndTime = service2.read(id);
             Reason reason = service3.read(id);
