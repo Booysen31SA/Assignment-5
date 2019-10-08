@@ -122,7 +122,7 @@ public class AppointmentController {
     }
 
     @GetMapping(value = "/delete/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public AppointmentCreation delete(@PathVariable String id){
+    public void delete(@PathVariable String id){
 
         Appointment appointment = service.read(id);
         DateAndTime dateAndTime = service2.read(id);
@@ -139,7 +139,6 @@ public class AppointmentController {
             service2.delete(dateAndTime.getPersal_Number());
             service3.delete(reason.getPersal_Number());
         }
-        return new AppointmentCreation(appointmentCreation.getAppointment(), appointmentCreation.getDateAndTime(), appointmentCreation.getReason());
     }
 
     @GetMapping(value = "/getall/appointment", produces = MediaType.APPLICATION_JSON_VALUE)
