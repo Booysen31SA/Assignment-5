@@ -37,7 +37,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"appointment\":{\n\t\t\"persalNumber\" : \"2\",\n\t\t\"appointmentToSee\": \"Matt\"\n\t},\n\t\"dateAndTime\":{\n\t\t\"persal_Number\" : \"2\",\n\t\t\"date\" : \"17/5\",\n\t\t\"time\" : \"17h30\"\n\t},\n\t\"reason\":{\n\t\t\"persal_Number\" : \"2\",\n\t\t\"rason\" : \"vist\"\n\t}\n}",
+							"raw": "{\n\t\"appointment\":{\n\t\t\"persalNumber\" : \"2\",\n\t\t\"appointmentToSee\": \"Matt\"\n\t},\n\t\"dateAndTime\":{\n\t\t\"persal_Number\" : \"2\",\n\t\t\"date\" : \"17/5\",\n\t\t\"time\" : \"17h30\"\n\t},\n\t\"reason\":{\n\t\t\"persal_Number\" : \"2\",\n\t\t\"reason\" : \"vist\"\n\t}\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -86,14 +86,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/gender/getall",
+							"raw": "http://localhost:8080/appointment/getall",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"gender",
+								"appointment",
 								"getall"
 							]
 						}

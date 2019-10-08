@@ -1,18 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="db575afb-bea7-494f-a82d-c40e34fa18a0" name="Default Changelist" comment="Controllers tests">
+    <list default="true" id="db575afb-bea7-494f-a82d-c40e34fa18a0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PostmanCollection/Assignment.postman_collection.json" beforeDir="false" afterPath="$PROJECT_DIR$/PostmanCollection/Assignment.postman_collection.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/controller/appointment/AppointmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/controller/appointment/AppointmentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Booysen31SA/controller/appointment/AppointmentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Booysen31SA/controller/appointment/AppointmentController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Booysen31SA/domain/teacher/user/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Booysen31SA/domain/teacher/user/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Booysen31SA/factory/appointment/AppointmentFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Booysen31SA/factory/appointment/AppointmentFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Booysen31SA/factory/retirement/RetirementFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Booysen31SA/factory/retirement/RetirementFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Booysen31SA/factory/school/TransferFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Booysen31SA/factory/school/TransferFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Booysen31SA/factory/teacher/user/UserFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Booysen31SA/factory/teacher/user/UserFactory.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -473,7 +465,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570021537301</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="enhancements">
+      <created>1570530100192</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1570530100192</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -513,7 +512,8 @@
     <MESSAGE value="Controller Tests complete" />
     <MESSAGE value="Fix Retirement Controller bug" />
     <MESSAGE value="added user Roles" />
-    <option name="LAST_COMMIT_MESSAGE" value="added user Roles" />
+    <MESSAGE value="enhancements" />
+    <option name="LAST_COMMIT_MESSAGE" value="enhancements" />
   </component>
   <component name="masterDetails">
     <states>

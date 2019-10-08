@@ -144,10 +144,24 @@ public class AppointmentController {
         return new AppointmentCreation(appointmentCreation.getAppointment(), appointmentCreation.getDateAndTime(), appointmentCreation.getReason());
     }
 
-    @GetMapping(value = "/getall", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Set<Appointment> getAll(){
+    @GetMapping(value = "/getall/appointment", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Set<Appointment> getAllAppointments(){
         ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Success");
         Set<Appointment> appointments = service.getAll();
+        responseObj.setResponse(appointments);
+        return appointments;
+    }
+    @GetMapping(value = "/getall/dateandtime", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Set<DateAndTime> getAllDateAndTime(){
+        ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Success");
+        Set<DateAndTime> appointments = service2.getAll();
+        responseObj.setResponse(appointments);
+        return appointments;
+    }
+    @GetMapping(value = "/getall/reason", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Set<Reason> getAllReason(){
+        ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Success");
+        Set<Reason> appointments = service3.getAll();
         responseObj.setResponse(appointments);
         return appointments;
     }
