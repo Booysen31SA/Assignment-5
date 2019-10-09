@@ -44,9 +44,7 @@ public class RetirementController {
     }
 
     @PostMapping(value = "/create")
-    public ResponseEntity createA( @RequestBody RetirementCreation retirementCreation){
-
-        ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Retirement Created!");
+    public RetirementCreation createA( @RequestBody RetirementCreation retirementCreation){
 
         Retirement retirement = retirementCreation.getRetirement();
         Status status = retirementCreation.getStatus();
@@ -55,13 +53,10 @@ public class RetirementController {
         Status buildStatus;
          Retirement check = service.read(retirement.getPersal_Num());
         if(retirement == null){
-            responseObj.setResponse(retirementCreation);
-            responseObj.setResponseCode(HttpStatus.PRECONDITION_FAILED.toString());
-            responseObj.setResponseDescription("Provide an retirement!");
+
         }else if(check != null){
-            responseObj.setResponse(retirementCreation);
-            responseObj.setResponseCode(HttpStatus.PRECONDITION_FAILED.toString());
-            responseObj.setResponseDescription("Retirement already exists!");
+            buildRetirement = RetirementFactory.buildRetirement(null, null, null, null, 0);
+            buildStatus = StatusFactory.buildStatus(null, null);
         }  else{
             buildRetirement = RetirementFactory.buildRetirement(retirement.getPersal_Num(), retirement.getiD(), retirement.getFirstName(), retirement.getLastName(), retirement.getPayout());
             buildStatus = StatusFactory.buildStatus(retirement.getPersal_Num(), status.getRequest());
@@ -69,12 +64,11 @@ public class RetirementController {
             service.create(buildRetirement);
             service2.create(buildStatus);
 
-            responseObj.setResponse(retirementCreation);
         }
-        return ResponseEntity.ok(responseObj);
+        return new RetirementCreation(retirementCreation.getRetirement(), retirementCreation.getStatus());
     }
     @GetMapping("/read/{id}")
-    public ResponseEntity read(@PathVariable String id){
+    public RetirementCreation read(@PathVariable String id){
 
         ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Get Retirement!");
 
@@ -82,47 +76,43 @@ public class RetirementController {
         Status status = service2.read(id);
 
         if(retirement == null){
-            responseObj.setResponse(id);
-            responseObj.setResponseCode(HttpStatus.PRECONDITION_FAILED.toString());
-            responseObj.setResponseDescription("Retirement Doesnt exist!");
+            retirement = RetirementFactory.buildRetirement(retirement.getPersal_Num(), retirement.getiD(), retirement.getFirstName(), retirement.getLastName(), retirement.getPayout());
+            status = StatusFactory.buildStatus(retirement.getPersal_Num(), status.getRequest());
         }else{
+            retirement = RetirementFactory.buildRetirement(retirement.getPersal_Num(), retirement.getiD(), retirement.getFirstName(), retirement.getLastName(), retirement.getPayout());
+            status = StatusFactory.buildStatus(retirement.getPersal_Num(), status.getRequest());
             RetirementCreation retirementCreation = new RetirementCreation(retirement, status);
-            responseObj.setResponse(retirementCreation);
         }
-        return ResponseEntity.ok(responseObj);
+        return new RetirementCreation(retirement, status);
     }
 
     @PostMapping(value = "/update")
-    public ResponseEntity update( @RequestBody RetirementCreation retirementCreation){
-
-
-        ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Retirement Updated!");
+    public RetirementCreation update( @RequestBody RetirementCreation retirementCreation){
 
         Retirement retirement = retirementCreation.getRetirement();
         Status status = retirementCreation.getStatus();
 
         Retirement buildRetirement;
         Status buildStatus;
+        Retirement check = service.read(retirement.getPersal_Num());
+        if(retirement == null){
 
-        Retirement retirement1 = service.read(retirement.getPersal_Num());
-        if(retirement1 == null){
-            responseObj.setResponse(retirementCreation);
-            responseObj.setResponseCode(HttpStatus.PRECONDITION_FAILED.toString());
-            responseObj.setResponseDescription("Retirement dont exist!");
-        }else {
+        }else if(check != null){
+            buildRetirement = RetirementFactory.buildRetirement(null, null, null, null, 0);
+            buildStatus = StatusFactory.buildStatus(null, null);
+        }  else{
             buildRetirement = RetirementFactory.buildRetirement(retirement.getPersal_Num(), retirement.getiD(), retirement.getFirstName(), retirement.getLastName(), retirement.getPayout());
             buildStatus = StatusFactory.buildStatus(retirement.getPersal_Num(), status.getRequest());
 
             service.update(buildRetirement);
             service2.update(buildStatus);
 
-            responseObj.setResponse(retirementCreation);
         }
-        return ResponseEntity.ok(responseObj);
+        return new RetirementCreation(retirementCreation.getRetirement(), retirementCreation.getStatus());
     }
 
     @GetMapping("/delete/{id}")
-    public ResponseEntity delete(@PathVariable String id){
+    public void delete(@PathVariable String id){
 
         ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Delete Retirement!");
 
@@ -140,14 +130,20 @@ public class RetirementController {
 
             responseObj.setResponse(retirementCreation);
         }
-        return ResponseEntity.ok(responseObj);
     }
 
-    @GetMapping(value = "/getall", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity getAll(){
+    @GetMapping(value = "/getall/retirement", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Set<Retirement> getAllRetirements(){
         ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Success");
         Set<Retirement> genders = service.getAll();
         responseObj.setResponse(genders);
-        return ResponseEntity.ok(responseObj);
+        return genders;
+    }
+    @GetMapping(value = "/getall/retirementStatus", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Set<Status> getAllRetirementStatus(){
+        ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Success");
+        Set<Status> genders = service2.getAll();
+        responseObj.setResponse(genders);
+        return genders;
     }
 }
