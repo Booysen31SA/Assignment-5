@@ -52,7 +52,7 @@ public class RetirementController {
         Retirement buildRetirement;
         Status buildStatus;
          Retirement check = service.read(retirement.getPersal_Num());
-        if(retirement == null){
+        if(retirement != null){
 
         }else if(check != null){
             buildRetirement = RetirementFactory.buildRetirement(null, null, null, null, 0);
