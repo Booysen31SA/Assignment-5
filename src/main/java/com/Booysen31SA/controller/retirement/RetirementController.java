@@ -52,18 +52,15 @@ public class RetirementController {
         Retirement buildRetirement;
         Status buildStatus;
          Retirement check = service.read(retirement.getPersal_Num());
-        if(retirement != null){
-
-        }else if(check != null){
-            buildRetirement = RetirementFactory.buildRetirement(null, null, null, null, 0);
+        if(retirement == null){
+            buildRetirement = RetirementFactory.buildRetirement(null, null, null,null, 0);
             buildStatus = StatusFactory.buildStatus(null, null);
-        }  else{
+        }else{
             buildRetirement = RetirementFactory.buildRetirement(retirement.getPersal_Num(), retirement.getiD(), retirement.getFirstName(), retirement.getLastName(), retirement.getPayout());
             buildStatus = StatusFactory.buildStatus(retirement.getPersal_Num(), status.getRequest());
 
             service.create(buildRetirement);
             service2.create(buildStatus);
-
         }
         return new RetirementCreation(retirementCreation.getRetirement(), retirementCreation.getStatus());
     }

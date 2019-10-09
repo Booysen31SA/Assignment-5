@@ -35,7 +35,7 @@ public class RetirementServiceImpl implements IRetirementService {
 
     @Override
     public Retirement create(Retirement appointment) {
-        return repository.save(appointment);
+        return this.repository.save(appointment);
     }
 
     @Override
