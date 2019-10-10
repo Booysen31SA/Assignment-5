@@ -34,7 +34,7 @@ public class EducationSecurity extends WebSecurityConfigurerAdapter {
                 .httpBasic()
                 .and()
                 .authorizeRequests()
-                .antMatchers(HttpMethod.POST, "/appointment/**/**").hasRole(TEACHER_ROLE)
+                .antMatchers("/appointment/**").hasRole(TEACHER_ROLE)
                 .antMatchers("/retirement/**/**").hasRole(USER_ROLE)
                 .antMatchers("/transfer/**/**").hasRole(USER_ROLE)
                 .antMatchers("/teacher/**/**").hasRole(USER_ROLE)
