@@ -50,11 +50,18 @@ public class GenderController {
     }
 
     @GetMapping(value = "/read/{id}")
-    public ResponseEntity read(@PathVariable String id){
+    public Gender read(@PathVariable String id){
         ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Success");
         Gender genders = genderService.getByName(id);
         responseObj.setResponse(genders);
-        return ResponseEntity.ok(responseObj);
+        return genders;
+    }
+    @GetMapping(value = "/readBy/{id}")
+    public Gender readBy(@PathVariable String id){
+        ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Success");
+        Gender genders = genderService.read(id);
+        responseObj.setResponse(genders);
+        return genders;
     }
 
     @PostMapping(value = "/update/{gender}", produces = MediaType.APPLICATION_JSON_VALUE)

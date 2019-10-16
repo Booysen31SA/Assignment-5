@@ -79,9 +79,7 @@ public class TeacherController {
     }
 
     @PostMapping(value = "/create/{gender}/{race}")
-    public ResponseEntity createA(@RequestBody TeacherCreation teacherCreation, @PathVariable String gender, @PathVariable String race){
-
-        ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "User Created!");
+    public TeacherCreation createA(@RequestBody TeacherCreation teacherCreation, @PathVariable String gender, @PathVariable String race){
 
         User user = teacherCreation.getUser();
         Address address = teacherCreation.getAddress();
@@ -91,37 +89,31 @@ public class TeacherController {
         UserRole userRole = teacherCreation.getUserRole();
 
 
-        User buildUser;
-        Address buildAddress;
-        DateAppointed buildDateAppointed;
-        UserDemography buildUserDemography;
-        Gender buildGender;
-        Race buildRace;
-        UserRole buildUserRole;
+        User buildUser = null;
+        Address buildAddress = null;
+        DateAppointed buildDateAppointed = null;
+        UserDemography buildUserDemography = null;
+        Gender buildGender = null;
+        Race buildRace = null;
+        UserRole buildUserRole = null;
 
         User check = service.read(user.getPersal_Number());
         if(user == null){
-            responseObj.setResponse(teacherCreation);
-            responseObj.setResponseCode(HttpStatus.PRECONDITION_FAILED.toString());
-            responseObj.setResponseDescription("Provide an user!");
+            buildUser = UserFactory.buildUser(user.getPersal_Number(), user.getId(), user.getFirst_Names(), user.getLast_Name());
+            buildAddress = AddressFactory.buildAddress(user.getPersal_Number(), address.getPhysicalAddress(), address.getPostalAddress());
+            buildDateAppointed = DateAppointedFactory.buildDateAppointed(user.getPersal_Number(), dateAppointed.getDate());
+            buildUserDemography = UserDemographyFactory.buildUserDemography(user.getPersal_Number(), genderCheck.getGenderId(), raceCheck.getRaceId());
+            buildUserRole = UserRoleFactory.BuildUserRole(user.getPersal_Number(), userRole.getUserRole(), userRole.getUserPassword());
         }else if(address == null){
-            responseObj.setResponse(teacherCreation);
-            responseObj.setResponseCode(HttpStatus.PRECONDITION_FAILED.toString());
-            responseObj.setResponseDescription("Provide an address!");
+
         }else if(check != null){
-            responseObj.setResponse(teacherCreation);
-            responseObj.setResponseCode(HttpStatus.PRECONDITION_FAILED.toString());
-            responseObj.setResponseDescription("User already exist!");
+
         }else {
 
             if (genderCheck == null) {
-                responseObj.setResponse(teacherCreation);
-                responseObj.setResponseCode(HttpStatus.PRECONDITION_FAILED.toString());
-                responseObj.setResponseDescription("Please Create the Correct Gender!");
+
             } else if (raceCheck == null) {
-                responseObj.setResponse(teacherCreation);
-                responseObj.setResponseCode(HttpStatus.PRECONDITION_FAILED.toString());
-                responseObj.setResponseDescription("Please Create the Correct Race!");
+
             } else {
                 buildUser = UserFactory.buildUser(user.getPersal_Number(), user.getId(), user.getFirst_Names(), user.getLast_Name());
                 buildAddress = AddressFactory.buildAddress(user.getPersal_Number(), address.getPhysicalAddress(), address.getPostalAddress());
@@ -133,14 +125,13 @@ public class TeacherController {
                 service3.create(buildDateAppointed);
                 service4.create(buildUserDemography);
                 service7.create(buildUserRole);
-                responseObj.setResponse(teacherCreation);
             }
         }
-        return ResponseEntity.ok(responseObj);
+        return new TeacherCreation(buildUser, buildDateAppointed, buildAddress, buildUserRole);
     }
 
     @GetMapping("/read/{id}")
-    public ResponseEntity read(@PathVariable String id){
+    public TeacherCreation read(@PathVariable String id){
 
         ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Get Teacher!");
 
@@ -160,12 +151,12 @@ public class TeacherController {
             TeacherCreation teacherCreation = new TeacherCreation(buildUser, buildDateAppointed, buildAddress,checkGender,checkRace,userRole);
             responseObj.setResponse(teacherCreation);
         }
-        return ResponseEntity.ok(responseObj);
+        return new TeacherCreation(buildUser, buildDateAppointed, buildAddress, userRole);
     }
 
 
     @GetMapping("/delete/{id}")
-    public ResponseEntity delete(@PathVariable String id){
+    public TeacherCreation delete(@PathVariable String id){
 
         ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Delete Teacher!");
 
@@ -190,63 +181,68 @@ public class TeacherController {
             service4.delete(buildUser.getPersal_Number());
             responseObj.setResponse(teacherCreation);
         }
-        return ResponseEntity.ok(responseObj);
+        return new TeacherCreation(buildUser, buildDateAppointed, buildAddress, userRole);
     }
 
-    @PostMapping(value = "/update")
-    public ResponseEntity update(@RequestBody TeacherCreation teacherCreation){
-
-
-
-        ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "User updated!");
+    @PostMapping(value = "/update/{gender}/{race}")
+    public TeacherCreation update(@RequestBody TeacherCreation teacherCreation, @PathVariable String gender, @PathVariable String race){
 
         User user = teacherCreation.getUser();
         Address address = teacherCreation.getAddress();
         DateAppointed dateAppointed = teacherCreation.getDateAppointed();
+        Gender genderCheck = service5.getByName(gender);
+        Race raceCheck = service6.getByName(race);
+        UserRole userRole = teacherCreation.getUserRole();
 
 
-        User buildUser;
-        Address buildAddress;
-        DateAppointed buildDateAppointed;
-        UserDemography buildUserDemography;
-        Gender buildGender;
-        Race buildRace;
+        User buildUser = null;
+        Address buildAddress = null;
+        DateAppointed buildDateAppointed = null;
+        UserDemography buildUserDemography = null;
+        Gender buildGender = null;
+        Race buildRace = null;
+        UserRole buildUserRole = null;
 
         User check = service.read(user.getPersal_Number());
         if(user == null){
-            responseObj.setResponse(teacherCreation);
-            responseObj.setResponseCode(HttpStatus.PRECONDITION_FAILED.toString());
-            responseObj.setResponseDescription("Provide an user!");
+            buildUser = UserFactory.buildUser(null, null, null,null);
         }else if(address == null){
-            responseObj.setResponse(teacherCreation);
-            responseObj.setResponseCode(HttpStatus.PRECONDITION_FAILED.toString());
-            responseObj.setResponseDescription("Provide an address!");
-        }else if(check == null){
-            responseObj.setResponse(teacherCreation);
-            responseObj.setResponseCode(HttpStatus.PRECONDITION_FAILED.toString());
-            responseObj.setResponseDescription("Dont exist!");
-        }else{
-
-
-            buildUser = UserFactory.buildUser(user.getPersal_Number(), user.getId(), user.getFirst_Names(), user.getLast_Name());
-            buildAddress = AddressFactory.buildAddress(user.getPersal_Number(), address.getPhysicalAddress(), address.getPostalAddress());
-            buildDateAppointed = DateAppointedFactory.buildDateAppointed(user.getPersal_Number(), dateAppointed.getDate());
-//                buildUserDemography = UserDemographyFactory.buildUserDemography(user.getPersal_Number(), buildGender.getGenderId(), buildRace.getRaceId());
-
-            service.update(buildUser);
-            service2.update(buildAddress);
-            service3.update(buildDateAppointed);
-//                service4.create(buildUserDemography);
-            responseObj.setResponse(teacherCreation);
-        }
-
-        return ResponseEntity.ok(responseObj);
+            buildAddress = AddressFactory.buildAddress(null, null,null);
+        }else if(check != null){
+            buildUser = UserFactory.buildUser(null, null, null,null);
+        }else {
+                buildUser = UserFactory.buildUser(user.getPersal_Number(), user.getId(), user.getFirst_Names(), user.getLast_Name());
+                buildAddress = AddressFactory.buildAddress(user.getPersal_Number(), address.getPhysicalAddress(), address.getPostalAddress());
+                buildDateAppointed = DateAppointedFactory.buildDateAppointed(user.getPersal_Number(), dateAppointed.getDate());
+                buildUserDemography = UserDemographyFactory.buildUserDemography(user.getPersal_Number(), genderCheck.getGenderId(), raceCheck.getRaceId());
+                buildUserRole = UserRoleFactory.BuildUserRole(user.getPersal_Number(), userRole.getUserRole(), userRole.getUserPassword());
+                service.create(buildUser);
+                service2.create(buildAddress);
+                service3.create(buildDateAppointed);
+                service4.create(buildUserDemography);
+                service7.create(buildUserRole);
+            }
+        return new TeacherCreation(buildUser, buildDateAppointed, buildAddress, buildUserRole);
     }
-    @GetMapping(value = "/getall", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity getAll(){
-        ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Success");
-        Set<User> genders = service.getAll();
-        responseObj.setResponse(genders);
-        return ResponseEntity.ok(responseObj);
+
+    @GetMapping(value = "/getall/user", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Set<User> getAllUsers(){
+        Set<User> user = service.getAll();
+        return user;
+    }
+    @GetMapping(value = "/getall/address", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Set<Address> getAllAddress(){
+        Set<Address> user = service2.getAll();
+        return user;
+    }
+    @GetMapping(value = "/getall/dateAppointed", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Set<DateAppointed> getAllDateAppointed(){
+        Set<DateAppointed> user = service3.getAll();
+        return user;
+    }
+    @GetMapping(value = "/getall/userDemo", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Set<UserDemography> getAllUserDemography(){
+        Set<UserDemography> user = service4.getAll();
+        return user;
     }
 }
