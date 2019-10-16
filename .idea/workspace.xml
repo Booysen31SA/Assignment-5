@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="db575afb-bea7-494f-a82d-c40e34fa18a0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/security/EducationSecurity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Booysen31SA/security/EducationSecurity.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -277,7 +278,7 @@
       <workItem from="1570607607370" duration="19092000" />
       <workItem from="1571123255765" duration="599000" />
       <workItem from="1571129443754" duration="11097000" />
-      <workItem from="1571211483884" duration="10983000" />
+      <workItem from="1571211483884" duration="11914000" />
     </task>
     <task id="LOCAL-00001" summary="Basic Layout : 10 classes&#10;             : 2 Factories&#10;             : 2 Tests">
       <created>1555362412059</created>
@@ -545,7 +546,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571222744277</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Code Clean up">
+      <created>1571227798146</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1571227798146</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -566,7 +574,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
-    <MESSAGE value="commit 03" />
     <MESSAGE value="Files added" />
     <MESSAGE value="some of repository files added" />
     <MESSAGE value="Repository updated" />
@@ -591,7 +598,8 @@
     <MESSAGE value="adjusted the Security" />
     <MESSAGE value="Updated Transfer Controller" />
     <MESSAGE value="Updated User Controller" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated User Controller" />
+    <MESSAGE value="Code Clean up" />
+    <option name="LAST_COMMIT_MESSAGE" value="Code Clean up" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -603,7 +611,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/Booysen31SA/controller/retirement/RetirementControllerTest.java</url>
-          <line>66</line>
+          <line>63</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
