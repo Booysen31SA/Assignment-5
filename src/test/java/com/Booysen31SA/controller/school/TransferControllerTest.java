@@ -34,9 +34,6 @@ public class TransferControllerTest {
 
     @Autowired
     private TestRestTemplate restTemplate;
-    @Before
-    public void setUp() throws Exception {
-    }
 
     protected String mapToJson(Object obj) throws JsonProcessingException {
         ObjectMapper objectMapper = new ObjectMapper();

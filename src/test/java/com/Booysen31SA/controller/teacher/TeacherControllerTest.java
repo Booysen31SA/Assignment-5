@@ -37,9 +37,6 @@ public class TeacherControllerTest {
 
     @Autowired
     private TestRestTemplate restTemplate;
-    @Before
-    public void setUp() throws Exception {
-    }
 
     protected String mapToJson(Object obj) throws JsonProcessingException {
         ObjectMapper objectMapper = new ObjectMapper();
@@ -83,10 +80,6 @@ public class TeacherControllerTest {
                 .getForEntity(BASE_URL + "/read/216062241",  String.class);
         System.out.println(result.getBody());
         assertEquals(HttpStatus.OK, result.getStatusCode());
-    }
-
-    @Test
-    public void getAll() {
     }
 
     @Test

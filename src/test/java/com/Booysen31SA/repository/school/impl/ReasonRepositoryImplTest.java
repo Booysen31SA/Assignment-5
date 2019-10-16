@@ -6,7 +6,4 @@ import static org.junit.Assert.*;
 
 public class ReasonRepositoryImplTest {
 
-    @Before
-    public void setUp() throws Exception {
-    }
 }
