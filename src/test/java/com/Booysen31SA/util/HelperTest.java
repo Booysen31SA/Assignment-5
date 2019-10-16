@@ -8,9 +8,6 @@ import static org.junit.Assert.*;
 public class HelperTest {
 
     private static final String SUFFIX = Helper.getSuffixFromClassName(GenderFactory.class); // Expecting GF from (G)ender(F)actory.
-    @Before
-    public void setUp() throws Exception {
-    }
 
     @Test
     public void getSuffixFromClassName() {
@@ -18,15 +15,4 @@ public class HelperTest {
         assertEquals(SUFFIX, "GF");
     }
 
-    @Test
-    public void generateRandomGivenSuffix() {
-    }
-
-    @Test
-    public void getClassName() {
-    }
-
-    @Test
-    public void testGetSuffixFromClassName() {
-    }
 }

@@ -37,7 +37,7 @@ public class EducationSecurity extends WebSecurityConfigurerAdapter {
                 .antMatchers("/appointment/**").hasRole(TEACHER_ROLE)
                 .antMatchers("/retirement/**/**").hasRole(USER_ROLE)
                 .antMatchers("/transfer/**/**").hasRole(USER_ROLE)
-                .antMatchers("/teacher/**/**").hasRole(USER_ROLE)
+                .antMatchers("/teacher/**/**").hasRole(ADMIN_ROLE)
                 .antMatchers("/").hasRole(TEACHER_ROLE)
                 .antMatchers("/**").hasRole(ADMIN_ROLE)
                 .antMatchers("/userRole").hasRole(TEACHER_ROLE)

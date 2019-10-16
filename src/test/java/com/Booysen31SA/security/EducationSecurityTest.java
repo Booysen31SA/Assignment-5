@@ -12,14 +12,6 @@ public class EducationSecurityTest {
     private TestRestTemplate restTemplate;
     private String baseURL = "http://localhost:8080/appointment";
 
-    @Before
-    public void setUp() throws Exception {
-    }
-
-    @Test
-    public void configure() {
-    }
-
     @Test
     public void testConfigure() {
         ResponseEntity<String> result = restTemplate.withBasicAuth("admin", "password")

@@ -18,10 +18,6 @@ public class AddressServiceImplTest {
     }
 
     @Test
-    public void getService() {
-    }
-
-    @Test
     public void getAll() {
         address = AddressFactory.buildAddress("216062241", "fssgsg", "sdvvsd");
         service.create(address);

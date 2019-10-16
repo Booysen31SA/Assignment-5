@@ -18,10 +18,6 @@ public class UserDemographyServiceImplTest {
     }
 
     @Test
-    public void getService() {
-    }
-
-    @Test
     public void getAll() {
         userDemography = UserDemographyFactory.buildUserDemography("216062241", "1", "2");
         service.create(userDemography);
