@@ -4,6 +4,7 @@ import com.Booysen31SA.domain.ResponseObj;
 import com.Booysen31SA.domain.appointment.Appointment;
 import com.Booysen31SA.domain.appointment.DateAndTime;
 import com.Booysen31SA.domain.appointment.Reason;
+import com.Booysen31SA.domain.teacher.demography.Gender;
 import com.Booysen31SA.factory.ResponseObjFactory;
 import com.Booysen31SA.factory.appointment.AppointmentFactory;
 import com.Booysen31SA.factory.appointment.DateAndTimeFactory;
@@ -51,9 +52,7 @@ public class AppointmentController {
         }
 
         @PostMapping(value = "/create")
-        public ResponseEntity createA( @RequestBody AppointmentCreation appointmentCreation){
-
-            ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Appointment created!");
+        public AppointmentCreation createA( @RequestBody AppointmentCreation appointmentCreation){
 
             Appointment appointment = appointmentCreation.getAppointment();
             DateAndTime dateAndTime = appointmentCreation.getDateAndTime();
@@ -63,9 +62,9 @@ public class AppointmentController {
             Appointment appointment1;
             Reason reason1;
             if (appointment == null) {
-                responseObj.setResponse(appointmentCreation);
-                responseObj.setResponseCode(HttpStatus.PRECONDITION_FAILED.toString());
-                responseObj.setResponseDescription("Provide an appointment!");
+                appointment1 = AppointmentFactory.buildAppointment(null, null);
+                dateAndTime1 = DateAndTimeFactory.buildDateAndTime(null, null, null);
+                reason1 = ReasonFactory.buildReason(null, null);
             }else{
 
                     appointment1 = AppointmentFactory.buildAppointment(appointment.getPersalNumber(), appointment.getAppointmentToSee());
@@ -75,37 +74,24 @@ public class AppointmentController {
                     service.create(appointment1);
                     service2.create(dateAndTime1);
                     service3.create(reason1);
-
-                responseObj.setResponse(appointmentCreation);
             }
-            return ResponseEntity.ok(responseObj);
+            return new AppointmentCreation(appointmentCreation.getAppointment(), appointmentCreation.getDateAndTime(), appointmentCreation.getReason());
 
         }
 
         @GetMapping(value = "/read/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity read(@PathVariable String id){
-
-            ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Get Appointment!");
+    public AppointmentCreation read(@PathVariable String id){
 
             Appointment appointment = service.read(id);
             DateAndTime dateAndTime = service2.read(id);
             Reason reason = service3.read(id);
+            AppointmentCreation appointmentCreation = new AppointmentCreation(appointment, dateAndTime, reason);
 
-            if(appointment == null){
-                responseObj.setResponse(id);
-                responseObj.setResponseCode(HttpStatus.PRECONDITION_FAILED.toString());
-                responseObj.setResponseDescription("appointment Doesnt exist!");
-            }else{
-                AppointmentCreation appointmentCreation = new AppointmentCreation(appointment, dateAndTime, reason);
-                responseObj.setResponse(appointmentCreation);
-            }
-            return ResponseEntity.ok(responseObj);
+            return new AppointmentCreation(appointmentCreation.getAppointment(), appointmentCreation.getDateAndTime(), appointmentCreation.getReason());
         }
 
     @PostMapping(value = "/update")
-    public ResponseEntity update( @RequestBody AppointmentCreation appointmentCreation){
-
-        ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Appointment updated!");
+    public AppointmentCreation update( @RequestBody AppointmentCreation appointmentCreation){
 
         Appointment appointment = appointmentCreation.getAppointment();
         DateAndTime dateAndTime = appointmentCreation.getDateAndTime();
@@ -118,9 +104,9 @@ public class AppointmentController {
         Appointment appointment2 = service.read(appointment.getPersalNumber());
 
         if (appointment2 == null) {
-            responseObj.setResponse(appointmentCreation);
-            responseObj.setResponseCode(HttpStatus.PRECONDITION_FAILED.toString());
-            responseObj.setResponseDescription("Appointment dont exist!");
+            appointment1 = AppointmentFactory.buildAppointment(null, null);
+            dateAndTime1 = DateAndTimeFactory.buildDateAndTime(null, null, null);
+            reason1 = ReasonFactory.buildReason(null, null);
         }else{
 
             appointment1 = AppointmentFactory.buildAppointment(appointment.getPersalNumber(), appointment.getAppointmentToSee());
@@ -130,42 +116,50 @@ public class AppointmentController {
             service.update(appointment1);
             service2.update(dateAndTime1);
             service3.update(reason1);
-
-            responseObj.setResponse(appointmentCreation);
         }
-        return ResponseEntity.ok(responseObj);
+        return new AppointmentCreation(appointmentCreation.getAppointment(), appointmentCreation.getDateAndTime(), appointmentCreation.getReason());
 
     }
 
     @GetMapping(value = "/delete/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity delete(@PathVariable String id){
-
-        ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Deleted Appointment!");
+    public void delete(@PathVariable String id){
 
         Appointment appointment = service.read(id);
         DateAndTime dateAndTime = service2.read(id);
         Reason reason = service3.read(id);
-
+        AppointmentCreation appointmentCreation = new AppointmentCreation();
         if(appointment == null){
-            responseObj.setResponse(id);
-            responseObj.setResponseCode(HttpStatus.PRECONDITION_FAILED.toString());
-            responseObj.setResponseDescription("appointment Doesnt exist!");
+            appointment = AppointmentFactory.buildAppointment(null, null);
+            dateAndTime = DateAndTimeFactory.buildDateAndTime(null, null, null);
+            reason = ReasonFactory.buildReason(null, null);
         }else{
-            AppointmentCreation appointmentCreation = new AppointmentCreation(appointment, dateAndTime, reason);
+            AppointmentCreation appointmentCreationUpdated = new AppointmentCreation(appointment, dateAndTime, reason);
 
             service.delete(appointment.getPersalNumber());
             service2.delete(dateAndTime.getPersal_Number());
             service3.delete(reason.getPersal_Number());
-            responseObj.setResponse(appointmentCreation);
         }
-        return ResponseEntity.ok(responseObj);
     }
 
-    @GetMapping(value = "/getall", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity getAll(){
+    @GetMapping(value = "/getall/appointment", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Set<Appointment> getAllAppointments(){
         ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Success");
-        Set<Appointment> genders = service.getAll();
-        responseObj.setResponse(genders);
-        return ResponseEntity.ok(responseObj);
+        Set<Appointment> appointments = service.getAll();
+        responseObj.setResponse(appointments);
+        return appointments;
+    }
+    @GetMapping(value = "/getall/dateandtime", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Set<DateAndTime> getAllDateAndTime(){
+        ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Success");
+        Set<DateAndTime> appointments = service2.getAll();
+        responseObj.setResponse(appointments);
+        return appointments;
+    }
+    @GetMapping(value = "/getall/reason", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Set<Reason> getAllReason(){
+        ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Success");
+        Set<Reason> appointments = service3.getAll();
+        responseObj.setResponse(appointments);
+        return appointments;
     }
     }

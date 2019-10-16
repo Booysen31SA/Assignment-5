@@ -50,11 +50,18 @@ public class RaceController {
     }
 
     @GetMapping(value = "/read/{id}")
-    public ResponseEntity read(@PathVariable String id){
+    public Race read(@PathVariable String id){
         ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Success");
         Race race = raceService.getByName(id);
         responseObj.setResponse(race);
-        return ResponseEntity.ok(responseObj);
+        return race;
+    }
+    @GetMapping(value = "/readBy/{id}")
+    public Race readBy(@PathVariable String id){
+        ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Success");
+        Race race = raceService.read(id);
+        responseObj.setResponse(race);
+        return race;
     }
 
     @PostMapping(value = "/update/{race}", produces = MediaType.APPLICATION_JSON_VALUE)

@@ -22,9 +22,13 @@ public class AppointmentCreation {
         return reason;
     }
 
+    public AppointmentCreation() {
+    }
+
     public AppointmentCreation(Appointment appointment, DateAndTime dateAndTime, Reason reason){
           this.appointment = AppointmentFactory.buildAppointment(appointment.getPersalNumber(), appointment.getAppointmentToSee());
           this.dateAndTime = dateAndTime;
           this.reason = reason;
     }
+
 }

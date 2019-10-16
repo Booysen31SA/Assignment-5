@@ -44,15 +44,15 @@ public class TransferController {
     }
 
     @PostMapping(value = "/create")
-    public ResponseEntity createA( @RequestBody TransferCreation transferCreation) {
+    public TransferCreation createA( @RequestBody TransferCreation transferCreation) {
 
         ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Transfer Created created!");
 
         Transfer transfer = transferCreation.getTransfer();
         Status status = transferCreation.getStatus();
 
-        Transfer buildTransfer;
-        Status buildStatus;
+        Transfer buildTransfer = null;
+        Status buildStatus = null;
 
         if(transfer == null){
             responseObj.setResponse(transferCreation);
@@ -67,11 +67,11 @@ public class TransferController {
 
             responseObj.setResponse(transferCreation);
         }
-        return ResponseEntity.ok(responseObj);
+        return new TransferCreation(buildTransfer, buildStatus);
     }
 
     @GetMapping("/read/{id}")
-    public ResponseEntity read(@PathVariable String id){
+    public TransferCreation read(@PathVariable String id){
 
         ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Get Transfer!");
 
@@ -86,19 +86,19 @@ public class TransferController {
             TransferCreation transferCreation = new TransferCreation(buildTransfer, buildStatus);
             responseObj.setResponse(transferCreation);
         }
-        return ResponseEntity.ok(responseObj);
+        return new TransferCreation(buildTransfer, buildStatus);
     }
 
     @PostMapping(value = "/update")
-    public ResponseEntity update( @RequestBody TransferCreation transferCreation) {
+    public TransferCreation update( @RequestBody TransferCreation transferCreation) {
 
         ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Transfer updated!");
 
         Transfer transfer = transferCreation.getTransfer();
         Status status = transferCreation.getStatus();
 
-        Transfer buildTransfer;
-        Status buildStatus;
+        Transfer buildTransfer = null;
+        Status buildStatus = null;
 
         Transfer checkTransfer = service.read(transfer.getPersalNumber());
         if(checkTransfer == null){
@@ -114,11 +114,11 @@ public class TransferController {
 
             responseObj.setResponse(transferCreation);
         }
-        return ResponseEntity.ok(responseObj);
+        return new TransferCreation(buildTransfer, buildStatus);
     }
 
     @GetMapping("/delete/{id}")
-    public ResponseEntity delete(@PathVariable String id){
+    public void delete(@PathVariable String id){
 
         ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Delete Transfer!");
 
@@ -136,13 +136,19 @@ public class TransferController {
             service2.delete(buildStatus.getPersal_Number());
             responseObj.setResponse(transferCreation);
         }
-        return ResponseEntity.ok(responseObj);
     }
-    @GetMapping(value = "/getall", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity getAll(){
+    @GetMapping(value = "/getallTransfer", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Set<Transfer> getAll(){
         ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Success");
         Set<Transfer> genders = service.getAll();
         responseObj.setResponse(genders);
-        return ResponseEntity.ok(responseObj);
+        return genders;
+    }
+    @GetMapping(value = "/getallStatus", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Set<Status> getAllStatus(){
+        ResponseObj responseObj = ResponseObjFactory.buildGenericResponseObj(HttpStatus.OK.toString(), "Success");
+        Set<Status> genders = service2.getAll();
+        responseObj.setResponse(genders);
+        return genders;
     }
     }

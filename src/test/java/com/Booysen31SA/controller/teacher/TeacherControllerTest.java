@@ -1,9 +1,11 @@
 package com.Booysen31SA.controller.teacher;
 
 import com.Booysen31SA.controller.school.TransferCreation;
+import com.Booysen31SA.domain.teacher.user.Role.UserRole;
 import com.Booysen31SA.domain.teacher.user.User;
 import com.Booysen31SA.domain.teacher.user.address.Address;
 import com.Booysen31SA.domain.teacher.user.appointed.DateAppointed;
+import com.Booysen31SA.factory.teacher.user.Role.UserRoleFactory;
 import com.Booysen31SA.factory.teacher.user.UserFactory;
 import com.Booysen31SA.factory.teacher.user.address.AddressFactory;
 import com.Booysen31SA.factory.teacher.user.appointed.DateAppointedFactory;
@@ -58,8 +60,8 @@ public class TeacherControllerTest {
         User user = UserFactory.buildUser("216062241","51515415458L", "Matthew","Booysen");
         Address address = AddressFactory.buildAddress("216062241", "scsdcsd", "scsdcs");
         DateAppointed dateAppointed = DateAppointedFactory.buildDateAppointed("216062241", "17/02/2020");
-
-        teacherCreation = new TeacherCreation(user, dateAppointed, address);
+        UserRole userRole = UserRoleFactory.BuildUserRole("216062241", "admin", "password");
+        teacherCreation = new TeacherCreation(user, dateAppointed, address,userRole);
 
         String inputJson = mapToJson(teacherCreation);
         URI uri = new URI(BASE_URL+"/create");
@@ -92,8 +94,8 @@ public class TeacherControllerTest {
         User user = UserFactory.buildUser("216062241","51515415458L", "Matthew","Booysen");
         Address address = AddressFactory.buildAddress("216062241", "32 South Road", "32 South Road");
         DateAppointed dateAppointed = DateAppointedFactory.buildDateAppointed("216062241", "17/02/2020");
-
-        teacherCreation = new TeacherCreation(user, dateAppointed, address);
+        UserRole userRole = UserRoleFactory.BuildUserRole("216062241", "admin", "password");
+        teacherCreation = new TeacherCreation(user, dateAppointed, address,userRole);
 
         String inputJson = mapToJson(teacherCreation);
         URI uri = new URI(BASE_URL+"/update");

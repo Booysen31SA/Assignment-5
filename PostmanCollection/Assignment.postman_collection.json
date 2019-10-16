@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "b45b2436-5524-45b2-aeb1-20e222dac317",
+		"_postman_id": "40f1d5e8-5621-4cf5-878f-6095318bf9ba",
 		"name": "Assignment",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -37,7 +37,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"appointment\":{\n\t\t\"persalNumber\" : \"2\",\n\t\t\"appointmentToSee\": \"Matt\"\n\t},\n\t\"dateAndTime\":{\n\t\t\"persal_Number\" : \"2\",\n\t\t\"date\" : \"17/5\",\n\t\t\"time\" : \"17h30\"\n\t},\n\t\"reason\":{\n\t\t\"persal_Number\" : \"2\",\n\t\t\"rason\" : \"vist\"\n\t}\n}",
+							"raw": "{\n\t\"appointment\":{\n\t\t\"persalNumber\" : \"2\",\n\t\t\"appointmentToSee\": \"Matt\"\n\t},\n\t\"dateAndTime\":{\n\t\t\"persal_Number\" : \"2\",\n\t\t\"date\" : \"17/5\",\n\t\t\"time\" : \"17h30\"\n\t},\n\t\"reason\":{\n\t\t\"persal_Number\" : \"2\",\n\t\t\"reason\" : \"vist\"\n\t}\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -86,14 +86,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/gender/getall",
+							"raw": "http://localhost:8080/appointment/getall",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"gender",
+								"appointment",
 								"getall"
 							]
 						}
@@ -451,7 +451,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"user\":{\n\t\t\"persal_Number\":\"216062241\",\n\t\t\"id\" : \"1234567890\",\n\t\t\"first_Name\" : \"Matthew\",\n\t\t\"last_Name\" : \"Booysen\"\n\t},\n\t\"dateAppointed\":{\n\t\t\"persal_Number\":\"216062241\",\n\t\t\"date\":\"17/02/2005\"\n\t},\n\t\"address\":{\n\t\t\"persal_Number\":\"216062241\",\n\t\t\"physicalAddress\":\"32 South Road\",\n\t\t\"postalAddress\":\"32 South Road\"\n\t\t\n\t}\n}",
+							"raw": "{\n\t\"user\":{\n\t\t\"persal_Number\":\"216062241\",\n\t\t\"id\" : \"1234567890\",\n\t\t\"first_Name\" : \"Matthew\",\n\t\t\"last_Name\" : \"Booysen\"\n\t},\n\t\"dateAppointed\":{\n\t\t\"persal_Number\":\"216062241\",\n\t\t\"date\":\"17/02/2005\"\n\t},\n\t\"address\":{\n\t\t\"persal_Number\":\"216062241\",\n\t\t\"physicalAddress\":\"32 South Road\",\n\t\t\"postalAddress\":\"32 South Road\"\n\t\t\n\t},\n\t\"userRole\" :{\n\t\t\"persal_Number\": \"216062241\",\n\t\t\"userRole\":\"admin\",\n\t\t\"userPassword\":\"password\"\n\t}\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -459,7 +459,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/teacher/create",
+							"raw": "http://localhost:8080/teacher/create/female/coloured",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -467,7 +467,9 @@
 							"port": "8080",
 							"path": [
 								"teacher",
-								"create"
+								"create",
+								"female",
+								"coloured"
 							]
 						}
 					},
@@ -683,6 +685,23 @@
 								"gender",
 								"getall"
 							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "UserRole",
+			"item": [
+				{
+					"name": "getUserRole",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
 						}
 					},
 					"response": []
